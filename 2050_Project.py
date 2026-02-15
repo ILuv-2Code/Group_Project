@@ -6,10 +6,10 @@ class Course:
     
     def add_student(self, student): #develop by David Matos
         self.students.append(student)
-        pass #Adds a Student object to the course roster
+        pass 
     
     def get_student_count(self): #develop by David Matos
-        return self.students.count()
+        return len(self.students)
 
 class Student:
 
@@ -27,8 +27,9 @@ class Student:
         self.courses = c
     
     def enroll(self, course, grade): #develop by David Matos
-        #enrolls the student in a course with the given grade and updates the course roster
         self.courses.update(course, grade)
+        self.courses[course].add_student(self)
+        # TODO: Update course roster (check if it works) fr
     
     def update_grade(self, course, grade): #develop by David Matos
         self.courses[course] = grade
