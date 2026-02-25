@@ -30,7 +30,7 @@ class Student:
     
     def enroll(self, course:Course, grade:str): #develop by David Matos
         if course in self.courses:
-            raise ValueError(f"Student is already enroled in {course.course_code}")
+            raise ValueError(f"Student is already enrolled in {course.course_code}")
         
         self.courses[course] =  grade
         course.add_student(self)
@@ -43,13 +43,12 @@ class Student:
         self.courses[course] = grade
     
     def calculate_gpa(self): #develop by David Matos
-        summary = self.get_course_info()
         total_credits = 0
         numerator = 0
         
-        for credits, grade in summary.values():
-            numerator += int(credits) * self.GRADE_POINTS[grade]
-            total_credits += int(credits)
+        for course, grade in self.courses.items():
+            numerator += int(course.credits) * self.GRADE_POINTS[grade]
+            total_credits += int(course.credits)
             
         if total_credits > 0:
             return (numerator/total_credits)
