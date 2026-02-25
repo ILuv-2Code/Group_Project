@@ -29,6 +29,9 @@ class Student:
         self.courses = c
     
     def enroll(self, course, grade): #develop by David Matos
+        if course in self.courses:
+            raise ValueError(f"Student is already enroled in {course}")
+        
         self.courses[course] =  grade
         course.add_student(self)
         
