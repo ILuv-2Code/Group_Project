@@ -5,10 +5,12 @@ class Course:
         self.students = s
     
     def add_student(self, student): #develop by David Matos
+        # adds a Student object to the course roster.
         self.students.append(student)
         pass 
     
     def get_student_count(self): #develop by David Matos
+        # returns the number of students currently enrolled.
         return len(self.students)
 
 class Student:
