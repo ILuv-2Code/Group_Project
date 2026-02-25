@@ -67,9 +67,9 @@ class Student:
         
     
 class University(): #develop by David Matos
-    def __init__(self, s:dict, c:dict):
-        self.students = s
-        self.courses = c
+    def __init__(self):
+        self.students = {}
+        self.courses = {}
         
     def add_course(self, course_code, credits): #develop by David Matos
         # if the course does not exist, create and store it; return the course object.
