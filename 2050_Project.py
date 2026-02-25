@@ -1,13 +1,13 @@
 class Course:
-    def __init__(self, c_c:str, c:int, s:list): #develop by David Matos
+    def __init__(self, c_c:str, c:int): #develop by David Matos
         self.course_code = c_c
         self.credits = c
-        self.students = s
+        self.students = []
     
     def add_student(self, student): #develop by David Matos
         # adds a Student object to the course roster.
-        self.students.append(student)
-        pass 
+        if student not in self.students:
+            self.students.append(student)
     
     def get_student_count(self): #develop by David Matos
         # returns the number of students currently enrolled.
@@ -23,35 +23,41 @@ class Student:
         'F' : 0.0
         }
     
-    def __init__(self, s_i:str, n:str, c:dict={}): #develop by David Matos
+    def __init__(self, s_i:str, n:str): #develop by David Matos
         self.student_id = s_i
         self.name = n
-        self.courses = c
+        self.courses = {}
     
     def enroll(self, course:Course, grade:str): #develop by David Matos
         if course in self.courses:
-            raise ValueError(f"Student is already enroled in {course}")
+            raise ValueError(f"Student is already enroled in {course.course_code}")
         
         self.courses[course] =  grade
         course.add_student(self)
         
     
     def update_grade(self, course:Course, grade:str): #develop by David Matos
+        if course not in self.courses:
+            raise ValueError(f"Student not enrolled in course {course.course_code}")
+        
         self.courses[course] = grade
     
     def calculate_gpa(self): #develop by David Matos
         summary = self.get_course_info()
-        credits = 0
+        total_credits = 0
         numerator = 0
         
         for credits, grade in summary.values():
             numerator += int(credits) * self.GRADE_POINTS[grade]
-            credits += int (credits)
-        
-        return (numerator/credits)
+            total_credits += int(credits)
+            
+        if total_credits > 0:
+            return (numerator/total_credits)
+        else:
+            return 0.0
         
     def get_courses(self): #develop by David Matos
-        return self.courses.keys()
+        return list(self.courses.keys())
     
     def get_course_info(self): #develop by David Matos
         summary = {}
