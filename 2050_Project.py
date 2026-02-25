@@ -51,7 +51,7 @@ class Student:
         if grade in self.GRADE_POINTS:
             self.courses[course] = grade
         else:
-            raise ValueError("Non-existent frade")
+            raise ValueError("Non-existent grade")
     
     def calculate_gpa(self): #develop by David Matos
         total_credits = 0
@@ -96,28 +96,33 @@ class University(): #develop by David Matos
             self.students[student_id] = Student(student_id, name)
             return self.students[student_id]
         else:
-            
             return self.students[student_id]
         
 
     def get_student(self, student_id): #develop by David Matos
         # returns the student object for that ID (or None if not found).
+        return self.students.get(student_id, None)
         
-        pass
     
     def get_course(self, course_code): #develop by David Matos
         # returns the course object for that code (or None if not found).
-        pass
+        return self.courses.get(course_code, None)
         
     def get_course_enrollment(self, course_code): #develop by David Matos
         # returns the number of students enrolled in the given course.
-        pass
+        if course_code in self.courses:
+            return self.courses[course_code].get_student_count()
+        else:
+            raise ValueError("Course doesn't exist")
     
     def get_students_in_course(self, course_code): #develop by David Matos
         # returns a list of student objects enrolled in the given course
-        pass
+        if course_code in self.courses:
+            return self.courses[course_code].students
+        else:
+            raise ValueError("Course doesn't exist")
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     # Demonstrations
     pass
