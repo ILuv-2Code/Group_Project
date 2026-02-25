@@ -29,9 +29,9 @@ class Student:
         self.courses = c
     
     def enroll(self, course, grade): #develop by David Matos
-        self.courses.update(course, grade)
-        self.courses[course].add_student(self)
-        # TODO: Update course roster (check if it works) fr
+        self.courses[course] =  grade
+        course.add_student(self)
+        
     
     def update_grade(self, course, grade): #develop by David Matos
         self.courses[course] = grade
