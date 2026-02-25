@@ -1,3 +1,4 @@
+import csv
 class Course:
     def __init__(self, c_c:str, c:int): #develop by David Matos
         self.course_code = c_c
@@ -124,5 +125,27 @@ class University(): #develop by David Matos
 
 
 if __name__ == "__main__":
-    # Demonstrations
-    pass
+    # Demonstrations, developed by Mark Le
+    print("Demonstation: University Course and Student Management System")
+    print("-------------------------------------------------------------")
+    UConn = University() #Initializes University object
+    with open('course_catalog.csv', 'r') as f: # Reads course catalog and adds courses to UConn
+        course_reader = csv.reader(f, delimiter=',')
+        next(course_reader) # skip header row
+        for row in course_reader:
+            course_code, credits = row
+            UConn.add_course(course_code, credits)
+    with open('university_data.csv', 'r') as f: # Reads student enrollments and adds students (name + id) and their course enrollments to UConn
+        student_reader = csv.reader(f, delimiter=',')
+        next(student_reader) # skip header row
+        for row in student_reader:
+            student_id, name, course_data = row
+            student = UConn.add_student(student_id, name)
+            course_information = course_data.split(';')
+            for course_info in course_information:
+                if course_info.strip() == "":
+                    continue
+                course_code, grade = course_info.split(':')
+                course = UConn.get_course(course_code)
+                if course is not None:
+                    student.enroll(course, grade)
