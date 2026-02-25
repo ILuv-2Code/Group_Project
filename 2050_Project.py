@@ -8,6 +8,8 @@ class Course:
         # adds a Student object to the course roster.
         if student not in self.students:
             self.students.append(student)
+        else:
+            raise ValueError("Student already in course")
     
     def get_student_count(self): #develop by David Matos
         # returns the number of students currently enrolled.
@@ -24,8 +26,15 @@ class Student:
         }
     
     def __init__(self, s_i:str, n:str): #develop by David Matos
-        self.student_id = s_i
-        self.name = n
+        if (s_i[0:4] == "STU") and (len(s_i) == 8):
+            self.student_id = s_i
+        else:
+            raise ValueError("Incorrect Student ID")
+        
+        if n is not None:
+            self.name = n
+        else: 
+            raise ValueError("Empty Name")
         self.courses = {}
     
     def enroll(self, course:Course, grade:str): #develop by David Matos
@@ -39,8 +48,10 @@ class Student:
     def update_grade(self, course:Course, grade:str): #develop by David Matos
         if course not in self.courses:
             raise ValueError(f"Student not enrolled in course {course.course_code}")
-        
-        self.courses[course] = grade
+        if grade in self.GRADE_POINTS:
+            self.courses[course] = grade
+        else:
+            raise ValueError("Non-existent frade")
     
     def calculate_gpa(self): #develop by David Matos
         total_credits = 0
@@ -68,19 +79,30 @@ class Student:
     
 class University(): #develop by David Matos
     def __init__(self):
-        self.students = {}
-        self.courses = {}
+        self.students = {} # student id --> student obj
+        self.courses = {} # course code --> course obj
         
     def add_course(self, course_code, credits): #develop by David Matos
         # if the course does not exist, create and store it; return the course object.
-        pass
-
+        if course_code not in self.courses:
+            self.courses[course_code] = Course(course_code, credits)
+            return self.courses[course_code]
+        else:
+            return self.courses[course_code]
+            
     def add_student(self, student_id, name): #develop by David Matos
         # if the student does not exist, create and store them; return the student object.
-        pass
+        if student_id not in self.students: 
+            self.students[student_id] = Student(student_id, name)
+            return self.students[student_id]
+        else:
+            
+            return self.students[student_id]
+        
 
     def get_student(self, student_id): #develop by David Matos
         # returns the student object for that ID (or None if not found).
+        
         pass
     
     def get_course(self, course_code): #develop by David Matos
@@ -94,3 +116,8 @@ class University(): #develop by David Matos
     def get_students_in_course(self, course_code): #develop by David Matos
         # returns a list of student objects enrolled in the given course
         pass
+
+
+if __name__ = "__main__":
+    # Demonstrations
+    pass
