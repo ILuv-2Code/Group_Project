@@ -28,7 +28,7 @@ class Student:
         self.name = n
         self.courses = c
     
-    def enroll(self, course, grade): #develop by David Matos
+    def enroll(self, course:Course, grade:str): #develop by David Matos
         if course in self.courses:
             raise ValueError(f"Student is already enroled in {course}")
         
@@ -36,19 +36,32 @@ class Student:
         course.add_student(self)
         
     
-    def update_grade(self, course, grade): #develop by David Matos
+    def update_grade(self, course:Course, grade:str): #develop by David Matos
         self.courses[course] = grade
     
     def calculate_gpa(self): #develop by David Matos
-        # refer to grade clac. on pdf
-        pass
-    
+        summary = self.get_course_info()
+        credits = 0
+        numerator = 0
+        
+        for credits, grade in summary.values():
+            numerator += int(credits) * self.GRADE_POINTS[grade]
+            credits += int (credits)
+        
+        return (numerator/credits)
+            
+            
+        
     def get_courses(self): #develop by David Matos
         return self.courses.keys()
     
     def get_course_info(self): #develop by David Matos
-        #returns a structured summary of all enrollments, including course code, grade, and credits
-        pass
+        summary = {}
+        for course, grade in self.courses.items():
+            summary[course] = (course.credits, grade)
+        
+        return summary
+        
     
 class University(): #develop by David Matos
     def __init__(self, s:dict, c:dict):
