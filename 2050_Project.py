@@ -23,7 +23,7 @@ class Student:
         'F' : 0.0
         }
     
-    def __init__(self, s_i:str, n:str, c:dict): #develop by David Matos
+    def __init__(self, s_i:str, n:str, c:dict={}): #develop by David Matos
         self.student_id = s_i
         self.name = n
         self.courses = c
@@ -49,8 +49,6 @@ class Student:
             credits += int (credits)
         
         return (numerator/credits)
-            
-            
         
     def get_courses(self): #develop by David Matos
         return self.courses.keys()
