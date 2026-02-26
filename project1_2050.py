@@ -201,12 +201,13 @@ if __name__ == "__main__":
     print("Calculate mean, mode and median for a course")
     print("Choosing a random course within the catalog...")
     course_code = random.choice(course_codes) #course_code can be designated for specific instances, but is currently set to random for demonstration purposes.
+    course = UConn.get_course(course_code) # Getting the course object as Student.get_course_info() returns a dictionary with course objects as keys.
     students_in_course = UConn.get_students_in_course(course_code)
     grades = []
     for student in students_in_course:
         course_info = student.get_course_info()
-        if course_code in course_info:
-            grade = course_info[course_code][1] # grade is the second element in the tuple (credits, grade) in the structure key:value = course: (credits, grades)
+        if course in course_info:
+            grade = course_info[course][1] # grade is the second element in the tuple (credits, grade) in the structure key:value = course: (credits, grades)
             grades.append(grade)
     if grades:
         grade_points = [Student.GRADE_POINTS[grade] for grade in grades]
@@ -216,7 +217,8 @@ if __name__ == "__main__":
         sorted_grades = sorted(grade_points)
         n = len(sorted_grades)
         median = (sorted_grades[n // 2] if n % 2 != 0 else (sorted_grades[n // 2 - 1] + sorted_grades[n // 2]) / 2)
-        print(f"Course Code: {course_code}, Mean GPA: {mean:.2f}, Mode GPA: {mode:.2f}, Mode letter: {mode_letter}, Median GPA: {median:.2f}")
+        median_letter = [grade for grade, points in Student.GRADE_POINTS.items() if points == median][0]
+        print(f"Course Code: {course_code}, Mean GPA: {mean:.2f}, Mode GPA: {mode:.2f}, Mode letter: {mode_letter}, Median GPA: {median:.2f}, Median letter: {median_letter}")
     else:
         print(f"No grades found for course {course_code}.")
     print("-------------------------------------------------------------")
@@ -249,5 +251,5 @@ if __name__ == "__main__":
     else:
         print("No common students enrolled in both courses.")
     print("-------------------------------------------------------------")
-    print("Demonstations complete. Thank you for your time!")
+    print("Demonstrations complete. Thank you for your time!")
                 
