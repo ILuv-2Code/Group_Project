@@ -92,9 +92,9 @@ class University(): #develop by David Matos
             return self.courses[course_code]
         else:
             return self.courses[course_code]
-    def update_course(self, course_code, credits): #develop by David Matos
+    def update_course(self, course_code, credits): #extra function developed by Mark Le.
         # if the course exists, update the course credits; return the course object.
-        if course_code in self.courses: #extra function developed by Mark Le
+        if course_code in self.courses: 
             self.courses[course_code].credits = credits
             return self.courses[course_code]
         else:
