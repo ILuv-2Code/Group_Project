@@ -41,6 +41,7 @@ class Student:
         self.courses = {}
     
     def enroll(self, course:Course, grade:str): #develop by David Matos
+        # enrolls student in course and checks whether they're already enrolled
         if course in self.courses:
             raise ValueError(f"Student is already enrolled in {course.course_code}")
         
@@ -49,6 +50,7 @@ class Student:
         
     
     def update_grade(self, course:Course, grade:str): #develop by David Matos
+        # updates grade in course IF student is already enrolled
         if course not in self.courses:
             raise ValueError(f"Student not enrolled in course {course.course_code}")
         if grade in self.GRADE_POINTS:
@@ -57,6 +59,7 @@ class Student:
             raise ValueError("Non-existent grade")
     
     def calculate_gpa(self): #develop by David Matos
+        # calculates student GPA using the formula provided
         total_credits = 0
         numerator = 0
         
@@ -70,9 +73,11 @@ class Student:
             return 0.0
         
     def get_courses(self): #develop by David Matos
+        # returns number of keys (number of courses) student has in their course dictionary
         return list(self.courses.keys())
     
     def get_course_info(self): #develop by David Matos
+        # returns a simple summary of student performance in the form of course: (credits, grade)
         summary = {}
         for course, grade in self.courses.items():
             summary[course] = (course.credits, grade)
