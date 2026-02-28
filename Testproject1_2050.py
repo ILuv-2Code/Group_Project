@@ -49,7 +49,7 @@ class TestUniversity(unittest.TestCase): #test for University class, using data 
     def test_object_creation(self): # developed by Mark Le
         UConn = University()
         self.assertIsInstance(UConn, University)
-    def add_course_to_university(self): # developed by Mark Le
+    def test_add_course_to_university(self): # developed by Mark Le
         UConn = University()
         course_code1 = "CSE1010"
         credits1 = 3
