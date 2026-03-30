@@ -1,19 +1,26 @@
 import csv
 import random
+import datetime
+class EnrollmentRecord: #developed by Mark Le, milestone 2
+    def __init__(self, student = Student(student_id="", name=""), enroll_date = datetime.date.today()):
+        self.student = student
+        self.enroll_date = enroll_date
+
 class Course:
-    def __init__(self, c_c:str, c:int): #develop by David Matos
+    def __init__(self, c_c:str, c:int, capacity:int): #develop by David Matos
         self.course_code = c_c
         self.credits = c
+        self.capacity = capacity
         self.students = []
     
-    def add_student(self, student): #develop by David Matos
+    def add_student(self, student: EnrollmentRecord): #develop by David Matos, fixed by Mark Le, milestone 2
         # adds a Student object to the course roster.
-        if student not in self.students:
-            self.students.append(student)
+        if len(self.students) < self.capacity:
+            if student not in self.students:
+                self.students.append(student)
         else:
-            raise ValueError("Student already in course")
-        #Extra Note (by Mark Le): As this function isn't required to return any value, we decided to leave this one as raise ValueError, which is different from the requirements in the University class.
-    
+            #TODO: Function to put into waitlist, needs LinkedQueue 
+            
     def get_student_count(self): #develop by David Matos
         # returns the number of students currently enrolled.
         return len(self.students)
