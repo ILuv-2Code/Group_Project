@@ -1,6 +1,9 @@
 import csv
 import random
 import datetime
+import tqdm from tqdm
+def recursive_binary_search(records, target_id, low, high):
+
 class EnrollmentRecord: #developed by Mark Le, milestone 2
     def __init__(self, student = Student(student_id="", name=""), enroll_date = datetime.date.today()):
         self.student = student
@@ -11,19 +14,23 @@ class Course:
         self.course_code = c_c
         self.credits = c
         self.capacity = capacity
-        self.students = []
+        self.enrolled_roster = []
     
-    def add_student(self, student: EnrollmentRecord): #develop by David Matos, fixed by Mark Le, milestone 2
+    def request_enroll(self, student = Student(student_id="", name=""), enroll_date = datetime.date.today()): #develop by David Matos, fixed by Mark Le, milestone 2
         # adds a Student object to the course roster.
-        if len(self.students) < self.capacity:
-            if student not in self.students:
-                self.students.append(student)
+        enrollment_record = EnrollmentRecord(student, enroll_date)
+        if enrollment_record in self.enrolled_roster:
+            tqdm.info(f"{student.name}, studentID {student.student_id} is already enrolled in this course.")
+            continue
+        elif len(self.enrolled_roster) < self.capacity:
+            self.enrolled_roster.append(enrollment_record)
         else:
             #TODO: Function to put into waitlist, needs LinkedQueue 
-            
+    def drop(self, student_id, enroll_date_for_replacement = None):
+            #TODO
     def get_student_count(self): #develop by David Matos
         # returns the number of students currently enrolled.
-        return len(self.students)
+        return len(self.enrolled_roster)
 
 class Student:
 
