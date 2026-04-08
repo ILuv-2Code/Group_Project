@@ -8,22 +8,9 @@ class Course:
         self.capacity = capacity
         self.enrolled_roster = [] #Milestone 2 adaptation, developed by Mark Le, this is the enrolled roster for the course, implemented as a list of EnrollmentRecord objects to store both the student and their enrollment date for each enrolled student in the course.
         self.waitlist = LinkedQueue() #Milestone 2 add-on, developed by Mark Le, this is the waitlist for the course, implemented as a LinkedQueue to follow FIFO order for enrollment from the waitlist when spots open up in the course.
-<<<<<<< HEAD
-        self.waitlist_roster = [] #Milestone 2 add-on, developed by Mark Le, this is a list to store the enrollment records in the waitlist for easy access and checking for duplicates when students request enrollment, as LinkedQueue does not support direct access to its elements.
-    def remove_waitlist(self, enrollment_record): #Milestone 2 add-on, developed by Mark Le, this is a helper function to remove a specific enrollment record from the waitlist, used for cases where a student in the waitlist successfully enrolls in the course due to a spot opening up, or if they are already in the waitlist and try to enroll again, we want to remove their previous waitlist record to avoid duplication.
-        temp_queue = LinkedQueue()
-        removed = False
-        while not self.waitlist.is_empty():
-            record = self.waitlist.dequeue()
-            if record != enrollment_record:
-                temp_queue.enqueue(record)
-        self.waitlist = temp_queue
-    def request_enroll(self, student = None, enroll_date = datetime.date.today()): #develop by David Matos, fixed by Mark Le, milestone 2
-=======
         self.enrolled_sorted_by = None
     
-    def request_enroll(self, student = Student(student_id="", name=""), enroll_date = datetime.date.today()): #develop by David Matos, fixed by Mark Le, milestone 2
->>>>>>> refs/remotes/origin/master
+    def request_enroll(self, student = None, enroll_date = datetime.date.today()): #develop by David Matos, fixed by Mark Le, milestone 2
         # adds a Student object to the course roster.
         if student is None:
             raise ValueError("Student cannot be None")
