@@ -4,13 +4,17 @@ dequeue as remove_first(). This means that only an assignment operation is neede
 dequeue (either move the head foward, or add a new tail node) which causes the time complexity to be 
 O(1)
 
-The Big-O time complexity for bubble sort is O(n^2). This is because in an unsorted list, the bubble sort
-will still have to 
+The Big-O time complexity for bubble sort is O(n^2). This is because in an unsorted list, bubble sort 
+must repeatedly compare and swap adjacent elements across multiple passes, 
+leading to about n^2 operations in the worst case.
 
 The Big-O time complexity for insertion sort is O(n^2). This is because in an unsorted list, 
+elements may need to be compared and swapped multiple times to reach the correct position, 
+resulting in O(n^2) time
 
-The Big-O time complexity for selection sort is O(n^2). This is because in an unsorted list, 
-
+The Big-O time complexity for selection sort is O(n^2). This is because in an unsorted list, similar
+to bubble sort and insertion sort, elements need to be compared and swapped multiple times before
+the correct position is reached, leading to O(n^2) time.
 
 The Big-O time complexity for recursive binary sort is log(n) because the amount of
 iterations made is 1/2 the full list. Sorting is required for correctness because binary search 
@@ -19,4 +23,8 @@ conditional of target greater than or less than the current element to be evalua
 If the list was unsorted, then the binary search wouldn't work because it's main assumption
 would be false.
 
-Between bubble sort, insertion sort, and selection sort, 
+Between bubble sort, insertion sort, and selection sort, insertion sort is preferred for small or nearly sorted 
+lists because it can finish quickly with fewer swaps. Bubble sort is simple but generally less efficient.
+However, with the swapped flag, it can stop early if no swaps occur, making it faster for already sorted lists. 
+Selection sort is useful when minimizing swaps is important, since it performs fewer swaps than the others, but it still always takes O(n^2) 
+time regardless of the input.

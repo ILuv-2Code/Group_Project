@@ -57,8 +57,10 @@ class Course:
             insertion_sort(self.enrolled_roster, by)
         elif algorithm == 'bubble':
             bubble_sort(self.enrolled_roster, by)
+        elif algorithm == 'selection':
+            selection_sort(self.enrolled_roster, by)
         else:
-            raise ValueError("Invalid algorithm. Choose 'insertion' or 'bubble'.")
+            raise ValueError("Invalid algorithm. Choose 'insertion', 'selection', or 'bubble'.")
         
         self.enrolled_sorted_by = by
 
@@ -184,8 +186,8 @@ class University(): #develop by David Matos
 def insertion_sort(record, by): # developed by David Matos (milestone 2)
     n = len(record)
     for i in range(n):
-        j = n - i - 1 
-        while j < n - 1:
+        j = n-i-1 
+        while j < n-1:
             if by == 'name':
                 if record[j].student.name.lower() > record[j+1].student.name.lower():
                     record[j], record[j+1] = record[j+1], record[j]
@@ -206,9 +208,9 @@ def insertion_sort(record, by): # developed by David Matos (milestone 2)
             j += 1
 
 def selection_sort(record, by):
-    for i in range(len(record) - 1):
+    for i in range(len(record)-1):
         max_j = 0
-        for j in range(len(record) - i):
+        for j in range(len(record)-i):
             if by == 'name':
                 if record[j].student.name.lower() > record[max_j].student.name.lower():
                     max_j = j
@@ -221,8 +223,8 @@ def selection_sort(record, by):
             else:
                 raise ValueError("Choose 'name', 'id', or 'date'")
 
-        if (len(record) - i - 1) != max_j:
-            record[len(record) - i - 1], record[max_j] = record[max_j], record[len(record) - i - 1]
+        if (len(record)-i-1) != max_j:
+            record[len(record)-i-1], record[max_j] = record[max_j], record[len(record)-i-1]
 
 def bubble_sort(record, by): # developed by David Matos (milestone 2)
     n = len(record)
