@@ -8,6 +8,7 @@ class Course:
         self.capacity = capacity
         self.enrolled_roster = [] #Milestone 2 adaptation, developed by Mark Le, this is the enrolled roster for the course, implemented as a list of EnrollmentRecord objects to store both the student and their enrollment date for each enrolled student in the course.
         self.waitlist = LinkedQueue() #Milestone 2 add-on, developed by Mark Le, this is the waitlist for the course, implemented as a LinkedQueue to follow FIFO order for enrollment from the waitlist when spots open up in the course.
+<<<<<<< HEAD
         self.waitlist_roster = [] #Milestone 2 add-on, developed by Mark Le, this is a list to store the enrollment records in the waitlist for easy access and checking for duplicates when students request enrollment, as LinkedQueue does not support direct access to its elements.
     def remove_waitlist(self, enrollment_record): #Milestone 2 add-on, developed by Mark Le, this is a helper function to remove a specific enrollment record from the waitlist, used for cases where a student in the waitlist successfully enrolls in the course due to a spot opening up, or if they are already in the waitlist and try to enroll again, we want to remove their previous waitlist record to avoid duplication.
         temp_queue = LinkedQueue()
@@ -18,6 +19,11 @@ class Course:
                 temp_queue.enqueue(record)
         self.waitlist = temp_queue
     def request_enroll(self, student = None, enroll_date = datetime.date.today()): #develop by David Matos, fixed by Mark Le, milestone 2
+=======
+        self.enrolled_sorted_by = None
+    
+    def request_enroll(self, student = Student(student_id="", name=""), enroll_date = datetime.date.today()): #develop by David Matos, fixed by Mark Le, milestone 2
+>>>>>>> refs/remotes/origin/master
         # adds a Student object to the course roster.
         if student is None:
             raise ValueError("Student cannot be None")
@@ -42,7 +48,7 @@ class Course:
 
         index = recursive_binary_search(self.enrolled_roster, student_id, 0, len(self.enrolled_roster)-1)
 
-        if index is None:
+        if index == -1:
             raise IndexError(f"Student ID {student_id} not found in enrolled roster.")
         
         self.enrolled_roster.pop(index)
@@ -78,14 +84,14 @@ class Student:
         'F' : 0.0
         }
     
-    def __init__(self, s_i:str, n:str): #developed by David Matos, fixed by Mark Le
-        if (s_i[0:3] == "STU") and (len(s_i) == 8):
-            self.student_id = s_i
+    def __init__(self, student_id:str, name:str): #developed by David Matos, fixed by Mark Le
+        if (student_id[0:3] == "STU") and (len(student_id) == 8):
+            self.student_id = student_id
         else:
             raise ValueError("Incorrect Student ID")
         
-        if n is not None:
-            self.name = n
+        if name is not None:
+            self.name = name
         else: 
             raise ValueError("Empty Name")
         self.courses = {}
@@ -96,7 +102,7 @@ class Student:
             raise ValueError(f"Student is already enrolled in {course.course_code}")
         
         self.courses[course] =  grade
-        course.add_student(self)
+        course.add_student(self) ##FIX??
         
     
     def update_grade(self, course:Course, grade:str): #develop by David Matos
@@ -211,6 +217,25 @@ def insertion_sort(record, by): # developed by David Matos (milestone 2)
                 raise ValueError("Choose 'name', 'id', or 'date'")
             j += 1
 
+def selection_sort(record, by):
+    for i in range(len(record) - 1):
+        max_j = 0
+        for j in range(len(record) - i):
+            if by == 'name':
+                if record[j].student.name.lower() > record[max_j].student.name.lower():
+                    max_j = j
+            elif by == 'id':
+                if record[j].student.student_id > record[max_j].student.student_id:
+                    max_j = j
+            elif by == 'date':
+                if record[j].enroll_date > record[max_j].enroll_date:
+                    max_j = j
+            else:
+                raise ValueError("Choose 'name', 'id', or 'date'")
+
+        if (len(record) - i - 1) != max_j:
+            record[len(record) - i - 1], record[max_j] = record[max_j], record[len(record) - i - 1]
+
 def bubble_sort(record, by): # developed by David Matos (milestone 2)
     n = len(record)
     for i in range(n-1):
@@ -235,7 +260,7 @@ def bubble_sort(record, by): # developed by David Matos (milestone 2)
 
 def recursive_binary_search(records, target_id, low, high): # developed by David Matos (milestone 2)
     if low > high:
-        return None
+        return -1
     mid = (low + high) // 2
     current_id = records[mid].student.student_id
     if current_id == target_id:
