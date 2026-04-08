@@ -30,7 +30,7 @@ class Course:
             return # If duplication happens, we decided not to use raise ValueError as it would disrupt the flow of the program, but we also don't want to just ignore it, so we print a message and continues the loop.
         elif len(self.enrolled_roster) < self.capacity:
             #Extra check to remove from waitlist if the student is already in the waitlist, as we don't want duplication in the waitlist either. This also works for cases where the student is already enrolled, as it would be caught by the first check.
-            if student in self.waitlist_roster:
+            if student in self.waitlist_roster: #For students in updated capacities courses who get permission to study in that class (priority queueing)
                 print(f"{student.name}, studentID {student.student_id} is already in the waitlist for this course. Removing from waitlist and enrolling in course.")
                 # To remove the student from the waitlist, we need for now to create a temp new waitlist..
                 self.remove_waitlist(enrollment_record)
