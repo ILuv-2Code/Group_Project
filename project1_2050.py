@@ -92,7 +92,7 @@ class Student:
             raise ValueError(f"Student is already enrolled in {course.course_code}")
         
         self.courses[course] =  grade
-        course.request_enroll(student=self) ##FIX??
+        course.request_enroll(student=self)
         
     
     def update_grade(self, course:Course, grade:str): #develop by David Matos
