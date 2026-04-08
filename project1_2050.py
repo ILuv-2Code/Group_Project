@@ -57,6 +57,7 @@ class Course:
             else:
                 next_record.enroll_date = datetime.date.today()
             self.enrolled_roster.append(next_record)
+            self.enrolled_sorted_by = None
             self.waitlist_roster.remove(next_record.student) # Also remove from waitlist roster to avoid duplication and maintain consistency with the waitlist itself.
                     
     def get_student_count(self): #develop by David Matos
