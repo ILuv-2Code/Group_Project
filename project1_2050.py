@@ -52,9 +52,6 @@ class Course:
             raise ValueError("Invalid algorithm. Choose 'insertion' or 'bubble'.")
         
         self.enrolled_sorted_by = by
-    
-    def get_sorting_key(self): # developed by David Matos
-        return self.enrolled_sorted_by
 
 class Student:
 
