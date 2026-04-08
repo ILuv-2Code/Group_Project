@@ -70,7 +70,7 @@ class Course:
         elif algorithm == 'selection':
             selection_sort(self.enrolled_roster, by)
         else:
-            raise ValueError("Invalid algorithm. Choose 'insertion' or 'bubble'.")
+            raise ValueError("Invalid algorithm. Choose 'insertion', 'selection', or 'bubble'.")
         
         self.enrolled_sorted_by = by
 
