@@ -30,10 +30,10 @@ class Course:
             return # If duplication happens, we decided not to use raise ValueError as it would disrupt the flow of the program, but we also don't want to just ignore it, so we print a message and continues the loop.
         elif len(self.enrolled_roster) < self.capacity:
             #Extra check to remove from waitlist if the student is already in the waitlist, as we don't want duplication in the waitlist either. This also works for cases where the student is already enrolled, as it would be caught by the first check.
-            if enrollment_record in self.waitlist_roster:
+            if student in self.waitlist_roster:
                 print(f"{student.name}, studentID {student.student_id} is already in the waitlist for this course. Removing from waitlist and enrolling in course.")
                 # To remove the student from the waitlist, we need for now to create a temp new waitlist..
-                self.remove_waitlist(self, enrollment_record)
+                self.remove_waitlist(enrollment_record)
             self.enrolled_roster.append(enrollment_record)
         else:
             self.waitlist.enqueue(enrollment_record) # Add to waitlist if course is full
@@ -57,6 +57,7 @@ class Course:
             else:
                 next_record.enroll_date = datetime.date.today()
             self.enrolled_roster.append(next_record)
+            self.waitlist_roster.remove(next_record.student) # Also remove from waitlist roster to avoid duplication and maintain consistency with the waitlist itself.
                     
     def get_student_count(self): #develop by David Matos
         # returns the number of students currently enrolled.
@@ -66,6 +67,8 @@ class Course:
             insertion_sort(self.enrolled_roster, by)
         elif algorithm == 'bubble':
             bubble_sort(self.enrolled_roster, by)
+        elif algorithm == 'selection':
+            selection_sort(self.enrolled_roster, by)
         else:
             raise ValueError("Invalid algorithm. Choose 'insertion' or 'bubble'.")
         
@@ -275,6 +278,10 @@ class EnrollmentRecord: #developed by Mark Le, milestone 2
             raise ValueError("Student cannot be None")
         self.student = student
         self.enroll_date = enroll_date
+    def __eq__(self, other):
+        if isinstance(other, EnrollmentRecord):
+            return self.student.student_id == other.student.student_id
+        return False
         
 # Task 2 - LinkedQueue ADT, developed by Mark Le, milestone 2:
 class Node:
