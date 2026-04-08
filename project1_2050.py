@@ -136,13 +136,14 @@ class University(): #develop by David Matos
         self.students = {} # student id --> student obj
         self.courses = {} # course code --> course obj
         
-    def add_course(self, course_code, credits): #develop by David Matos
+    def add_course(self, course_code, credits, capacity): #develop by David Matos
         # if the course does not exist, create and store it; return the course object.
         if course_code not in self.courses:
-            self.courses[course_code] = Course(course_code, credits)
+            self.courses[course_code] = Course(course_code, credits, capacity)
             return self.courses[course_code]
         else:
             return self.courses[course_code]
+        
     def update_course(self, course_code, credits): #extra function developed by Mark Le.
         # if the course exists, update the course credits; return the course object.
         if course_code in self.courses: 
@@ -182,6 +183,7 @@ class University(): #develop by David Matos
             return self.courses[course_code].students
         else:
             raise ValueError("Course doesn't exist")
+        
 #Milestone 2 Add-ons:
 def insertion_sort(record, by): # developed by David Matos (milestone 2)
     n = len(record)
@@ -207,7 +209,7 @@ def insertion_sort(record, by): # developed by David Matos (milestone 2)
                 raise ValueError("Choose 'name', 'id', or 'date'")
             j += 1
 
-def selection_sort(record, by):
+def selection_sort(record, by): # developed by David Matos
     for i in range(len(record)-1):
         max_j = 0
         for j in range(len(record)-i):
@@ -266,11 +268,13 @@ class EnrollmentRecord: #developed by Mark Le, milestone 2
             raise ValueError("Student cannot be None")
         self.student = student
         self.enroll_date = enroll_date
+        
 # Task 2 - LinkedQueue ADT, developed by Mark Le, milestone 2:
 class Node:
     def __init__(self, data = None):
         self.data = data
         self.next = None
+
 class LinkedQueue: #Single linked list adaptation for LinkedQueue
     def __init__(self):
         self.head = None
