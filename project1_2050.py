@@ -216,13 +216,8 @@ def insertion_sort(record, by): # developed by David Matos (milestone 2)
                 raise ValueError("Choose 'name', 'id', or 'date'")
             j += 1
 
-<<<<<<< HEAD
 def selection_sort(record, by): # developed by David Matos
     for i in range(len(record)-1):
-=======
-def selection_sort(record, by):
-    for i in range(len(record) - 1):
->>>>>>> 049fa683f58ced193fb999348f043d223678612e
         max_j = 0
         for j in range(len(record) - i):
             if by == 'name':
