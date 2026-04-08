@@ -33,7 +33,6 @@ class Course:
 
         if len(self.waitlist) > 0:
             next_record = self.waitlist.dequeue()
-            self.enrolled_roster.append(next_record)
             if enroll_date_for_replacement:
                 next_record.enroll_date = enroll_date_for_replacement 
             else:
