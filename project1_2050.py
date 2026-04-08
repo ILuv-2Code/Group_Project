@@ -19,11 +19,42 @@ class Course:
             self.enrolled_roster.append(enrollment_record)
         else:
             self.waitlist.enqueue(enrollment_record) # Add to waitlist if course is full
-    def drop(self, student_id, enroll_date_for_replacement = None):
-            #TODO
+
+    def drop(self, student_id, enroll_date_for_replacement = None): # developed by David Matos
+        if self.enrolled_sorted_by != 'id':
+            self.sort_enrolled('id', 'bubble')
+
+        index = recursive_binary_search(self.enrolled_roster, student_id, 0, len(self.enrolled_roster)-1)
+
+        if index is None:
+            raise IndexError(f"Student ID {student_id} not found in enrolled roster.")
+        
+        self.enrolled_roster.pop(index)
+
+        if len(self.waitlist) > 0:
+            next_record = self.waitlist.dequeue()
+            self.enrolled_roster.append(next_record)
+            if enroll_date_for_replacement:
+                next_record.enroll_date = enroll_date_for_replacement 
+            else:
+                next_record.enroll_date = datetime.date.today()
+            self.enrolled_roster.append(next_record)
+                    
     def get_student_count(self): #develop by David Matos
         # returns the number of students currently enrolled.
         return len(self.enrolled_roster)
+    def sort_enrolled(self, by, algorithm): # developed by David Matos
+        if algorithm == 'insertion':
+            insertion_sort(self.enrolled_roster, by)
+        elif algorithm == 'bubble':
+            bubble_sort(self.enrolled_roster, by)
+        else:
+            raise ValueError("Invalid algorithm. Choose 'insertion' or 'bubble'.")
+        
+        self.enrolled_sorted_by = by
+    
+    def get_sorting_key(self): # developed by David Matos
+        return self.enrolled_sorted_by
 
 class Student:
 
@@ -144,8 +175,64 @@ class University(): #develop by David Matos
         else:
             raise ValueError("Course doesn't exist")
 #Milestone 2 Add-ons:
-def recursive_binary_search(records, target_id, low, high):
-#TODO: Helper function for binary search, developed by Mark Le, milestone 2:
+def insertion_sort(record, by): # developed by David Matos (milestone 2)
+    n = len(record)
+    for i in range(n):
+        j = n - i - 1 
+        while j < n - 1:
+            if by == 'name':
+                if record[j].student.name.lower() > record[j+1].student.name.lower():
+                    record[j], record[j+1] = record[j+1], record[j]
+                else:
+                    break
+            elif by == 'id':
+                if record[j].student.student_id > record[j+1].student.student_id:
+                    record[j], record[j+1] = record[j+1], record[j]
+                else:
+                    break
+            elif by == 'date':
+                if record[j].enroll_date > record[j+1].enroll_date:
+                    record[j], record[j+1] = record[j+1], record[j]
+                else:
+                    break
+            else:
+                raise ValueError("Choose 'name', 'id', or 'date'")
+            j += 1
+
+def bubble_sort(record, by): # developed by David Matos (milestone 2)
+    n = len(record)
+    for i in range(n-1):
+        swapped = False
+        for j in range(n-1-i):
+            if by == 'name':
+                if record[j].student.name.lower() > record[j+1].student.name.lower():
+                    record[j], record[j+1] = record[j+1], record[j]
+                    swapped = True
+            elif by == 'id':
+                if record[j].student.student_id > record[j+1].student.student_id:
+                    record[j], record[j+1] = record[j+1], record[j]
+                    swapped = True
+            elif by == 'date':
+                if record[j].enroll_date > record[j+1].enroll_date:
+                    record[j], record[j+1] = record[j+1], record[j]
+                    swapped = True
+            else:
+                raise ValueError("Choose 'name', 'id', or 'date'")
+        if not swapped:
+            break
+
+def recursive_binary_search(records, target_id, low, high): # developed by David Matos (milestone 2)
+    if low > high:
+        return None
+    mid = (low + high) // 2
+    current_id = records[mid].student.student_id
+    if current_id == target_id:
+        return mid
+    elif target_id < current_id:
+        return recursive_binary_search(records, target_id, low, mid - 1)
+    else:
+        return recursive_binary_search(records, target_id, mid + 1, high)
+
 class EnrollmentRecord: #developed by Mark Le, milestone 2
     def __init__(self, student = Student(student_id="", name=""), enroll_date = datetime.date.today()):
         self.student = student
@@ -182,6 +269,8 @@ class LinkedQueue: #Single linked list adaptation for LinkedQueue
         if self.is_empty():
             self.tail = None
         return data
+
+
 if __name__ == "__main__":
     # Demonstrations, developed by Mark Le
     print("Demonstation: University Course and Student Management System")
