@@ -9,6 +9,7 @@ class Course:
         self.enrolled_roster = [] #Milestone 2 adaptation, developed by Mark Le, this is the enrolled roster for the course, implemented as a list of EnrollmentRecord objects to store both the student and their enrollment date for each enrolled student in the course.
         self.waitlist = LinkedQueue() #Milestone 2 add-on, developed by Mark Le, this is the waitlist for the course, implemented as a LinkedQueue to follow FIFO order for enrollment from the waitlist when spots open up in the course.
         self.enrolled_sorted_by = None
+        self.waitlist_roster = [] #Milestone 2 add-on, developed by Mark Le, this is the waitlist roster for the course, implemented as a list of EnrollmentRecord objects to store both the student and their enrollment date for each student in the waitlist for easy access and duplicate checking when students request enrollment in the course.  
     
     def request_enroll(self, student = None, enroll_date = datetime.date.today()): #develop by David Matos, fixed by Mark Le, milestone 2
         # adds a Student object to the course roster.
