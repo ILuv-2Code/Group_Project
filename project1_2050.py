@@ -14,7 +14,7 @@ class Course:
         enrollment_record = EnrollmentRecord(student, enroll_date)
         if enrollment_record in self.enrolled_roster:
             print(f"{student.name}, studentID {student.student_id} is already enrolled in this course.")
-            continue # If duplication happens, we decided not to use raise ValueError as it would disrupt the flow of the program, but we also don't want to just ignore it, so we print a message and continues the loop.
+            return # If duplication happens, we decided not to use raise ValueError as it would disrupt the flow of the program, but we also don't want to just ignore it, so we print a message and continues the loop.
         elif len(self.enrolled_roster) < self.capacity:
             self.enrolled_roster.append(enrollment_record)
         else:
