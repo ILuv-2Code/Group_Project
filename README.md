@@ -4,13 +4,13 @@ This project includes four main files as per **Milestone 2** requirements: one w
 
 **Note:** Milestone 2 requirements are in 'Milestone_2' folder
 
-## Run All Unit Tests
+## Run All Unit Tests (In 'Milestone_2' Folder)
 
 ```bash
 python test_milestone2.py
 ```
 
-## Run All Demonstrations
+## Run All Demonstrations (In 'Milestone_2' Folder)
 
 ```bash
 python demo_milestone2.py
