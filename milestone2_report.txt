@@ -24,7 +24,7 @@ If the list was unsorted, then the binary search wouldn't work because it's main
 would be false.
 
 Between bubble sort, insertion sort, and selection sort, insertion sort is preferred for small or nearly sorted 
-lists because it can finish quickly with fewer swaps. Bubble sort is simple but generally less efficient.
-However, with the swapped flag, it can stop early if no swaps occur, making it faster for already sorted lists. 
+lists because it can finish quickly with fewer swaps. With the swapped flag, bubble sort can stop early if no swaps occur, making it faster for already sorted lists. 
 Selection sort is useful when minimizing swaps is important, since it performs fewer swaps than the others, but it still always takes O(n^2) 
-time regardless of the input.
+time regardless of the input. Moreover, both bubble sort and insertion sort are preferred when trying 
+to maintain original sort order compared to selection sort which is unstable.
