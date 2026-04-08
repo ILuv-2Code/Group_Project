@@ -8,17 +8,33 @@ class Course:
         self.capacity = capacity
         self.enrolled_roster = [] #Milestone 2 adaptation, developed by Mark Le, this is the enrolled roster for the course, implemented as a list of EnrollmentRecord objects to store both the student and their enrollment date for each enrolled student in the course.
         self.waitlist = LinkedQueue() #Milestone 2 add-on, developed by Mark Le, this is the waitlist for the course, implemented as a LinkedQueue to follow FIFO order for enrollment from the waitlist when spots open up in the course.
-    
-    def request_enroll(self, student = Student(student_id="", name=""), enroll_date = datetime.date.today()): #develop by David Matos, fixed by Mark Le, milestone 2
+        self.waitlist_roster = [] #Milestone 2 add-on, developed by Mark Le, this is a list to store the enrollment records in the waitlist for easy access and checking for duplicates when students request enrollment, as LinkedQueue does not support direct access to its elements.
+    def remove_waitlist(self, enrollment_record): #Milestone 2 add-on, developed by Mark Le, this is a helper function to remove a specific enrollment record from the waitlist, used for cases where a student in the waitlist successfully enrolls in the course due to a spot opening up, or if they are already in the waitlist and try to enroll again, we want to remove their previous waitlist record to avoid duplication.
+        temp_queue = LinkedQueue()
+        removed = False
+        while not self.waitlist.is_empty():
+            record = self.waitlist.dequeue()
+            if record != enrollment_record:
+                temp_queue.enqueue(record)
+        self.waitlist = temp_queue
+    def request_enroll(self, student = None, enroll_date = datetime.date.today()): #develop by David Matos, fixed by Mark Le, milestone 2
         # adds a Student object to the course roster.
+        if student is None:
+            raise ValueError("Student cannot be None")
         enrollment_record = EnrollmentRecord(student, enroll_date)
         if enrollment_record in self.enrolled_roster:
             print(f"{student.name}, studentID {student.student_id} is already enrolled in this course.")
             return # If duplication happens, we decided not to use raise ValueError as it would disrupt the flow of the program, but we also don't want to just ignore it, so we print a message and continues the loop.
         elif len(self.enrolled_roster) < self.capacity:
+            #Extra check to remove from waitlist if the student is already in the waitlist, as we don't want duplication in the waitlist either. This also works for cases where the student is already enrolled, as it would be caught by the first check.
+            if enrollment_record in self.waitlist_roster:
+                print(f"{student.name}, studentID {student.student_id} is already in the waitlist for this course. Removing from waitlist and enrolling in course.")
+                # To remove the student from the waitlist, we need for now to create a temp new waitlist..
+                self.remove_waitlist(self, enrollment_record)
             self.enrolled_roster.append(enrollment_record)
         else:
             self.waitlist.enqueue(enrollment_record) # Add to waitlist if course is full
+            self.waitlist_roster.append(enrollment_record) # Also add to waitlist roster for easy access and duplicate checking.
 
     def drop(self, student_id, enroll_date_for_replacement = None): # developed by David Matos
         if self.enrolled_sorted_by != 'id':
@@ -230,7 +246,9 @@ def recursive_binary_search(records, target_id, low, high): # developed by David
         return recursive_binary_search(records, target_id, mid + 1, high)
 
 class EnrollmentRecord: #developed by Mark Le, milestone 2
-    def __init__(self, student = Student(student_id="", name=""), enroll_date = datetime.date.today()):
+    def __init__(self, student = None, enroll_date = datetime.date.today()):
+        if student is None:
+            raise ValueError("Student cannot be None")
         self.student = student
         self.enroll_date = enroll_date
 # Task 2 - LinkedQueue ADT, developed by Mark Le, milestone 2:
@@ -266,7 +284,7 @@ class LinkedQueue: #Single linked list adaptation for LinkedQueue
             self.tail = None
         return data
 
-
+'''
 if __name__ == "__main__":
     # Demonstrations, developed by Mark Le
     print("Demonstation: University Course and Student Management System")
@@ -386,4 +404,4 @@ if __name__ == "__main__":
         print("No common students enrolled in both courses.")
     print("-------------------------------------------------------------")
     print("Demonstrations complete. Thank you for your time!")
-                
+'''              
