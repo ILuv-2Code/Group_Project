@@ -1,17 +1,17 @@
 # How to Run
 
-This project includes two main scripts as per **Milestone 1** requirements: one for running **all unit tests**, and one for running **demonstrations**.
+This project includes four main files as per **Milestone 2** requirements: one which is the **main project**, one for running **all unit tests**,  one for running **demonstrations**, and one which includes the **1/2 page writeup**. 
 
-**Note:** Specifics on what methods do are in the comments of project1_2050.py
+**Note:** Milestone 2 requirements are in 'Milestone_2' folder
 
 ## Run All Unit Tests
 
 ```bash
-python Testproject1_2050.py
+python test_milestone2.py
 ```
 
 ## Run All Demonstrations
 
 ```bash
-python project1_2050.py
+python demo_milestone2.py
 ```
