@@ -28,3 +28,5 @@ lists because it can finish quickly with fewer swaps. With the swapped flag, bub
 Selection sort is useful when minimizing swaps is important, since it performs fewer swaps than the others, but it still always takes O(n^2) 
 time regardless of the input. Moreover, both bubble sort and insertion sort are preferred when trying 
 to maintain original sort order compared to selection sort which is unstable.
+
+- By David Matos, double-checked by Mark Le
