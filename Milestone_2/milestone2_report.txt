@@ -6,16 +6,16 @@ O(1)
 
 The Big-O time complexity for bubble sort is O(n^2). This is because in an unsorted list, bubble sort 
 must repeatedly compare and swap adjacent elements across multiple passes, 
-leading to about n^2 operations in the worst case.
+leading to about n^2 operations in the worst case. The best case possible for bubble sort would be O(n), however only when list is completely sorted from the start
 
 The Big-O time complexity for insertion sort is O(n^2). This is because in an unsorted list, 
 elements may need to be compared and swapped multiple times to reach the correct position, 
-resulting in O(n^2) time
+resulting in O(n^2) time. The best case possible for insertion sort would also be O(n), although once again when list is completely sorted, but when it's partially sorted, this algorithm works better than bubble sort.
 
 The Big-O time complexity for selection sort is O(n^2). This is because the algorithm always performs n^2
 comparisons to find the maximum or minimum element in the unsorted portion of the list. 
 However, it performs only one swap per iteration, making it efficient when minimizing swaps is 
-important.
+important. Best case, however would still be O(n^2)
 
 The Big-O time complexity for recursive binary search is log(n) since the search space is halved at each iteration. 
 Sorting is required for correctness because binary search  operates under the assumption that the current 
