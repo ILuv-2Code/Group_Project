@@ -6,16 +6,21 @@ import random
 if __name__ == "__main__":
     print("Demo Milestone 2: Enroll, Waitlist, Sorting, Dropping")
     print("*" * 50)
+    print("Generate UConn Universtity Object")
+    uconn = University()
     print("Updating data from course_catalog_CSE10_with_capacity.csv...")
     with open("course_catalog_CSE10_with_capacity.csv", mode='r') as file:
         reader = csv.DictReader(file)
-        courses = []
         print("Loading courses from CSV:")
         print("Note: We're not taking the name of the course because the Course class doesn't have a name attribute, but we will load the course code, credits, and capacity.")
         for row in reader:
-            course = Course(c_c = row['course_id'], c = int(row['credits']), capacity=int(row['capacity']))
-            courses.append(course)
-    print("Courses loaded:")
+            course_code = row['course_id']
+            credits = int(row['credits'])
+            capacity = int(row['capacity'])
+            print(f"Loading course: {course_code} with {credits} credits and capacity of {capacity}")
+            uconn.add_course(course_code, credits, capacity)
+    courses = list(uconn.courses.values()) 
+    print("Courses loaded:")    
     for course in courses:
         print(f"{course.course_code} - Credits: {course.credits}, Capacity: {course.capacity}")
     print("\nCreating students and enrolling in all classes...")
@@ -27,7 +32,7 @@ if __name__ == "__main__":
         students = {}
         for row in reader:
             student_id = row['student_id']
-            name = random.choice(FIRST_NAMES) + " " + random.choice(LAST_NAMES) # Generate a random name for demonstration purposes.    
+            name = random.choice(FIRST_NAMES) + " " + random.choice(LAST_NAMES) # Generate a random name for demonstration purposes. This is not linked to university_data.csv as they have different enrollment statuses. Therefore, we only use this demo as a way to test the enrollment, waitlist, sorting, and dropping functionalities with a larger dataset.
             course_code = row['course_id'] #We're currently not using term and attempt for this demo, but it maybe useful in future demos.
             if student_id not in students:
                 students[student_id] = Student(student_id, name)
