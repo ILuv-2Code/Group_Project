@@ -156,7 +156,7 @@ class Student:
         return summary
         
     
-class University(): #develop by David Matos
+class University: #develop by David Matos
     def __init__(self):
         self.students = {} # student id --> student obj
         self.courses = {} # course code --> course obj
