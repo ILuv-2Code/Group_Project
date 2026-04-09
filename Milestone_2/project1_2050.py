@@ -205,7 +205,8 @@ class University(): #develop by David Matos
     def get_students_in_course(self, course_code): #develop by David Matos
         # returns a list of student objects enrolled in the given course
         if course_code in self.courses:
-            return self.courses[course_code].students
+            enrollment_roster = self.courses[course_code].enrolled_roster
+            return [record.student for record in enrollment_roster]
         else:
             raise ValueError("Course doesn't exist")
         
