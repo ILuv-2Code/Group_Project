@@ -17,7 +17,7 @@ comparisons to find the maximum or minimum element in the unsorted portion of th
 However, it performs only one swap per iteration, making it efficient when minimizing swaps is 
 important. Best case, however would still be O(n^2)
 
-The Big-O time complexity for recursive binary search is log(n) since the search space is halved at each iteration. 
+The Big-O time complexity for recursive binary search is O(log(n)) since the search space is halved at each iteration. 
 Sorting is required for correctness because binary search  operates under the assumption that the current 
 item will be in the correct position, enabling the conditional of target greater than or less than the current element to 
 be evaluated correctly. If the list was unsorted, then the binary search wouldn't work 
