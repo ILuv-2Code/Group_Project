@@ -1,5 +1,5 @@
-import csv
-import random
+# import csv
+# import random
 import datetime
 class Course:
     def __init__(self, c_c:str, c:int, capacity:int): #develop by David Matos
@@ -8,9 +8,11 @@ class Course:
         self.capacity = capacity
         self.enrolled_roster = [] #Milestone 2 adaptation, developed by Mark Le, this is the enrolled roster for the course, implemented as a list of EnrollmentRecord objects to store both the student and their enrollment date for each enrolled student in the course.
         self.waitlist = LinkedQueue() #Milestone 2 add-on, developed by Mark Le, this is the waitlist for the course, implemented as a LinkedQueue to follow FIFO order for enrollment from the waitlist when spots open up in the course.
-        self.enrolled_sorted_by = None
+        self.enrolled_sorted_by = None # developed by David Matos (milestone 2) tracks the attribute which sorting algorithms sorted by
         self.waitlist_roster = [] #Milestone 2 add-on, developed by Mark Le, this is the waitlist roster for the course, implemented as a list of EnrollmentRecord objects to store both the student and their enrollment date for each student in the waitlist for easy access and duplicate checking when students request enrollment in the course.  
-    def remove_waitlist(self, enrollment_record): #Milestone 2 add-on, developed by Mark Le, this is a helper function to remove a student from the waitlist when they are enrolled in the course, as we don't want duplication in the waitlist roster or the waitlist itself. This function works by creating a new temporary waitlist and waitlist roster, and only adding back the students that are not the target student for removal.
+
+    def remove_waitlist(self, enrollment_record): #Milestone 2 add-on, developed by Mark Le, 
+        # this is a helper function to remove a student from the waitlist when they are enrolled in the course, as we don't want duplication in the waitlist roster or the waitlist itself. This function works by creating a new temporary waitlist and waitlist roster, and only adding back the students that are not the target student for removal.
         temp_waitlist = LinkedQueue()
         temp_waitlist_roster = []
         while not self.waitlist.is_empty():
@@ -20,7 +22,8 @@ class Course:
                 temp_waitlist_roster.append(current_record.student)
         self.waitlist = temp_waitlist
         self.waitlist_roster = temp_waitlist_roster
-    def request_enroll(self, student = None, enroll_date = datetime.date.today()): #develop by David Matos, fixed by Mark Le, milestone 2
+
+    def request_enroll(self, student = None, enroll_date = None): #develop by David Matos, fixed by Mark Le, milestone 2
         # adds a Student object to the course roster.
         if student is None:
             raise ValueError("Student cannot be None")
@@ -40,30 +43,41 @@ class Course:
             self.waitlist_roster.append(enrollment_record.student) # Also add to waitlist roster for easy access and duplicate checking.
 
     def drop(self, student_id, enroll_date_for_replacement = None): # developed by David Matos
+        # checks whether enrolled roster is already, if not, use bubble sort (due to optimization)
         if self.enrolled_sorted_by != 'id':
             self.sort_enrolled('id', 'bubble')
 
+        # binary search to find the index of the desired student
         index = recursive_binary_search(self.enrolled_roster, student_id, 0, len(self.enrolled_roster)-1)
 
+        # return -1 if not found (per milestone instructions)
         if index == -1:
             raise IndexError(f"Student ID {student_id} not found in enrolled roster.")
         
+        # remove student
         self.enrolled_roster.pop(index)
 
+        # process to add student from waitlist to enrolled roster (if student on waitlist)
         if len(self.waitlist) > 0:
             next_record = self.waitlist.dequeue()
+
+            # adds 
             if enroll_date_for_replacement:
                 next_record.enroll_date = enroll_date_for_replacement 
             else:
                 next_record.enroll_date = datetime.date.today()
+            
+            # adds student from wait list onto enroll record
             self.enrolled_roster.append(next_record)
-            self.enrolled_sorted_by = None
+            self.enrolled_sorted_by = None # skips sorting because it's not needed at this time (will sort if said action is needed ONLY)
             self.waitlist_roster.remove(next_record.student) # Also remove from waitlist roster to avoid duplication and maintain consistency with the waitlist itself.
                     
     def get_student_count(self): #develop by David Matos
         # returns the number of students currently enrolled.
         return len(self.enrolled_roster)
+    
     def sort_enrolled(self, by, algorithm): # developed by David Matos
+        # sorts the enrolled roster using the defined sorting algorithms under "Task 2 Add Ons"
         if algorithm == 'insertion':
             insertion_sort(self.enrolled_roster, by)
         elif algorithm == 'bubble':
@@ -196,7 +210,9 @@ class University(): #develop by David Matos
             raise ValueError("Course doesn't exist")
         
 #Milestone 2 Add-ons:
-def insertion_sort(record, by): # developed by David Matos (milestone 2)
+
+# Task 3 - Sorting Algorithms (sorts a "record" (enrolled_roster) "by" a certain attribute (name, id, or date))
+def insertion_sort(record, by): # developed by David Matos (milestone 2), referenced class slideshow
     n = len(record)
     for i in range(n):
         j = n-i-1 
@@ -220,7 +236,7 @@ def insertion_sort(record, by): # developed by David Matos (milestone 2)
                 raise ValueError("Choose 'name', 'id', or 'date'")
             j += 1
 
-def selection_sort(record, by): # developed by David Matos
+def selection_sort(record, by): # developed by David Matos (milestone 2), referenced class slideshow
     for i in range(len(record)-1):
         max_j = 0
         for j in range(len(record)-i):
@@ -239,7 +255,7 @@ def selection_sort(record, by): # developed by David Matos
         if (len(record)-i-1) != max_j:
             record[len(record)-i-1], record[max_j] = record[max_j], record[len(record)-i-1]
 
-def bubble_sort(record, by): # developed by David Matos (milestone 2)
+def bubble_sort(record, by): # developed by David Matos (milestone 2), referenced class slideshow
     n = len(record)
     for i in range(n-1):
         swapped = False
@@ -260,8 +276,8 @@ def bubble_sort(record, by): # developed by David Matos (milestone 2)
                 raise ValueError("Choose 'name', 'id', or 'date'")
         if not swapped:
             break
-
-def recursive_binary_search(records, target_id, low, high): # developed by David Matos (milestone 2)
+# Task 5 - Binary Search 
+def recursive_binary_search(records, target_id, low, high): # developed by David Matos (milestone 2), referenced class slideshow
     if low > high:
         return -1
     mid = (low + high) // 2
