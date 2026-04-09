@@ -202,7 +202,7 @@ class University(): #develop by David Matos
         else:
             raise ValueError("Course doesn't exist")
     
-    def get_students_in_course(self, course_code): #develop by David Matos
+    def get_students_in_course(self, course_code): #develop by David Matos 
         # returns a list of student objects enrolled in the given course
         if course_code in self.courses:
             enrollment_roster = self.courses[course_code].enrolled_roster
@@ -214,6 +214,7 @@ class University(): #develop by David Matos
 
 # Task 3 - Sorting Algorithms (sorts a "record" (enrolled_roster) "by" a certain attribute (name, id, or date))
 def insertion_sort(record, by): # developed by David Matos (milestone 2), referenced class slideshow
+    # basically, the algorithm is the same, but we check the 'id' argument and then compare to the specified attribute (via the "by" argument) of the EnrollmentRecord class
     n = len(record)
     for i in range(n):
         j = n-i-1 
@@ -282,7 +283,7 @@ def recursive_binary_search(records, target_id, low, high): # developed by David
     if low > high:
         return -1
     mid = (low + high) // 2
-    current_id = records[mid].student.student_id
+    current_id = records[mid].student.student_id #compares student attribute (specifically student_id) of the EnrollmentRecord class
     if current_id == target_id:
         return mid
     elif target_id < current_id:
