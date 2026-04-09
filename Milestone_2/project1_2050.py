@@ -260,7 +260,7 @@ def selection_sort(record, by): # developed by David Matos (milestone 2), refere
 def bubble_sort(record, by): # developed by David Matos (milestone 2), referenced class slideshow
     n = len(record)
     for i in range(n-1):
-        swapped = False
+        swapped = False # added a swapped flag to optimize bubble_sort()
         for j in range(n-1-i):
             if by == 'name':
                 if record[j].student.name.lower() > record[j+1].student.name.lower():
