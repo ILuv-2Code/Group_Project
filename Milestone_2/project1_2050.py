@@ -43,9 +43,9 @@ class Course:
             self.waitlist_roster.append(enrollment_record.student) # Also add to waitlist roster for easy access and duplicate checking.
 
     def drop(self, student_id, enroll_date_for_replacement = None): # developed by David Matos
-        # checks whether enrolled roster is already, if not, use bubble sort (due to optimization)
+        # checks whether enrolled roster is already, if not, use insertion sort (generally better of the two algorithms)
         if self.enrolled_sorted_by != 'id':
-            self.sort_enrolled('id', 'bubble')
+            self.sort_enrolled('id', 'insertion')
 
         # binary search to find the index of the desired student
         index = recursive_binary_search(self.enrolled_roster, student_id, 0, len(self.enrolled_roster)-1)
