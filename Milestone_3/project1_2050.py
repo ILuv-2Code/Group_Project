@@ -93,12 +93,12 @@ class Course:
             bubble_sort(self.enrolled_roster, by)
         elif algorithm == 'selection':
             selection_sort(self.enrolled_roster, by)
-        elif algorithm == 'mergesort':
+        elif algorithm == 'merge':
             merge_sort(self.enrolled_roster, by)
-        elif algorithm == 'quicksort':
+        elif algorithm == 'quick':
             quick_sort(self.enrolled_roster, by)
         else:
-            raise ValueError("Invalid algorithm. Choose 'mergesort', 'quicksort', 'insertion', 'selection', or 'bubble'.")
+            raise ValueError("Invalid algorithm. Choose 'merge', 'quick', 'insertion', 'selection', or 'bubble'.")
         
         self.enrolled_sorted_by = by
 
@@ -126,11 +126,12 @@ class Student:
     
     def enroll(self, course:Course, grade:str): #develop by David Matos
         # enrolls student in course and checks whether they're already enrolled
+        #Note: In continuing functions, this function has somewhat been deprecated and serve a different purpose.
         if course in self.courses:
             raise ValueError(f"Student is already enrolled in {course.course_code}")
         
         self.courses[course] =  grade
-        course.request_enroll(student=self)
+        #course.request_enroll(student=self)
         
     
     def update_grade(self, course:Course, grade:str): #develop by David Matos
@@ -448,13 +449,15 @@ def partition(record, i, j, by): #helper function for quick_sort
         record[i], record[pivot] = record[pivot], record[i]
         pivot = i
     return pivot
-def quick_sort(record, left, right, by): # developed by David Matos, Milestone 3
+def quick_sort_helper(record, left, right, by): # developed by David Matos, Milestone 3
     if right - left <= 1:
         return
     pivot = partition(record, left, right, by)
-    quick_sort(record, left, pivot, by)
-    quick_sort(record, pivot + 1, right, by)
+    quick_sort_helper(record, left, pivot, by)
+    quick_sort_helper(record, pivot + 1, right, by)
     return record
+def quick_sort(record, by): # developed by David Matos, Milestone 3
+    return quick_sort_helper(record, 0, len(record), by)
 '''
 if __name__ == "__main__":
     # Demonstrations, developed by Mark Le
