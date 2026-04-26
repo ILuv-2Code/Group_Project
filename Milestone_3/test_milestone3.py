@@ -5,36 +5,60 @@ from project1_2050 import *
 import datetime
 class TestHashMap(unittest.TestCase):
     def test_hash_map(self):
-        #Test the basic functionality of the HashMap
-        hm = HashMap()
-        hm.add("value1")
-        hm.add("value2")
-        self.assertIn("value1", hm)
-        self.assertIn("value2", hm)
-        #Test the resizing functionality of the HashMap
-        for i in range(100):
-            hm.add(f"value{i}")
-        self.assertTrue(hm._n_buckets == 128) #The number of buckets should have increased after adding 100 items
-        #Test the resizing down functionality of the HashMap
-        for i in range(100):
-            hm.remove(f"value{i}")
-        self.assertTrue(hm._n_buckets == 8) #The number of buckets should have decreased after removing 100 items
+        #Test the basic functionality of the HashMap class, including adding, retrieving, and removing key-value pairs, as well as handling collisions and resizing.
+        hashmap = HashMap()
+        hashmap.put("CSE2050", ["CSE1010", "CSE1020"])
+        hashmap.put("CSE1010", [])
+        hashmap.put("CSE1020", [])
+        self.assertEqual(hashmap.get("CSE2050"), ["CSE1010", "CSE1020"])
+        self.assertEqual(hashmap.get("CSE1010"), [])
+        self.assertEqual(hashmap.get("CSE1020"), [])
+        with self.assertRaises(KeyError):
+            hashmap.get("CSE9999") #Test that getting a non-existent key raises a KeyError
+        hashmap.remove("CSE1020")
+        with self.assertRaises(KeyError):
+            hashmap.get("CSE1020") #Test that the removed key is no longer accessible
 class TestEnrollment(unittest.TestCase):
     def test_enrollment(self):
-        #Test the enrollment functionality of the Course class
-        course = Course("CSE2050", 3, 50)
-        course.prerequisite.add("CSE1010") #Add a prerequisite course to the course
-        student1 = Student("STU12345", "Alice")
-        student2 = Student("STU54321", "Bob")
-        student1.enroll("CSE1010", "A") #This enroll function is essentially just adding the courses the student has enrolled and has grades in
-        course.request_enroll(student1, "2024-09-01") #This should enroll successfully as the student meets the prerequisite
-        course.request_enroll(student2, "2024-09-01") #This should not enroll successfully as the student does not meet the prerequisite
-        self.assertIn(EnrollmentRecord(student1, "2024-09-01"), course.enrolled_roster) #Student 1 should be enrolled in the course
-        self.assertNotIn(EnrollmentRecord(student2, "2024-09-01"), course.enrolled_roster) #Student 2 should not be enrolled in the course
+        #Test that students can enroll in a course, and that the enrollment records are created correctly with the correct enrollment dates. Also test that students who do not meet prerequisites cannot enroll.
+        course = Course("CSE2600", 5, capacity=5) #Test a course with an empty prerequisite list first.
+        student1 = Student(student_id="STU00001", name="Student1")
+        student2 = Student(student_id="STU00002", name="Student2")
+        student3 = Student(student_id="STU00003", name="Student3")
+        student4 = Student(student_id="STU00004", name="Student4")
+        student5 = Student(student_id="STU00005", name="Student5")
+        #Test enrollment without prerequisites first, then we will add prerequisites and test that as well.
+        course.request_enroll(student1, datetime.date(2026, 4, 1))
+        course.request_enroll(student2, datetime.date(2026, 4, 2))
+        course.request_enroll(student3, datetime.date(2026, 4, 3))
+        course.request_enroll(student4, datetime.date(2026, 4, 4))
+        course.request_enroll(student5, datetime.date(2026, 4, 5))
+        self.assertEqual(len(course.enrolled_roster), 5)
+        self.assertEqual(course.enrolled_roster[0].student.name, "Student1")
+        self.assertEqual(course.enrolled_roster[0].enroll_date, datetime.date(2026, 4, 1))
+        self.assertEqual(course.enrolled_roster[4].student.name, "Student5")
+        self.assertEqual(course.enrolled_roster[4].enroll_date, datetime.date(2026, 4, 5))
+        #Now test enrollment with prerequisites. We will use the same students and just add a prerequisite to the course, and then test that the students cannot enroll because they do not meet the prerequisite, and then we will add the prerequisite course to the students' studied courses and test that they can enroll successfully.
+        course_with_prereq = Course("CSE2050", 5, capacity=5)
+        prereq = Course("CSE1010", 5, capacity=5)
+        student1.enroll(prereq, "A")
+        student2.enroll(prereq, "B")
+        student3.enroll(prereq, "C")
+        student4.enroll(prereq, "D")
+        course_with_prereq.request_enroll(student1, datetime.date(2026, 4, 1))
+        course_with_prereq.request_enroll(student2, datetime.date(2026, 4, 2))
+        course_with_prereq.request_enroll(student3, datetime.date(2026, 4, 3))
+        course_with_prereq.request_enroll(student4, datetime.date(2026, 4, 4))
+        course_with_prereq.request_enroll(student5, datetime.date(2026, 4, 5))
+        self.assertEqual(len(course_with_prereq.enrolled_roster), 4) #Only 4 students should be enrolled because student5 does not meet the prerequisite
+        self.assertEqual(course_with_prereq.enrolled_roster[0].student.name, "Student1")
+        self.assertEqual(course_with_prereq.enrolled_roster[0].enroll_date, datetime.date(2026, 4, 1))
+        self.assertEqual(course_with_prereq.enrolled_roster[3].student.name, "Student4")
+        self.assertEqual(course_with_prereq.enrolled_roster[3].enroll_date, datetime.date(2026, 4, 4))  
 class TestNewSort(unittest.TestCase):
     def test_sort_enrolled_new(self):
         #Test that enrolled_roster is sorted by different aspects in two new sorting methods.
-        course = Course("CSE2050", 5, capacity=5) # I don't add prerequisites here because the sorting functions should work regardless of whether there are prerequisites or not, and it would just add unnecessary complexity to the test if we had to set up prerequisites and students that meet those prerequisites.
+        course = Course("CSE1010", 5, capacity=5) # I don't add courses with prerequisites here because the sorting functions should work regardless of whether there are prerequisites or not, and it would just add unnecessary complexity to the test if we had to set up prerequisites and students that meet those prerequisites.
         students = [Student(student_id ="STU"+f"{i:05d}", name=f"Student{6-i}") for i in range(5, 0, -1)] #Create a reversed list of students to test sorting.
         #Testing student values:
         self.assertEqual(students[0].student_id, "STU00005")

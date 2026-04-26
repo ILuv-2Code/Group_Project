@@ -28,7 +28,7 @@ class Course:
         if student is None:
             raise ValueError("Student cannot be None")
         enrollment_record = EnrollmentRecord(student, enroll_date)
-        student_studied = student.get_courses()
+        student_studied = [course.course_code for course in student.get_courses()]
         prerequisite_met = True
         if self.course_code in self.prerequisite:
             for prereq in self.prerequisite.get(self.course_code):
@@ -405,7 +405,7 @@ class HashMap: #developed by Mark Le, milestone 3
 #Adding prereqs from cse_prerequisites.csv
 PREREQUISITE = HashMap() # This is a global variable that will be used to store the prerequisites for each course. The key will be the course code, and the value will be a list of prerequisite course codes. This allows for efficient retrieval of prerequisites when checking if a student meets the requirements for enrolling in a course. The HashMap implementation allows for efficient insertion and retrieval of prerequisite information, which is crucial for the performance of the enrollment process, especially as the number of courses and students increases.
 with open("cse_prerequisites.csv", "r") as f:
-    reader = csv.reader(f)
+    reader = csv.reader(f, delimiter='\t')
     next(reader)
     for row in reader:
         course_code = row[0]
@@ -413,7 +413,7 @@ with open("cse_prerequisites.csv", "r") as f:
         PREREQUISITE.put(course_code, prereq_list)
 #Task 2: Pre-requisite verification, developed by David Matos, milestone 3
 def merge_sort(record, by): # developed by David Matos, Milestone 3, referenced class slideshow
-    if len(record) == 1:
+    if len(record) <= 1:
         return record
     mid = len(record) // 2
     A = record[:mid]
