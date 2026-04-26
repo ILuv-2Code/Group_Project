@@ -1,4 +1,4 @@
-# import csv
+import csv
 # import random
 import datetime
 class Course:
@@ -10,7 +10,7 @@ class Course:
         self.waitlist = LinkedQueue() #Milestone 2 add-on, developed by Mark Le, this is the waitlist for the course, implemented as a LinkedQueue to follow FIFO order for enrollment from the waitlist when spots open up in the course.
         self.enrolled_sorted_by = None # developed by David Matos (milestone 2) tracks the attribute which sorting algorithms sorted by
         self.waitlist_roster = [] #Milestone 2 add-on, developed by Mark Le, this is the waitlist roster for the course, implemented as a list of EnrollmentRecord objects to store both the student and their enrollment date for each student in the waitlist for easy access and duplicate checking when students request enrollment in the course.  
-        self.prerequisite = HashMap() #This requisite will gather info from cse.prerequisites.csv, and will be used to check whether a student meets the prerequisite requirements for a course when they request enrollment. The key will be the course code of the prerequisite, and the value will be the minimum grade required in that prerequisite course to enroll in the target course. For example, if CSE 101 is a prerequisite for CSE 201 with a minimum grade of B, then the key-value pair in the HashMap would be "CSE 101": "B". This allows for efficient checking of prerequisites when students request enrollment in courses.
+        self.prerequisite = PREREQUISITE
     def remove_waitlist(self, enrollment_record): #Milestone 2 add-on, developed by Mark Le, 
         # this is a helper function to remove a student from the waitlist when they are enrolled in the course, as we don't want duplication in the waitlist roster or the waitlist itself. This function works by creating a new temporary waitlist and waitlist roster, and only adding back the students that are not the target student for removal.
         temp_waitlist = LinkedQueue()
@@ -30,11 +30,12 @@ class Course:
         enrollment_record = EnrollmentRecord(student, enroll_date)
         student_studied = student.get_courses()
         prerequisite_met = True
-        for prereq_course in self.prerequisite: #Iterate through the buckets in the HashMap to check for prerequisites, as the keys (course codes) are stored in the buckets. This is not the most efficient way to check for prerequisites, but it works with the current implementation of the HashMap. A more efficient way would be to implement a get method in the HashMap to directly access the value (minimum grade) for a given key (prerequisite course code).
-            if prereq_course not in student_studied:
-                prerequisite_met = False
-                print(f"Student {student.name} (ID: {student.student_id}) does not meet the prerequisite requirements for {self.course_code}. Missing prerequisite course: {prereq_course}.")
-                break
+        if self.course_code in self.prerequisite:
+            for prereq in self.prerequisite.get(self.course_code):
+                if prereq not in student_studied:
+                    prerequisite_met = False
+                    print(f"{student.name}, studentID {student.student_id} does not meet the prerequisites for this course. Cannot enroll in {self.course_code}.")
+                    break
         '''Note: In the requirements, it requires that if false, raise Exception. But this will disrupt the flow of the program, and I think it's better to just print a message and not enroll the student in the course if they don't meet the prerequisites, rather than raising an exception which would require handling the exception in the calling code. What I do know that the method to raise exceptions are raise Exception("message"), so we're all good on that.'''
         if prerequisite_met:
             if enrollment_record in self.enrolled_roster:
@@ -197,8 +198,7 @@ class University: #develop by David Matos
             self.students[student_id] = Student(student_id, name)
             return self.students[student_id]
         else:
-            return self.students[student_id]
-        
+            return self.students[student_id]       
 
     def get_student(self, student_id): #develop by David Matos
         # returns the student object for that ID (or None if not found).
@@ -367,35 +367,50 @@ class HashMap: #developed by Mark Le, milestone 3
         return self._len / self._n_buckets
     def _find_bucket(self, key):
         return hash(key) % self._n_buckets #Find the bucket to insert key-calue pairs
-    def __contains__(self, item): #Re-customize the "in" operator to check for key existence when using seperate chaining for making this HashMap
-        index = self._find_bucket(item)
-        return item in self._L[index] #Check for key existence in the appropriate bucket
-    def add(self, item):
-        if item in self:
-            print(f"Item {item} already exists in the HashMap. No duplicates allowed.") #Temporary announcement, 
-            return # If the item already exists, we do nothing (no duplicates allowed)
-        index = self._find_bucket(item)
-        self._L[index].append(item) #Add the item to the appropriate bucket (seperate chaining)
+    def __contains__(self, key): #Re-customize the "in" operator to check for key existence when using seperate chaining for making this HashMap
+        index = self._find_bucket(key)
+        return key in [item[0] for item in self._L[index]] #Check for key existence in the appropriate bucket
+    def add(self, key, value):
+        if key in self:
+            raise KeyError(f"Course {key} already exists in the HashMap. Duplicate courses are not allowed.")
+        index = self._find_bucket(key)
+        self._L[index].append((key, value)) #Add the key-value pair to the appropriate bucket
         self._len += 1
-        if self._load() > 0.8: #Resize up if load factor exceeds 0.75
-            self._rehash(self._n_buckets * 2)
-    def remove(self, item):
-        if item not in self:
-            raise KeyError(f"Item {item} not found in the HashMap. Cannot remove non-existent item.")
-        index = self._find_bucket(item)
-        self._L[index].remove(item) #Remove the item from the appropriate bucket
-        self._len -= 1
-        if self._load() < 0.8 and self._n_buckets > self._min_buckets: #Resize down if load factor falls below 0.25, but maintain a minimum number of buckets to avoid excessive collisions
-            new_size = max(self._n_buckets // 2, self._min_buckets) #This would help if we set _min_buckets to be any other value than an exponent of 2. However, it's not really necessary in this case.
-            self._rehash(new_size)
+        if self._load() > 0.8: #Resize up if load factor exceeds 0.8 to maintain efficient operations
+            self._rehash(self._n_buckets * 2) #Double the number of buckets when resizing up for better performance and to reduce collisions.
+    def get(self, key):
+        bucket = self._L[self._find_bucket(key)]
+        for item in bucket:
+            if item[0] == key:
+                return item[1] #Return the value associated with the key if found
+        raise KeyError(f"Course {key} not found.")
+    def remove(self, key):
+        index = self._find_bucket(key)
+        for item in self._L[index]:
+            if item[0] == key:
+                self._L[index].remove(item)
+                self._len -= 1
+                if self._load() < 0.25 and self._n_buckets > self._min_buckets:
+                    self._rehash(max(self._n_buckets // 2, self._min_buckets))
+                return
+        raise KeyError(f"Course {key} not found.")
     def _rehash(self, new_size):
         self._n_buckets = new_size
         new_L = [[] for _ in range(self._n_buckets)] #Create a new list of buckets with the new size
         for bucket in self._L: #Rehash all existing items into the new list of buckets
             for item in bucket:
-                index = self._find_bucket(item) #Find the new bucket index for the item based on the new number of buckets
+                index = self._find_bucket(item[0]) #Find the new bucket index for the item based on the new number of buckets
                 new_L[index].append(item) #Add the item to the appropriate bucket in the new list of buckets
         self._L = new_L #Replace the old list of buckets with the new one
+#Adding prereqs from cse_prerequisites.csv
+PREREQUISITE = HashMap() # This is a global variable that will be used to store the prerequisites for each course. The key will be the course code, and the value will be a list of prerequisite course codes. This allows for efficient retrieval of prerequisites when checking if a student meets the requirements for enrolling in a course. The HashMap implementation allows for efficient insertion and retrieval of prerequisite information, which is crucial for the performance of the enrollment process, especially as the number of courses and students increases.
+with open("cse_prerequisites.csv", "r") as f:
+    reader = csv.reader(f)
+    next(reader)
+    for row in reader:
+        course_code = row[0]
+        prereq_list = [p for p in row[1:] if p]  # filter out empty strings
+        PREREQUISITE.add(course_code, prereq_list)
 #Task 2: Pre-requisite verification, developed by David Matos, milestone 3
 def merge_sort(record, by): # developed by David Matos, Milestone 3, referenced class slideshow
     if len(record) == 1:
