@@ -1,0 +1,39 @@
+#Written by Mark Le
+Milestone 3 Report
+(Note: the information here are infered from the slides and resources from geeksforgeeks. The work is manually written)
+- HashMap Time complexity
+    + Because we use separate chaining for handling hash collisions, the result for time complexity will be as follows:
+        a) put: O(1) best + average, O(n) worst case:
+            The hashing function has two parts: compute index (O(1)) and appending (O(1) best + average/O(n) worst)
+            While the appending part is O(1), the appending function requires comparison to the other values in the index.
+            Typicaly, the key and values are pretty well spread out, so the comparison is minimal (can be considered constant) and can be put as constant
+            However, worst case scenario will be all key-value pairs in one bucket. In this case, comparing with all the elements (n elements) requires O(n) time.
+        There's also the cost of rehashing, which is O(n) per rehash, however because we do this once every O(n) times, the cost of rehashing in this function overall is O(1).
+        b)  get: O(1) best + average, O(n) worst case:
+            Compute index, linearly scans the chain in the bucket for matching key 
+            Same thing as appending in put, with a good hash function, every bucket is expected to have a constant number of entries, which means an O(1) running time.
+            However, worst case scenario will be all key-value pairs in one bucket again. In this case, scannning all the elements requires O(n) running time.
+        Extra: remove: O(1) best and average, O(n) worst case:
+            Compute index, scan and remove the matching key-value pair
+            Similar reasoning, scan over the buckets, which should have constant elements, worst case scenario O(n) running time (all elements in one bucket)
+            Rehashing is also O(1) overall (same reasoning)
+- Sorting algorithm for Milestone 3 - Time complexity:
+    + Mergesort: O(nlogn) best, average, and worst:
+        No matter how ordered the list might be, the process remain the same.
+        List is divided in half recursivelty producing log n levels, and for each level, the merge step process all n elements (in (n/level) groups)
+        Therefore, total running time is O(nlogn), regardless of the initial order of the list.
+    + Quicksort: O(nlogn) best + average, O(n^2) worst case.
+        On average, the partition step divides the list into two roughly equal halves each time, so we would have roughly logn divisions, every time handling n elements, so running time (best and average) is O(nlogn)
+        However, there exists a worst case when the pivot chosen is consistently the smallest/largest element, which is theoretically possible if 1) the chosen index is not randomized, 2) the list is already sorted/ reverse-sorted. (there are obviously other cases, but it is case specific and with the same low possibility)
+        For our program, we only used the last element as the pivot, so the two aforementioned lists will have this scenario.
+        In this worst case scenario, partition becomes really unbalanced (0 and n-1), so the amount of divisions needed is n. Therefore, running time will be O(n^2)
+- Comparison, case-by-case of Mergesort and Quicksort:
+    + Mergesort is preferred when:
+        - Stability matters. The sorting function is stable, so it's good for maybe, multi-sorting algorithms where the sub-categories are used first before the main category sort.
+        - Predictability is enforced. Although mergesort is normally slower than quicksort, it has a consistent running time and the worst running time better than quicksort. 
+        Furthermore, our program can continuously do sorting algorithms, say adding, sorting and adding more later, so a consistent running time is better than quicksort, where specifically in our case will be slower.
+        This can also have some effects on systems that require consistent flow, usually in mass scale. 
+    + Quicksort is preferred when:
+        - It's quick, as suggested by the name. This is useful especially for random data and a good pivot selection strategy that we didn't implement is used (random pivot, mean-of-three random, etc.).
+        - Memory efficiency is a priority. Because quicksort (not the naive version) is in-place, it uses constant memory, and possibly some stack spaces for each level (O(logn)), compared to mergesort, where a new array size n must be made (O(n) memory).
+        
