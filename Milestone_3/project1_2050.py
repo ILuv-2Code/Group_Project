@@ -370,7 +370,7 @@ class HashMap: #developed by Mark Le, milestone 3
     def __contains__(self, key): #Re-customize the "in" operator to check for key existence when using seperate chaining for making this HashMap
         index = self._find_bucket(key)
         return key in [item[0] for item in self._L[index]] #Check for key existence in the appropriate bucket
-    def add(self, key, value):
+    def put(self, key, value):
         if key in self:
             raise KeyError(f"Course {key} already exists in the HashMap. Duplicate courses are not allowed.")
         index = self._find_bucket(key)
@@ -410,7 +410,7 @@ with open("cse_prerequisites.csv", "r") as f:
     for row in reader:
         course_code = row[0]
         prereq_list = [p for p in row[1:] if p]  # filter out empty strings
-        PREREQUISITE.add(course_code, prereq_list)
+        PREREQUISITE.put(course_code, prereq_list)
 #Task 2: Pre-requisite verification, developed by David Matos, milestone 3
 def merge_sort(record, by): # developed by David Matos, Milestone 3, referenced class slideshow
     if len(record) == 1:
