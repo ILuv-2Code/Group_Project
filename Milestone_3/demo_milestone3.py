@@ -274,10 +274,6 @@ for key, value in PREREQUISITE:
         adv_prereqs = value
         break
  
-if adv_course_code is None:
-    adv_course_code = "CSE2050"
-    adv_prereqs = ["CSE1010"]
- 
 print("Advanced course:", adv_course_code)
 print("Its prerequisites:", adv_prereqs)
  
