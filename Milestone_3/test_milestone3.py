@@ -18,6 +18,33 @@ class TestHashMap(unittest.TestCase):
         hashmap.remove("CSE1020")
         with self.assertRaises(KeyError):
             hashmap.get("CSE1020") #Test that the removed key is no longer accessible
+
+    def test_collision_handling(self): #Added by David Matos
+        # Test that separate chaining correctly handles multiple keys that hash to the same bucket.
+        hashmap = HashMap(size=2)
+        keys = ["AAA", "BBB", "CCC", "DDD"]
+        for k in keys:
+            hashmap.put(k, f"value_{k}")
+        for k in keys:
+            self.assertEqual(hashmap.get(k), f"value_{k}")
+        hashmap.remove("BBB")
+        with self.assertRaises(KeyError):
+            hashmap.get("BBB")
+        self.assertEqual(hashmap.get("AAA"), "value_AAA")
+        self.assertEqual(hashmap.get("CCC"), "value_CCC")
+        self.assertEqual(hashmap.get("DDD"), "value_DDD")
+ 
+    def test_rehashing(self): #Added by David Matos
+        # Test that the table doubles when load factor reaches >= 0.8 and that every key is still accessible after the rehash.
+        hashmap = HashMap()
+        keys = [f"KEY{i:03d}" for i in range(10)]
+        for k in keys:
+            hashmap.put(k, f"val_{k}")
+        self.assertEqual(len(hashmap), 10)
+        for k in keys:
+            self.assertEqual(hashmap.get(k), f"val_{k}")
+        self.assertGreater(hashmap._n_buckets, 8)
+
 class TestEnrollment(unittest.TestCase):
     def test_enrollment(self):
         #Test that students can enroll in a course, and that the enrollment records are created correctly with the correct enrollment dates. Also test that students who do not meet prerequisites cannot enroll.
@@ -55,6 +82,8 @@ class TestEnrollment(unittest.TestCase):
         self.assertEqual(course_with_prereq.enrolled_roster[0].enroll_date, datetime.date(2026, 4, 1))
         self.assertEqual(course_with_prereq.enrolled_roster[3].student.name, "Student4")
         self.assertEqual(course_with_prereq.enrolled_roster[3].enroll_date, datetime.date(2026, 4, 4))  
+
+
 class TestNewSort(unittest.TestCase):
     def test_sort_enrolled_new(self):
         #Test that enrolled_roster is sorted by different aspects in two new sorting methods.

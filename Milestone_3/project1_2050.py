@@ -55,7 +55,7 @@ class Course:
     def drop(self, student_id, enroll_date_for_replacement = None): # developed by David Matos
         # checks whether enrolled roster is already, if not, use insertion sort (generally better of the two algorithms)
         if self.enrolled_sorted_by != 'id':
-            self.sort_enrolled('id', 'insertion')
+            self.sort_enrolled('id', 'merge')
 
         # binary search to find the index of the desired student
         index = recursive_binary_search(self.enrolled_roster, student_id, 0, len(self.enrolled_roster)-1)
@@ -86,7 +86,7 @@ class Course:
         # returns the number of students currently enrolled.
         return len(self.enrolled_roster)
     
-    def sort_enrolled(self, by, algorithm): # developed by David Matos, updated by David Matos, Milestone 3
+    def sort_enrolled(self, by, algorithm): # developed and updated by David Matos (milestone 3)
         # sorts the enrolled roster using the defined sorting algorithms under "Milestone 2 - Task 3 Add ons" and "Milestone 3 Add Ons"
         if algorithm == 'insertion':
             insertion_sort(self.enrolled_roster, by)
@@ -353,8 +353,8 @@ class LinkedQueue: #Single linked list adaptation for LinkedQueue
 class HashMap: #developed by Mark Le, milestone 3
     #Note: I have pretty much created a complete HashMap for Task 1. I'm not sure whether I'll use all of these functions, but I'll eventually find a way to incorporate this HashMap into the University Course and Student Management System for efficient data management, as the current implementation relies on Python's built-in dictionaries which are already optimized hash maps. However, implementing our own HashMap allows us to demonstrate our understanding of hash maps and their operations, as well as giving us more control over the behavior of the data structure (such as resizing and collision handling).
     def __init__(self, size=10):
-        self._min_buckets = 8 # Minimum number of buckets to maintain, even after resizing down
-        self._n_buckets = 8 # Initial setup
+        self._min_buckets = size # Minimum number of buckets to maintain, even after resizing down
+        self._n_buckets = size # Initial setup
         self._len = 0 #When asked for len, we will use this as a custom iterator
         self._L = [[] for _ in range(self._n_buckets)] # Initialize the list of buckets, each bucket is a list to handle collisions via chaining
     def __iter__(self): #Create an iterator that will be useful when called in the main functions
@@ -376,7 +376,7 @@ class HashMap: #developed by Mark Le, milestone 3
         index = self._find_bucket(key)
         self._L[index].append((key, value)) #Add the key-value pair to the appropriate bucket
         self._len += 1
-        if self._load() > 0.8: #Resize up if load factor exceeds 0.8 to maintain efficient operations
+        if self._load() >= 0.8: #Resize up if load factor exceeds 0.8 to maintain efficient operations
             self._rehash(self._n_buckets * 2) #Double the number of buckets when resizing up for better performance and to reduce collisions.
     def get(self, key):
         bucket = self._L[self._find_bucket(key)]
@@ -411,8 +411,8 @@ with open("cse_prerequisites.csv", "r") as f:
         course_code = row[0]
         prereq_list = [p for p in row[1:] if p]  # filter out empty strings
         PREREQUISITE.put(course_code, prereq_list)
-#Task 2: Pre-requisite verification, developed by David Matos, milestone 3
-def merge_sort(record, by): # developed by David Matos, Milestone 3, referenced class slideshow
+#Task 2: Pre-requisite verification, developed by David Matos (milestone 3)
+def merge_sort(record, by): # developed by David Matos (milestone 3) referenced class slideshow
     if len(record) <= 1:
         return record
     mid = len(record) // 2
@@ -464,12 +464,12 @@ def partition(record, i, j, by): #helper function for quick_sort
         record[i], record[pivot] = record[pivot], record[i]
         pivot = i
     return pivot
-def quick_sort_helper(record, left, right, by): # developed by David Matos, Milestone 3
+def quick_sort_helper(record, left, right, by): # developed by David Matos (milestone 3)
     if right - left <= 1:
         return
     pivot = partition(record, left, right, by)
     quick_sort_helper(record, left, pivot, by)
     quick_sort_helper(record, pivot + 1, right, by)
     return record
-def quick_sort(record, by): # developed by David Matos, Milestone 3
+def quick_sort(record, by): # developed by David Matos (milestone 3)
     return quick_sort_helper(record, 0, len(record), by)
