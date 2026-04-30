@@ -272,7 +272,7 @@ with open('demo_output.txt', 'w') as f:
     adv_prereqs = []
     
     for key, value in PREREQUISITE:
-        if value and value != [''] and value != ['None'] and value != ['N/A']:
+        if value:
             adv_course_code = key
             adv_prereqs = value
             break

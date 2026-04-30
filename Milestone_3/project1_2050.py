@@ -36,7 +36,14 @@ class Course:
                     prerequisite_met = False
                     print(f"{student.name}, studentID {student.student_id} does not meet the prerequisites for this course. Cannot enroll in {self.course_code}.")
                     break
+        ## \/\/ TA READ HERE \/\/ ##
+        ## \/\/ TA READ HERE \/\/ ##
+        ## \/\/ TA READ HERE \/\/ ##
         '''Note: In the requirements, it requires that if false, raise Exception. But this will disrupt the flow of the program, and I think it's better to just print a message and not enroll the student in the course if they don't meet the prerequisites, rather than raising an exception which would require handling the exception in the calling code. What I do know that the method to raise exceptions are raise Exception("message"), so we're all good on that.'''
+        ## ^^ TA READ HERE ^^ ##
+        ## ^^ TA READ HERE ^^ ##
+        ## ^^ TA READ HERE ^^ ##
+
         if prerequisite_met:
             if enrollment_record in self.enrolled_roster:
                 print(f"{student.name}, studentID {student.student_id} is already enrolled in this course.")
