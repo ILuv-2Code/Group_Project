@@ -165,13 +165,11 @@ with open('demo_output.txt', 'w') as f:
             course = next((c for c in courses if c.course_code == course_code), None)
             if course:
                 course.request_enroll(student, datetime.date(2026, 1, random.randint(1, 31))) # Using a random date in January to check sorting algorithm.
-    
     print("Enrollment complete. Displaying enrolled students for each course:")
     for course in courses:
         print(f"\n{course.course_code} Enrolled Students:")
         for record in course.enrolled_roster:
             print(f"{record.student.student_id} - {record.student.name} (Enrolled on: {record.enroll_date})")
-    
     print("\nDisplaying waitlisted students for each course:")
     for course in courses:
         print(f"\n{course.course_code} Waitlisted Students:")
