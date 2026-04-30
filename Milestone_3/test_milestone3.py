@@ -37,13 +37,13 @@ class TestHashMap(unittest.TestCase):
     def test_rehashing(self): #Added by David Matos
         # Test that the table doubles when load factor reaches >= 0.8 and that every key is still accessible after the rehash.
         hashmap = HashMap()
-        keys = [f"KEY{i:03d}" for i in range(10)]
+        keys = [f"KEY{i}" for i in range(10)]
         for k in keys:
             hashmap.put(k, f"val_{k}")
         self.assertEqual(len(hashmap), 10)
         for k in keys:
             self.assertEqual(hashmap.get(k), f"val_{k}")
-        self.assertGreater(hashmap._n_buckets, 8)
+        self.assertGreater(hashmap._n_buckets, 10)
 
 class TestEnrollment(unittest.TestCase):
     def test_enrollment(self):
