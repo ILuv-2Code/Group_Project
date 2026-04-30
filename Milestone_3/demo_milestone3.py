@@ -20,7 +20,7 @@ with open('demo_output.txt', 'w') as f:
         for row in course_reader:
             course_code, credits = row
             UConn.add_course(course_code, int(credits), 30) # Milestone 3: capacity added (default 30); course_catalog.csv has no capacity column
-    with open('university_data.csv', 'r') as f: # Reads student enrollments and adds students (name + id) and their course enrollments to UConn (TODO: Do we need to change for Milestone 3?)
+    with open('university_data.csv', 'r') as f: # Reads student enrollments and adds students (name + id) and their course enrollments to UConn 
         student_reader = csv.reader(f, delimiter=',')
         next(student_reader) # skip header row
         for row in student_reader:
@@ -129,7 +129,7 @@ with open('demo_output.txt', 'w') as f:
     # demo 2
     print("---------------------Running Demo 2---------------------")
     print("Generate UConn Universtity Object")
-    uconn = University()
+    uconn_d2 = University()
     print("Updating data from course_catalog_CSE10_with_capacity.csv...")
     with open("course_catalog_CSE10_with_capacity.csv", mode='r') as file:
         reader = csv.DictReader(file)
@@ -140,15 +140,11 @@ with open('demo_output.txt', 'w') as f:
             credits = int(row['credits'])
             capacity = int(row['capacity'])
             print(f"Loading course: {course_code} with {credits} credits and capacity of {capacity}")
-            uconn.add_course(course_code, credits, capacity)
+            uconn_d2.add_course(course_code, credits, capacity)
     
-    courses = list(uconn.courses.values())
-    if course:
-        try:
-            course.request_enroll(student, datetime.date(2026, 1, random.randint(1, 31)))
-        except ValueError:
-            pass
-    
+    courses = list(uconn_d2.courses.values())
+    for course in courses:
+        print(f"Course code: {course.course_code}, Credits: {course.credits}, Capacity: {course.capacity}")
     print("\nCreating students and enrolling in all classes...")
     print("Grabbing data from enrollments_CSE10.csv...")
     FIRST_NAMES = ["Liam", "Olivia", "Noah", "Emma", "Ava", "Sophia", "Isabella", "Mason", "Lucas", "Mia"]
@@ -165,11 +161,19 @@ with open('demo_output.txt', 'w') as f:
             student = students[student_id]
             course = next((c for c in courses if c.course_code == course_code), None)
             if course:
+                #If that course has prereqs, we do a work-around by enrolling the student in the prereq course first with a passing grade, then enroll them in the actual course. This is just for testing purposes to check the enrollment, waitlist, sorting, and dropping functionalities with a larger dataset, and is not meant to reflect actual enrollment processes.
+                prereqs = course.prerequisite.get(course_code)
+                for prereq in prereqs:
+                    prereq_course = next((c for c in courses if c.course_code == prereq), None)
+                    if prereq_course:
+                        try:
+                            student.enroll(prereq_course, "A") # Enroll the student in the prereq course with a passing grade to meet the prerequisite requirement for the actual course enrollment.
+                        except ValueError as e:
+                            continue # If enrollment in the prereq course fails for any reason, we skip to the actual course enrollment attempt, which will also fail if the prerequisite is not met, but this allows us to test the enrollment and waitlist functionalities for courses with prerequisites.
                 try:
                     course.request_enroll(student, datetime.date(2026, 1, random.randint(1, 31))) # Using a random date in January to check sorting algorithm.
                 except ValueError as e:
-                    print(f"Enrollment failed for {student_id} in {course_code}: {e}")
-
+                    print(f"Error occurred while enrolling student: {e}")
     print("Enrollment complete. Displaying enrolled students for each course:")
     for course in courses:
         print(f"\n{course.course_code} Enrolled Students:")
@@ -365,3 +369,4 @@ with open('demo_output.txt', 'w') as f:
         print(" ", r.student.student_id, r.student.name, r.enroll_date)
 
     print("---------------------Finished Demo 3---------------------")
+    print("Thank you for reviewing our demonstration script for Milestone 3! We have showcased the functionalities of our University Course and Student Management System, including course enrollment with prerequisite verification, sorting enrolled students using different algorithms, and performing binary search for students in courses. We have also demonstrated the use of a hash map for managing course prerequisites. We hope this provides a comprehensive overview of our implementation and the features we have developed. Please let us know if you have any questions or feedback on our work!")
