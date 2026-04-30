@@ -241,28 +241,33 @@ with open('demo_output.txt', 'w') as f:
     # demo 3
     print("\n---------------------Running Demo 3---------------------")
     print("\n---------------------------Hash Map---------------------------")
-    
+     
+    # hashmap init
+    print("Initializing Hashmap")
     hm = HashMap(size=5)
     print("Buckets before rehash:", hm._n_buckets)
+    print("Adding courses")
     hm.put("CSE1010", [])
     hm.put("CSE2050", ["CSE1010"])
     hm.put("CSE2100", ["CSE2050"])
     hm.put("CSE3100", ["CSE2050", "CSE2100"])
     
-    print(hm.get("CSE2050"))
-    print(hm.get("CSE3100"))
+    # retreiving stored values
+    print("Retreiving CSE 2050 pre-reqs:", hm.get("CSE2050"))
+    print("Retreiving CSE 3100 pre-reqs:", hm.get("CSE3100"))
     
-    hm.put("CSE4001", ["CSE3100"])
+    # rehashing
+    print("Adding another course to force rehash")
+    print("Adding 'CSE 4001':", hm.put("CSE4001", ["CSE3100"]))
     print("Buckets after rehash:", hm._n_buckets)
     
-    print("CSE2050" in hm)
-    print("CSE9999" in hm)
-    
+    print("Duplicate Insertion attempt")
     try:
         hm.put("CSE2050", ["something"])
     except KeyError as e:
         print(e)
     
+    print("Getting non-existent course (key)")
     try:
         hm.get("CSE9999")
     except KeyError as e:
@@ -270,19 +275,20 @@ with open('demo_output.txt', 'w') as f:
     
     print("\n---------------------------Pre-req. verification---------------------------")
     
+    print("Initializing new university class")
     uconn_d3 = University()
     
     adv_course_code = []
     adv_prereqs = []
     adv_course_code_no_prereq = []
     
+    ## loading university and students
     for key, value in PREREQUISITE:
         if value and value != ['']:
             adv_course_code.append(key)
             adv_prereqs.append(value)
         else:
             adv_course_code_no_prereq.append(key)
-    print("Advanced courses with prerequisites:")
     for code, prereq in zip(adv_course_code, adv_prereqs):
         print(f"{code} with prerequisites {prereq}")
     print("\nCourses with no prerequisites:")

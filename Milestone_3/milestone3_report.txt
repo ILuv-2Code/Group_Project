@@ -1,11 +1,11 @@
-#Written by Mark Le
+#Written by Mark Le, reviewed and edited by David Matos
 Milestone 3 Report
 (Note: the information here are infered from the slides and resources from geeksforgeeks. The work is manually written)
 - HashMap Time complexity
     + Because we use separate chaining for handling hash collisions, the result for time complexity will be as follows:
         a) put: O(1) best + average, O(n) worst case:
             The hashing function has two parts: compute index (O(1)) and appending (O(1) best + average/O(n) worst)
-            While the appending part is O(1), the appending function requires comparison to the other values in the index.
+            While the appending part is O(1), the appending function requires comparison to the other values in the index (membership testing).
             Typicaly, the key and values are pretty well spread out, so the comparison is minimal (can be considered constant) and can be put as constant
             However, worst case scenario will be all key-value pairs in one bucket. In this case, comparing with all the elements (n elements) requires O(n) time.
         There's also the cost of rehashing, which is O(n) per rehash, however because we do this once every O(n) times, the cost of rehashing in this function overall is O(1).
