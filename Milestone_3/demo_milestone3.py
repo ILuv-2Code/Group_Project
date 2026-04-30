@@ -143,9 +143,6 @@ with open('demo_output.txt', 'w') as f:
             uconn.add_course(course_code, credits, capacity)
     
     courses = list(uconn.courses.values())
-    # Milestone 3: request_enroll now checks prerequisites. Filter to courses whose
-    # prerequisites list is empty so fresh students (no course history) can still enroll as before.
-    # Note: we check the list value, not just key existence — CSE1010 is in the hashmap but with []
     courses = [c for c in courses if c.course_code not in PREREQUISITE or not PREREQUISITE.get(c.course_code)]
     print("Courses loaded (filtered to those with no prerequisites):")
     for course in courses:
