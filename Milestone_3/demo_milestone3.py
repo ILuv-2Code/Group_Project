@@ -258,7 +258,8 @@ with open('demo_output.txt', 'w') as f:
     
     # rehashing
     print("Adding another course to force rehash")
-    print("Adding 'CSE 4001':", hm.put("CSE4001", ["CSE3100"]))
+    print("Adding 'CSE 4001':")
+    hm.put("CSE4001", ["CSE3100"])
     print("Buckets after rehash:", hm._n_buckets)
     
     print("Duplicate Insertion attempt")
