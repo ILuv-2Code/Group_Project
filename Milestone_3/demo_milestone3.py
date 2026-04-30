@@ -261,43 +261,72 @@ with open('demo_output.txt', 'w') as f:
     
     print("\n---------------------------Pre-req. verification---------------------------")
     
-    uni = University()
+    uconn_d3 = University()
     
-    adv_course_code = None
+    adv_course_code = []
     adv_prereqs = []
+    adv_course_code_no_prereq = []
     
     for key, value in PREREQUISITE:
-        if value:
-            adv_course_code = key
-            adv_prereqs = value
-            break
+        if value and value != [''] and value != ['None'] and value != ['N/A']:
+            adv_course_code.append(key)
+            adv_prereqs.append(value)
+        else:
+            adv_course_code_no_prereq.append(key)
+    print("Advanced courses with prerequisites:")
+    for code, prereq in zip(adv_course_code, adv_prereqs):
+        print(f"{code} with prerequisites {prereq}")
+    print("\nCourses with no prerequisites:")
+    for code in adv_course_code_no_prereq:
+        print(code)
     
-    print("Advanced course:", adv_course_code)
-    print("Its prerequisites:", adv_prereqs)
+    with open('course_catalog.csv', 'r') as f: # Reads course catalog and adds courses to UConn
+        course_reader = csv.reader(f, delimiter=',')
+        next(course_reader) # skip header row
+        for row in course_reader:
+            course_code, credits = row
+            uconn_d3.add_course(course_code, int(credits), 30) # Milestone 3: capacity added (default 30); course_catalog.csv has no capacity column
+    #Check enrollment from UConn student
+    with open("university_data.csv", mode='r') as f:
+        student_reader = csv.reader(f, delimiter=',')
+        next(student_reader) # skip header row
+        for row in student_reader:
+            student_id, name, course_data, gpa = row # I believe adding gpa to the CSV file is a readability mistake, as it forces an "empty" column that I don't think is at all necessary, but I left it in for the sake of consistency with the provided CSV file. The gpa column is not used in the code, as the GPA is calculated based on the course enrollments and grades for each student.
+            student = uconn_d3.add_student(student_id, name)
+            course_class_and_grades = course_data.split(';')
+            for course_info in course_class_and_grades:
+                if course_info.strip() == "":
+                    continue
+                course_code, grade = course_info.split(':')
+                course = uconn_d3.get_course(course_code)
+                if course is not None:
+                    student.enroll(course, grade)
+                else:
+                    raise ValueError(f"{course_code} not found in university catalog. Please check your course information again.")
+    print("University data loaded complete.")
+    print("Testing enrollment with prerequisites...")
+    with open("enrollments_CSE10.csv", mode='r') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            student_id = row['student_id']
+            name = "Test Student" # Using a generic name for testing purposes.
+            course_code = row['course_id']
+            student = uconn_d3.add_student(student_id, name)
+            course = uconn_d3.get_course(course_code)
+            if course:
+                try:
+                    course.request_enroll(student, datetime.date(2026, 1, random.randint(1, 31)))
+                    print(f"Enrollment successful: {student_id} enrolled in {course_code}")
+                except ValueError as e:
+                    print(f"Enrollment failed for {student_id} in {course_code}: {e}")
+            else:
+                pass # Some of the courses in the original data is not prevalent in the courses for milestone 3, so I'll pass to keep space.
     
-    adv = uni.add_course(adv_course_code, 3, 10)
-    
-    alice = uni.add_student("STU00001", "Alice")
-    bob   = uni.add_student("STU00002", "Bob")
-    
-    for prereq_code in adv_prereqs:
-        prereq_course = uni.add_course(prereq_code, 3, 10)
-        alice.enroll(prereq_course, "A")
-    
-    print("Alice's completed courses:", [c.course_code for c in alice.get_courses()])
-    print("Bob's completed courses:  ", [c.course_code for c in bob.get_courses()])
-    
-
-    adv.request_enroll(alice, datetime.date(2026, 1, 15))
-    print("Enrolled in", adv_course_code, ":", [r.student.name for r in adv.enrolled_roster])
-
-    # prints warning instead of error
-    adv.request_enroll(bob, datetime.date(2026, 1, 15))
-
     
     print("\n---------------------------Sorting---------------------------")
     
-    sort_course = uni.add_course("CSE9001", 3, 20)
+    print("Creating synthetic data as sorting data has been shown in Demo 2")
+    sort_course = uconn_d3.add_course("CSE9001", 3, 20)
     
     students_data = [
         ("STU00010", "Zara",  datetime.date(2026, 3, 5)),
@@ -308,7 +337,7 @@ with open('demo_output.txt', 'w') as f:
     ]
     
     for sid, sname, sdate in students_data:
-        s = uni.add_student(sid, sname)
+        s = uconn_d3.add_student(sid, sname)
         sort_course.request_enroll(s, sdate)
     
     print("Original order:")

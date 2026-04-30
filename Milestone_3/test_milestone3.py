@@ -76,7 +76,8 @@ class TestEnrollment(unittest.TestCase):
         course_with_prereq.request_enroll(student2, datetime.date(2026, 4, 2))
         course_with_prereq.request_enroll(student3, datetime.date(2026, 4, 3))
         course_with_prereq.request_enroll(student4, datetime.date(2026, 4, 4))
-        course_with_prereq.request_enroll(student5, datetime.date(2026, 4, 5))
+        with self.assertRaises(ValueError):
+            course_with_prereq.request_enroll(student5, datetime.date(2026, 4, 5))
         self.assertEqual(len(course_with_prereq.enrolled_roster), 4) #Only 4 students should be enrolled because student5 does not meet the prerequisite
         self.assertEqual(course_with_prereq.enrolled_roster[0].student.name, "Student1")
         self.assertEqual(course_with_prereq.enrolled_roster[0].enroll_date, datetime.date(2026, 4, 1))
