@@ -34,21 +34,8 @@ class Course:
             for prereq in self.prerequisite.get(self.course_code):
                 if prereq not in student_studied:
                     prerequisite_met = False
-<<<<<<< HEAD
-                    print(f"{student.name}, studentID {student.student_id} does not meet the prerequisites for this course. Cannot enroll in {self.course_code}.")
-                    break
-        ## \/\/ TA READ HERE \/\/ ##
-        ## \/\/ TA READ HERE \/\/ ##
-        ## \/\/ TA READ HERE \/\/ ##
-        '''Note: In the requirements, it requires that if false, raise Exception. But this will disrupt the flow of the program, and I think it's better to just print a message and not enroll the student in the course if they don't meet the prerequisites, rather than raising an exception which would require handling the exception in the calling code. What I do know that the method to raise exceptions are raise Exception("message"), so we're all good on that.'''
-        ## ^^ TA READ HERE ^^ ##
-        ## ^^ TA READ HERE ^^ ##
-        ## ^^ TA READ HERE ^^ ##
-
-=======
                     raise ValueError(f"{student.name}, studentID {student.student_id} does not meet the prerequisites for this course. Cannot enroll in {self.course_code}.")
         '''Note: In the requirements, it requires that if false, raise Exception. However, I think it would be better to raise a ValueError with a specific message about the prerequisite not being met, as this provides more information about why the enrollment failed and allows for better error handling in the program. Raising a generic Exception would not provide as much context about the error and could make it harder to debug issues related to prerequisites.'''
->>>>>>> 6f1922a (Added the necessary fixes to main file and test file so that it could work with the requirements of the milestone whilst ensuring a smooth running demo)
         if prerequisite_met:
             if enrollment_record in self.enrolled_roster:
                 print(f"{student.name}, studentID {student.student_id} is already enrolled in this course.")

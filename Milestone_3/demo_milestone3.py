@@ -143,10 +143,11 @@ with open('demo_output.txt', 'w') as f:
             uconn.add_course(course_code, credits, capacity)
     
     courses = list(uconn.courses.values())
-    courses = [c for c in courses if c.course_code not in PREREQUISITE or not PREREQUISITE.get(c.course_code)]
-    print("Courses loaded (filtered to those with no prerequisites):")
-    for course in courses:
-        print(f"{course.course_code} - Credits: {course.credits}, Capacity: {course.capacity}")
+    if course:
+        try:
+            course.request_enroll(student, datetime.date(2026, 1, random.randint(1, 31)))
+        except ValueError:
+            pass
     
     print("\nCreating students and enrolling in all classes...")
     print("Grabbing data from enrollments_CSE10.csv...")
@@ -164,7 +165,11 @@ with open('demo_output.txt', 'w') as f:
             student = students[student_id]
             course = next((c for c in courses if c.course_code == course_code), None)
             if course:
-                course.request_enroll(student, datetime.date(2026, 1, random.randint(1, 31))) # Using a random date in January to check sorting algorithm.
+                try:
+                    course.request_enroll(student, datetime.date(2026, 1, random.randint(1, 31))) # Using a random date in January to check sorting algorithm.
+                except ValueError as e:
+                    print(f"Enrollment failed for {student_id} in {course_code}: {e}")
+
     print("Enrollment complete. Displaying enrolled students for each course:")
     for course in courses:
         print(f"\n{course.course_code} Enrolled Students:")
@@ -268,7 +273,7 @@ with open('demo_output.txt', 'w') as f:
     adv_course_code_no_prereq = []
     
     for key, value in PREREQUISITE:
-        if value and value != [''] and value != ['None'] and value != ['N/A']:
+        if value and value != ['']:
             adv_course_code.append(key)
             adv_prereqs.append(value)
         else:

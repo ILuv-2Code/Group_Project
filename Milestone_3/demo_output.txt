@@ -5,54 +5,30 @@ University data loaded complete.
 -------------------------------------------------------------
 Starting demonstrations...
 Choosing a random course within the catalog
-<<<<<<< HEAD
-Students enrolled in PSYCH1010:
+Students enrolled in CSE2050:
 -------------------------------------------------------------
 Print GPA of a student
 Choosing a random student from the university data...
-GPA of student Student_69 (ID: STU00069): 3.36
+GPA of student Student_12 (ID: STU00012): 2.63
 -------------------------------------------------------------
 Print all the courses and course info ( grades and credits ) for a student
 Choosing a random student from the university data...
-Course information for student Student_11 (ID: STU00011):
-Course Code: PHYS1010, Credits: 3, Grade: B
-Course Code: MATH2010, Credits: 3, Grade: B+
-Course Code: CSE3100, Credits: 2, Grade: C+
+Course information for student Student_140 (ID: STU00140):
+Course Code: PHYS2010, Credits: 2, Grade: C+
+Course Code: CHEM1010, Credits: 3, Grade: B
+Course Code: MATH1010, Credits: 3, Grade: B-
+Course Code: PSYCH1010, Credits: 2, Grade: A
+Course Code: CSE2050, Credits: 2, Grade: C
 -------------------------------------------------------------
 Calculate mean, mode and median for a course
 Choosing a random course within the catalog...
-No grades found for course MATH1010.
-=======
-Students enrolled in MATH1010:
--------------------------------------------------------------
-Print GPA of a student
-Choosing a random student from the university data...
-GPA of student Student_188 (ID: STU00188): 2.33
--------------------------------------------------------------
-Print all the courses and course info ( grades and credits ) for a student
-Choosing a random student from the university data...
-Course information for student Student_148 (ID: STU00148):
-Course Code: ENG1010, Credits: 3, Grade: C-
-Course Code: BIO1010, Credits: 3, Grade: C
-Course Code: MATH2010, Credits: 3, Grade: C
-Course Code: CSE2050, Credits: 2, Grade: B+
-Course Code: PHYS2010, Credits: 2, Grade: F
-Course Code: CHEM1010, Credits: 3, Grade: B+
--------------------------------------------------------------
-Calculate mean, mode and median for a course
-Choosing a random course within the catalog...
-No grades found for course CSE1010.
->>>>>>> 6f1922a (Added the necessary fixes to main file and test file so that it could work with the requirements of the milestone whilst ensuring a smooth running demo)
+No grades found for course BUS1010.
 -------------------------------------------------------------
 Calculate mean and median for the GPA of all students in the university
 Mean GPA of all students: 2.73, Median GPA of all students: 2.77
 -------------------------------------------------------------
 Print common students in two different courses:
-<<<<<<< HEAD
-Course 1: MATH1010, Course 2: ECON1010
-=======
-Course 1: BIO1010, Course 2: MATH1010
->>>>>>> 6f1922a (Added the necessary fixes to main file and test file so that it could work with the requirements of the milestone whilst ensuring a smooth running demo)
+Course 1: ENG1010, Course 2: PHYS2010
 No common students enrolled in both courses.
 
 ---------------------Finished Demo 1---------------------
@@ -71,262 +47,354 @@ Loading course: CSE3140 with 2 credits and capacity of 24
 Loading course: CSE3150 with 3 credits and capacity of 25
 Loading course: CSE3500 with 3 credits and capacity of 30
 Loading course: CSE3666 with 3 credits and capacity of 28
-Courses loaded (filtered to those with no prerequisites):
-CSE1010 - Credits: 3, Capacity: 40
-CSE2600 - Credits: 3, Capacity: 30
-CSE3140 - Credits: 2, Capacity: 24
-CSE3666 - Credits: 3, Capacity: 28
 
 Creating students and enrolling in all classes...
 Grabbing data from enrollments_CSE10.csv...
+Enrollment failed for STU00046 in CSE2050: Lucas Davis, studentID STU00046 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00047 in CSE2050: Emma Brown, studentID STU00047 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00048 in CSE2050: Sophia Miller, studentID STU00048 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00049 in CSE2050: Olivia Hernandez, studentID STU00049 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00050 in CSE2050: Mia Garcia, studentID STU00050 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00051 in CSE2050: Ava Smith, studentID STU00051 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00052 in CSE2050: Lucas Davis, studentID STU00052 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00053 in CSE2050: Liam Smith, studentID STU00053 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00054 in CSE2050: Mia Miller, studentID STU00054 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00055 in CSE2050: Mia Jones, studentID STU00055 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00056 in CSE2050: Sophia Jones, studentID STU00056 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00057 in CSE2050: Mia Hernandez, studentID STU00057 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00058 in CSE2050: Ava Smith, studentID STU00058 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00059 in CSE2050: Mason Miller, studentID STU00059 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00060 in CSE2050: Emma Martinez, studentID STU00060 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00061 in CSE2050: Ava Martinez, studentID STU00061 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00062 in CSE2050: Liam Miller, studentID STU00062 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00063 in CSE2050: Sophia Miller, studentID STU00063 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00064 in CSE2050: Olivia Johnson, studentID STU00064 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00065 in CSE2050: Olivia Johnson, studentID STU00065 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00066 in CSE2050: Ava Jones, studentID STU00066 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00067 in CSE2050: Mason Hernandez, studentID STU00067 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00068 in CSE2050: Ava Smith, studentID STU00068 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00069 in CSE2050: Olivia Martinez, studentID STU00069 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00070 in CSE2050: Emma Brown, studentID STU00070 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00071 in CSE2050: Sophia Martinez, studentID STU00071 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00072 in CSE2050: Mason Johnson, studentID STU00072 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00073 in CSE2050: Mason Davis, studentID STU00073 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00074 in CSE2050: Ava Garcia, studentID STU00074 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00075 in CSE2050: Isabella Miller, studentID STU00075 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00076 in CSE2050: Ava Smith, studentID STU00076 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00077 in CSE2050: Mia Smith, studentID STU00077 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00078 in CSE2050: Mia Davis, studentID STU00078 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00079 in CSE2050: Isabella Smith, studentID STU00079 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00080 in CSE2050: Noah Hernandez, studentID STU00080 does not meet the prerequisites for this course. Cannot enroll in CSE2050.
+Enrollment failed for STU00081 in CSE2102: Emma Davis, studentID STU00081 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00082 in CSE2102: Ava Miller, studentID STU00082 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00083 in CSE2102: Sophia Smith, studentID STU00083 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00084 in CSE2102: Noah Brown, studentID STU00084 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00085 in CSE2102: Mason Miller, studentID STU00085 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00086 in CSE2102: Olivia Martinez, studentID STU00086 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00087 in CSE2102: Mia Johnson, studentID STU00087 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00088 in CSE2102: Olivia Garcia, studentID STU00088 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00089 in CSE2102: Sophia Williams, studentID STU00089 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00090 in CSE2102: Mason Martinez, studentID STU00090 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00091 in CSE2102: Noah Brown, studentID STU00091 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00092 in CSE2102: Lucas Jones, studentID STU00092 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00093 in CSE2102: Olivia Miller, studentID STU00093 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00094 in CSE2102: Emma Martinez, studentID STU00094 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00095 in CSE2102: Mia Williams, studentID STU00095 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00096 in CSE2102: Emma Jones, studentID STU00096 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00097 in CSE2102: Sophia Miller, studentID STU00097 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00098 in CSE2102: Mason Brown, studentID STU00098 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00099 in CSE2102: Liam Martinez, studentID STU00099 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00100 in CSE2102: Mason Williams, studentID STU00100 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00101 in CSE2102: Ava Brown, studentID STU00101 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00102 in CSE2102: Lucas Brown, studentID STU00102 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00103 in CSE2102: Isabella Jones, studentID STU00103 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00104 in CSE2102: Olivia Williams, studentID STU00104 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00105 in CSE2102: Sophia Jones, studentID STU00105 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00106 in CSE2102: Lucas Miller, studentID STU00106 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00107 in CSE2102: Liam Johnson, studentID STU00107 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00108 in CSE2102: Olivia Garcia, studentID STU00108 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00109 in CSE2102: Ava Hernandez, studentID STU00109 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00110 in CSE2102: Ava Smith, studentID STU00110 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00111 in CSE2500: Liam Garcia, studentID STU00111 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00112 in CSE2500: Olivia Martinez, studentID STU00112 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00113 in CSE2500: Ava Smith, studentID STU00113 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00114 in CSE2500: Sophia Hernandez, studentID STU00114 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00115 in CSE2500: Lucas Martinez, studentID STU00115 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00116 in CSE2500: Noah Garcia, studentID STU00116 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00117 in CSE2500: Olivia Martinez, studentID STU00117 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00118 in CSE2500: Mason Smith, studentID STU00118 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00119 in CSE2500: Noah Jones, studentID STU00119 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00120 in CSE2500: Emma Johnson, studentID STU00120 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00121 in CSE2500: Mia Martinez, studentID STU00121 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00122 in CSE2500: Olivia Jones, studentID STU00122 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00123 in CSE2500: Ava Garcia, studentID STU00123 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00124 in CSE2500: Liam Garcia, studentID STU00124 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00125 in CSE2500: Sophia Miller, studentID STU00125 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00126 in CSE2500: Ava Brown, studentID STU00126 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00127 in CSE2500: Mason Garcia, studentID STU00127 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00128 in CSE2500: Mia Johnson, studentID STU00128 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00129 in CSE2500: Mia Garcia, studentID STU00129 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00130 in CSE2500: Noah Jones, studentID STU00130 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00131 in CSE2500: Lucas Smith, studentID STU00131 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00132 in CSE2500: Liam Johnson, studentID STU00132 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00133 in CSE2500: Lucas Hernandez, studentID STU00133 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00134 in CSE2500: Isabella Smith, studentID STU00134 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00135 in CSE2500: Olivia Miller, studentID STU00135 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00136 in CSE2500: Olivia Jones, studentID STU00136 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00137 in CSE2500: Ava Martinez, studentID STU00137 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00138 in CSE2500: Ava Davis, studentID STU00138 does not meet the prerequisites for this course. Cannot enroll in CSE2500.
+Enrollment failed for STU00085 in CSE3100: Mason Miller, studentID STU00085 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00086 in CSE3100: Olivia Martinez, studentID STU00086 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00087 in CSE3100: Mia Johnson, studentID STU00087 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00088 in CSE3100: Olivia Garcia, studentID STU00088 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00089 in CSE3100: Sophia Williams, studentID STU00089 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00090 in CSE3100: Mason Martinez, studentID STU00090 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00091 in CSE3100: Noah Brown, studentID STU00091 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00092 in CSE3100: Lucas Jones, studentID STU00092 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00093 in CSE3100: Olivia Miller, studentID STU00093 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00094 in CSE3100: Emma Martinez, studentID STU00094 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00095 in CSE3100: Mia Williams, studentID STU00095 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00096 in CSE3100: Emma Jones, studentID STU00096 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00097 in CSE3100: Sophia Miller, studentID STU00097 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00098 in CSE3100: Mason Brown, studentID STU00098 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00099 in CSE3100: Liam Martinez, studentID STU00099 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00100 in CSE3100: Mason Williams, studentID STU00100 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00101 in CSE3100: Ava Brown, studentID STU00101 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00102 in CSE3100: Lucas Brown, studentID STU00102 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00103 in CSE3100: Isabella Jones, studentID STU00103 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00104 in CSE3100: Olivia Williams, studentID STU00104 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00105 in CSE3100: Sophia Jones, studentID STU00105 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00106 in CSE3100: Lucas Miller, studentID STU00106 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00107 in CSE3100: Liam Johnson, studentID STU00107 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00108 in CSE3100: Olivia Garcia, studentID STU00108 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00109 in CSE3100: Ava Hernandez, studentID STU00109 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00110 in CSE3100: Ava Smith, studentID STU00110 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00111 in CSE3100: Liam Garcia, studentID STU00111 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00112 in CSE3100: Olivia Martinez, studentID STU00112 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00153 in CSE3150: Ava Jones, studentID STU00153 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00154 in CSE3150: Mason Johnson, studentID STU00154 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00155 in CSE3150: Mason Garcia, studentID STU00155 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00156 in CSE3150: Lucas Davis, studentID STU00156 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00157 in CSE3150: Olivia Martinez, studentID STU00157 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00158 in CSE3150: Noah Martinez, studentID STU00158 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00159 in CSE3150: Olivia Jones, studentID STU00159 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00160 in CSE3150: Noah Smith, studentID STU00160 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00161 in CSE3150: Olivia Martinez, studentID STU00161 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00162 in CSE3150: Sophia Miller, studentID STU00162 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00163 in CSE3150: Liam Johnson, studentID STU00163 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00164 in CSE3150: Olivia Davis, studentID STU00164 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00165 in CSE3150: Olivia Brown, studentID STU00165 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00166 in CSE3150: Mason Miller, studentID STU00166 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00167 in CSE3150: Lucas Miller, studentID STU00167 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00168 in CSE3150: Ava Davis, studentID STU00168 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00169 in CSE3150: Noah Martinez, studentID STU00169 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00170 in CSE3150: Emma Martinez, studentID STU00170 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00171 in CSE3150: Emma Davis, studentID STU00171 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00172 in CSE3150: Emma Garcia, studentID STU00172 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00173 in CSE3150: Noah Williams, studentID STU00173 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00174 in CSE3150: Emma Garcia, studentID STU00174 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00175 in CSE3150: Isabella Martinez, studentID STU00175 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00176 in CSE3150: Sophia Martinez, studentID STU00176 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00177 in CSE3150: Isabella Hernandez, studentID STU00177 does not meet the prerequisites for this course. Cannot enroll in CSE3150.
+Enrollment failed for STU00178 in CSE3500: Noah Johnson, studentID STU00178 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00179 in CSE3500: Mia Williams, studentID STU00179 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00180 in CSE3500: Lucas Smith, studentID STU00180 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00181 in CSE3500: Liam Hernandez, studentID STU00181 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00182 in CSE3500: Noah Davis, studentID STU00182 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00183 in CSE3500: Lucas Miller, studentID STU00183 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00184 in CSE3500: Noah Johnson, studentID STU00184 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00185 in CSE3500: Sophia Davis, studentID STU00185 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00186 in CSE3500: Noah Martinez, studentID STU00186 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00187 in CSE3500: Ava Hernandez, studentID STU00187 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00188 in CSE3500: Emma Martinez, studentID STU00188 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00189 in CSE3500: Mason Hernandez, studentID STU00189 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00190 in CSE3500: Noah Brown, studentID STU00190 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00191 in CSE3500: Ava Hernandez, studentID STU00191 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00192 in CSE3500: Emma Williams, studentID STU00192 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00193 in CSE3500: Noah Jones, studentID STU00193 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00194 in CSE3500: Mia Miller, studentID STU00194 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00195 in CSE3500: Liam Brown, studentID STU00195 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00196 in CSE3500: Ava Miller, studentID STU00196 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00197 in CSE3500: Isabella Smith, studentID STU00197 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00198 in CSE3500: Emma Davis, studentID STU00198 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00199 in CSE3500: Isabella Jones, studentID STU00199 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00200 in CSE3500: Mason Johnson, studentID STU00200 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00025 in CSE3500: Mia Jones, studentID STU00025 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00026 in CSE3500: Ava Johnson, studentID STU00026 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00027 in CSE3500: Emma Williams, studentID STU00027 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00028 in CSE3500: Mia Miller, studentID STU00028 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00029 in CSE3500: Ava Miller, studentID STU00029 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00030 in CSE3500: Isabella Smith, studentID STU00030 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00031 in CSE3500: Noah Hernandez, studentID STU00031 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00059 in CSE2102: Mason Miller, studentID STU00059 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00060 in CSE3500: Emma Martinez, studentID STU00060 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00061 in CSE3100: Ava Martinez, studentID STU00061 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00062 in CSE3500: Liam Miller, studentID STU00062 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00063 in CSE3500: Sophia Miller, studentID STU00063 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00064 in CSE2102: Olivia Johnson, studentID STU00064 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00065 in CSE3100: Olivia Johnson, studentID STU00065 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00066 in CSE2102: Ava Jones, studentID STU00066 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00067 in CSE3100: Mason Hernandez, studentID STU00067 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
+Enrollment failed for STU00068 in CSE3500: Ava Smith, studentID STU00068 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00069 in CSE3500: Olivia Martinez, studentID STU00069 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00070 in CSE2102: Emma Brown, studentID STU00070 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00071 in CSE3500: Sophia Martinez, studentID STU00071 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00072 in CSE3500: Mason Johnson, studentID STU00072 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
+Enrollment failed for STU00073 in CSE2102: Mason Davis, studentID STU00073 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00074 in CSE2102: Ava Garcia, studentID STU00074 does not meet the prerequisites for this course. Cannot enroll in CSE2102.
+Enrollment failed for STU00075 in CSE3500: Isabella Miller, studentID STU00075 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
 Enrollment complete. Displaying enrolled students for each course:
 
 CSE1010 Enrolled Students:
-<<<<<<< HEAD
-STU00001 - Mason Garcia (Enrolled on: 2026-01-15)
-STU00002 - Sophia Johnson (Enrolled on: 2026-01-13)
-STU00003 - Lucas Smith (Enrolled on: 2026-01-01)
-STU00004 - Mia Smith (Enrolled on: 2026-01-21)
-STU00005 - Isabella Smith (Enrolled on: 2026-01-16)
-STU00006 - Ava Johnson (Enrolled on: 2026-01-30)
-STU00007 - Emma Martinez (Enrolled on: 2026-01-27)
-STU00008 - Sophia Johnson (Enrolled on: 2026-01-15)
-STU00009 - Mia Martinez (Enrolled on: 2026-01-25)
-STU00010 - Olivia Smith (Enrolled on: 2026-01-17)
-STU00011 - Isabella Williams (Enrolled on: 2026-01-16)
-STU00012 - Olivia Miller (Enrolled on: 2026-01-13)
-STU00013 - Olivia Brown (Enrolled on: 2026-01-12)
-STU00014 - Mason Brown (Enrolled on: 2026-01-26)
-STU00015 - Sophia Hernandez (Enrolled on: 2026-01-27)
-STU00016 - Ava Hernandez (Enrolled on: 2026-01-01)
-STU00017 - Noah Brown (Enrolled on: 2026-01-03)
-STU00018 - Olivia Smith (Enrolled on: 2026-01-25)
-STU00019 - Sophia Martinez (Enrolled on: 2026-01-04)
-STU00020 - Mia Hernandez (Enrolled on: 2026-01-12)
-STU00021 - Lucas Davis (Enrolled on: 2026-01-31)
-STU00022 - Isabella Johnson (Enrolled on: 2026-01-01)
-STU00023 - Mason Smith (Enrolled on: 2026-01-05)
-STU00024 - Sophia Garcia (Enrolled on: 2026-01-10)
-STU00025 - Lucas Williams (Enrolled on: 2026-01-09)
-STU00026 - Mia Hernandez (Enrolled on: 2026-01-16)
-STU00027 - Lucas Jones (Enrolled on: 2026-01-27)
-STU00028 - Isabella Jones (Enrolled on: 2026-01-07)
-STU00029 - Mia Miller (Enrolled on: 2026-01-19)
-STU00030 - Liam Hernandez (Enrolled on: 2026-01-30)
-STU00031 - Sophia Smith (Enrolled on: 2026-01-26)
-STU00032 - Sophia Brown (Enrolled on: 2026-01-16)
-STU00033 - Olivia Garcia (Enrolled on: 2026-01-28)
-STU00034 - Isabella Martinez (Enrolled on: 2026-01-25)
+STU00001 - Isabella Hernandez (Enrolled on: 2026-01-14)
+STU00002 - Olivia Garcia (Enrolled on: 2026-01-20)
+STU00003 - Emma Brown (Enrolled on: 2026-01-06)
+STU00004 - Mason Brown (Enrolled on: 2026-01-25)
+STU00005 - Mason Jones (Enrolled on: 2026-01-12)
+STU00006 - Isabella Davis (Enrolled on: 2026-01-31)
+STU00007 - Liam Johnson (Enrolled on: 2026-01-17)
+STU00008 - Emma Williams (Enrolled on: 2026-01-03)
+STU00009 - Mia Williams (Enrolled on: 2026-01-05)
+STU00010 - Olivia Davis (Enrolled on: 2026-01-01)
+STU00011 - Mia Smith (Enrolled on: 2026-01-28)
+STU00012 - Mia Hernandez (Enrolled on: 2026-01-12)
+STU00013 - Ava Davis (Enrolled on: 2026-01-16)
+STU00014 - Mia Williams (Enrolled on: 2026-01-31)
+STU00015 - Mia Martinez (Enrolled on: 2026-01-13)
+STU00016 - Liam Jones (Enrolled on: 2026-01-25)
+STU00017 - Noah Williams (Enrolled on: 2026-01-01)
+STU00018 - Isabella Miller (Enrolled on: 2026-01-10)
+STU00019 - Liam Miller (Enrolled on: 2026-01-12)
+STU00020 - Ava Hernandez (Enrolled on: 2026-01-25)
+STU00021 - Emma Hernandez (Enrolled on: 2026-01-20)
+STU00022 - Sophia Smith (Enrolled on: 2026-01-07)
+STU00023 - Noah Miller (Enrolled on: 2026-01-21)
+STU00024 - Noah Williams (Enrolled on: 2026-01-05)
+STU00025 - Mia Jones (Enrolled on: 2026-01-21)
+STU00026 - Ava Johnson (Enrolled on: 2026-01-13)
+STU00027 - Emma Williams (Enrolled on: 2026-01-17)
+STU00028 - Mia Miller (Enrolled on: 2026-01-31)
+STU00029 - Ava Miller (Enrolled on: 2026-01-03)
+STU00030 - Isabella Smith (Enrolled on: 2026-01-03)
+STU00031 - Noah Hernandez (Enrolled on: 2026-01-10)
+STU00032 - Noah Miller (Enrolled on: 2026-01-02)
+STU00033 - Liam Williams (Enrolled on: 2026-01-08)
+STU00034 - Isabella Hernandez (Enrolled on: 2026-01-28)
+
+CSE2050 Enrolled Students:
+
+CSE2102 Enrolled Students:
+
+CSE2500 Enrolled Students:
 
 CSE2600 Enrolled Students:
-STU00055 - Ava Johnson (Enrolled on: 2026-01-23)
-STU00056 - Noah Garcia (Enrolled on: 2026-01-04)
-STU00057 - Emma Miller (Enrolled on: 2026-01-30)
-STU00058 - Ava Martinez (Enrolled on: 2026-01-17)
-STU00059 - Mia Hernandez (Enrolled on: 2026-01-03)
-STU00060 - Olivia Hernandez (Enrolled on: 2026-01-14)
-STU00061 - Sophia Jones (Enrolled on: 2026-01-19)
-STU00062 - Lucas Johnson (Enrolled on: 2026-01-27)
-STU00063 - Emma Smith (Enrolled on: 2026-01-19)
-STU00064 - Ava Williams (Enrolled on: 2026-01-01)
-STU00065 - Emma Jones (Enrolled on: 2026-01-24)
-STU00066 - Olivia Johnson (Enrolled on: 2026-01-15)
-STU00067 - Sophia Martinez (Enrolled on: 2026-01-09)
-STU00068 - Ava Smith (Enrolled on: 2026-01-06)
-STU00069 - Liam Garcia (Enrolled on: 2026-01-30)
-STU00070 - Noah Davis (Enrolled on: 2026-01-30)
-STU00071 - Emma Miller (Enrolled on: 2026-01-28)
-STU00072 - Isabella Miller (Enrolled on: 2026-01-09)
-STU00073 - Isabella Hernandez (Enrolled on: 2026-01-17)
-STU00074 - Isabella Hernandez (Enrolled on: 2026-01-14)
-STU00075 - Sophia Smith (Enrolled on: 2026-01-12)
-STU00076 - Olivia Garcia (Enrolled on: 2026-01-21)
-STU00077 - Lucas Smith (Enrolled on: 2026-01-07)
-STU00078 - Ava Smith (Enrolled on: 2026-01-10)
-STU00079 - Sophia Davis (Enrolled on: 2026-01-30)
-STU00080 - Ava Jones (Enrolled on: 2026-01-23)
-STU00081 - Ava Miller (Enrolled on: 2026-01-21)
-STU00082 - Liam Hernandez (Enrolled on: 2026-01-24)
-STU00083 - Lucas Johnson (Enrolled on: 2026-01-08)
-STU00084 - Olivia Brown (Enrolled on: 2026-01-05)
+STU00055 - Mia Jones (Enrolled on: 2026-01-27)
+STU00056 - Sophia Jones (Enrolled on: 2026-01-26)
+STU00057 - Mia Hernandez (Enrolled on: 2026-01-31)
+STU00058 - Ava Smith (Enrolled on: 2026-01-17)
+STU00059 - Mason Miller (Enrolled on: 2026-01-25)
+STU00060 - Emma Martinez (Enrolled on: 2026-01-14)
+STU00061 - Ava Martinez (Enrolled on: 2026-01-21)
+STU00062 - Liam Miller (Enrolled on: 2026-01-23)
+STU00063 - Sophia Miller (Enrolled on: 2026-01-15)
+STU00064 - Olivia Johnson (Enrolled on: 2026-01-17)
+STU00065 - Olivia Johnson (Enrolled on: 2026-01-29)
+STU00066 - Ava Jones (Enrolled on: 2026-01-05)
+STU00067 - Mason Hernandez (Enrolled on: 2026-01-25)
+STU00068 - Ava Smith (Enrolled on: 2026-01-30)
+STU00069 - Olivia Martinez (Enrolled on: 2026-01-27)
+STU00070 - Emma Brown (Enrolled on: 2026-01-10)
+STU00071 - Sophia Martinez (Enrolled on: 2026-01-04)
+STU00072 - Mason Johnson (Enrolled on: 2026-01-04)
+STU00073 - Mason Davis (Enrolled on: 2026-01-16)
+STU00074 - Ava Garcia (Enrolled on: 2026-01-29)
+STU00075 - Isabella Miller (Enrolled on: 2026-01-28)
+STU00076 - Ava Smith (Enrolled on: 2026-01-30)
+STU00077 - Mia Smith (Enrolled on: 2026-01-17)
+STU00078 - Mia Davis (Enrolled on: 2026-01-06)
+STU00079 - Isabella Smith (Enrolled on: 2026-01-10)
+STU00080 - Noah Hernandez (Enrolled on: 2026-01-12)
+STU00081 - Emma Davis (Enrolled on: 2026-01-26)
+STU00082 - Ava Miller (Enrolled on: 2026-01-04)
+STU00083 - Sophia Smith (Enrolled on: 2026-01-11)
+STU00084 - Noah Brown (Enrolled on: 2026-01-28)
+
+CSE3100 Enrolled Students:
 
 CSE3140 Enrolled Students:
-STU00113 - Lucas Davis (Enrolled on: 2026-01-02)
-STU00114 - Lucas Smith (Enrolled on: 2026-01-30)
-STU00115 - Liam Martinez (Enrolled on: 2026-01-17)
-STU00116 - Emma Martinez (Enrolled on: 2026-01-06)
-STU00117 - Sophia Brown (Enrolled on: 2026-01-23)
-STU00118 - Olivia Hernandez (Enrolled on: 2026-01-25)
-STU00139 - Liam Davis (Enrolled on: 2026-01-24)
-STU00140 - Mia Johnson (Enrolled on: 2026-01-09)
-STU00141 - Liam Williams (Enrolled on: 2026-01-16)
-STU00142 - Liam Garcia (Enrolled on: 2026-01-27)
-STU00143 - Mason Garcia (Enrolled on: 2026-01-10)
-STU00144 - Mia Smith (Enrolled on: 2026-01-04)
-STU00145 - Emma Hernandez (Enrolled on: 2026-01-17)
-STU00146 - Mason Brown (Enrolled on: 2026-01-19)
-STU00147 - Olivia Garcia (Enrolled on: 2026-01-18)
-STU00148 - Liam Jones (Enrolled on: 2026-01-26)
-STU00149 - Olivia Miller (Enrolled on: 2026-01-24)
-STU00150 - Sophia Davis (Enrolled on: 2026-01-03)
-STU00151 - Sophia Garcia (Enrolled on: 2026-01-04)
-STU00152 - Olivia Jones (Enrolled on: 2026-01-23)
+STU00113 - Ava Smith (Enrolled on: 2026-01-17)
+STU00114 - Sophia Hernandez (Enrolled on: 2026-01-21)
+STU00115 - Lucas Martinez (Enrolled on: 2026-01-09)
+STU00116 - Noah Garcia (Enrolled on: 2026-01-22)
+STU00117 - Olivia Martinez (Enrolled on: 2026-01-31)
+STU00118 - Mason Smith (Enrolled on: 2026-01-30)
+STU00139 - Noah Johnson (Enrolled on: 2026-01-12)
+STU00140 - Lucas Williams (Enrolled on: 2026-01-25)
+STU00141 - Mia Brown (Enrolled on: 2026-01-19)
+STU00142 - Ava Smith (Enrolled on: 2026-01-15)
+STU00143 - Ava Davis (Enrolled on: 2026-01-08)
+STU00144 - Liam Williams (Enrolled on: 2026-01-16)
+STU00145 - Lucas Martinez (Enrolled on: 2026-01-05)
+STU00146 - Isabella Johnson (Enrolled on: 2026-01-06)
+STU00147 - Liam Brown (Enrolled on: 2026-01-15)
+STU00148 - Emma Davis (Enrolled on: 2026-01-16)
+STU00149 - Sophia Martinez (Enrolled on: 2026-01-11)
+STU00150 - Lucas Jones (Enrolled on: 2026-01-09)
+STU00151 - Sophia Johnson (Enrolled on: 2026-01-22)
+STU00152 - Olivia Garcia (Enrolled on: 2026-01-18)
+
+CSE3150 Enrolled Students:
+
+CSE3500 Enrolled Students:
 
 CSE3666 Enrolled Students:
-STU00032 - Sophia Brown (Enrolled on: 2026-01-08)
-STU00033 - Olivia Garcia (Enrolled on: 2026-01-15)
-STU00034 - Isabella Martinez (Enrolled on: 2026-01-03)
-STU00035 - Noah Martinez (Enrolled on: 2026-01-16)
-STU00036 - Sophia Williams (Enrolled on: 2026-01-08)
-STU00037 - Liam Davis (Enrolled on: 2026-01-04)
-STU00038 - Lucas Martinez (Enrolled on: 2026-01-21)
-STU00039 - Noah Jones (Enrolled on: 2026-01-03)
-STU00040 - Emma Jones (Enrolled on: 2026-01-20)
-STU00041 - Mia Johnson (Enrolled on: 2026-01-11)
-STU00042 - Sophia Miller (Enrolled on: 2026-01-19)
-STU00043 - Mason Hernandez (Enrolled on: 2026-01-08)
-STU00044 - Sophia Smith (Enrolled on: 2026-01-25)
-STU00045 - Emma Williams (Enrolled on: 2026-01-21)
-STU00046 - Olivia Garcia (Enrolled on: 2026-01-06)
-STU00047 - Noah Davis (Enrolled on: 2026-01-25)
-STU00048 - Olivia Davis (Enrolled on: 2026-01-27)
-STU00049 - Sophia Williams (Enrolled on: 2026-01-18)
-STU00050 - Mason Hernandez (Enrolled on: 2026-01-02)
-STU00051 - Mason Hernandez (Enrolled on: 2026-01-10)
-STU00052 - Ava Miller (Enrolled on: 2026-01-12)
-STU00053 - Emma Miller (Enrolled on: 2026-01-04)
-STU00054 - Sophia Hernandez (Enrolled on: 2026-01-23)
-STU00055 - Ava Johnson (Enrolled on: 2026-01-28)
-STU00056 - Noah Garcia (Enrolled on: 2026-01-21)
-STU00057 - Emma Miller (Enrolled on: 2026-01-08)
-STU00058 - Ava Martinez (Enrolled on: 2026-01-19)
-=======
-STU00001 - Lucas Williams (Enrolled on: 2026-01-16)
-STU00002 - Olivia Brown (Enrolled on: 2026-01-19)
-STU00003 - Mason Miller (Enrolled on: 2026-01-06)
-STU00004 - Isabella Davis (Enrolled on: 2026-01-23)
-STU00005 - Emma Garcia (Enrolled on: 2026-01-25)
-STU00006 - Liam Jones (Enrolled on: 2026-01-08)
-STU00007 - Ava Hernandez (Enrolled on: 2026-01-02)
-STU00008 - Sophia Hernandez (Enrolled on: 2026-01-01)
-STU00009 - Olivia Jones (Enrolled on: 2026-01-06)
-STU00010 - Mason Brown (Enrolled on: 2026-01-07)
-STU00011 - Sophia Martinez (Enrolled on: 2026-01-19)
-STU00012 - Olivia Williams (Enrolled on: 2026-01-23)
-STU00013 - Isabella Miller (Enrolled on: 2026-01-12)
-STU00014 - Mia Brown (Enrolled on: 2026-01-09)
-STU00015 - Isabella Smith (Enrolled on: 2026-01-25)
-STU00016 - Olivia Hernandez (Enrolled on: 2026-01-29)
-STU00017 - Sophia Jones (Enrolled on: 2026-01-05)
-STU00018 - Emma Brown (Enrolled on: 2026-01-31)
-STU00019 - Liam Williams (Enrolled on: 2026-01-17)
-STU00020 - Ava Johnson (Enrolled on: 2026-01-24)
-STU00021 - Olivia Williams (Enrolled on: 2026-01-08)
-STU00022 - Sophia Smith (Enrolled on: 2026-01-04)
-STU00023 - Mia Hernandez (Enrolled on: 2026-01-26)
-STU00024 - Isabella Garcia (Enrolled on: 2026-01-31)
-STU00025 - Emma Martinez (Enrolled on: 2026-01-12)
-STU00026 - Noah Davis (Enrolled on: 2026-01-16)
-STU00027 - Mason Williams (Enrolled on: 2026-01-25)
-STU00028 - Emma Smith (Enrolled on: 2026-01-30)
-STU00029 - Liam Williams (Enrolled on: 2026-01-15)
-STU00030 - Isabella Martinez (Enrolled on: 2026-01-12)
-STU00031 - Mia Davis (Enrolled on: 2026-01-11)
-STU00032 - Sophia Jones (Enrolled on: 2026-01-16)
-STU00033 - Ava Brown (Enrolled on: 2026-01-22)
-STU00034 - Mia Johnson (Enrolled on: 2026-01-16)
-
-CSE2600 Enrolled Students:
-STU00055 - Noah Hernandez (Enrolled on: 2026-01-13)
-STU00056 - Olivia Johnson (Enrolled on: 2026-01-14)
-STU00057 - Isabella Williams (Enrolled on: 2026-01-15)
-STU00058 - Lucas Martinez (Enrolled on: 2026-01-30)
-STU00059 - Noah Williams (Enrolled on: 2026-01-07)
-STU00060 - Liam Brown (Enrolled on: 2026-01-01)
-STU00061 - Noah Smith (Enrolled on: 2026-01-06)
-STU00062 - Mia Davis (Enrolled on: 2026-01-24)
-STU00063 - Lucas Williams (Enrolled on: 2026-01-15)
-STU00064 - Mason Garcia (Enrolled on: 2026-01-11)
-STU00065 - Ava Smith (Enrolled on: 2026-01-08)
-STU00066 - Emma Garcia (Enrolled on: 2026-01-10)
-STU00067 - Mason Miller (Enrolled on: 2026-01-23)
-STU00068 - Mia Miller (Enrolled on: 2026-01-21)
-STU00069 - Emma Martinez (Enrolled on: 2026-01-26)
-STU00070 - Lucas Hernandez (Enrolled on: 2026-01-09)
-STU00071 - Ava Davis (Enrolled on: 2026-01-13)
-STU00072 - Olivia Johnson (Enrolled on: 2026-01-25)
-STU00073 - Isabella Garcia (Enrolled on: 2026-01-09)
-STU00074 - Liam Miller (Enrolled on: 2026-01-21)
-STU00075 - Olivia Smith (Enrolled on: 2026-01-07)
-STU00076 - Olivia Brown (Enrolled on: 2026-01-03)
-STU00077 - Lucas Smith (Enrolled on: 2026-01-17)
-STU00078 - Lucas Garcia (Enrolled on: 2026-01-01)
-STU00079 - Emma Hernandez (Enrolled on: 2026-01-18)
-STU00080 - Isabella Davis (Enrolled on: 2026-01-13)
-STU00081 - Liam Johnson (Enrolled on: 2026-01-16)
-STU00082 - Ava Davis (Enrolled on: 2026-01-15)
-STU00083 - Emma Jones (Enrolled on: 2026-01-12)
-STU00084 - Mason Jones (Enrolled on: 2026-01-06)
-
-CSE3140 Enrolled Students:
-STU00113 - Sophia Williams (Enrolled on: 2026-01-01)
-STU00114 - Noah Davis (Enrolled on: 2026-01-11)
-STU00115 - Mia Johnson (Enrolled on: 2026-01-11)
-STU00116 - Isabella Williams (Enrolled on: 2026-01-29)
-STU00117 - Mason Smith (Enrolled on: 2026-01-29)
-STU00118 - Ava Miller (Enrolled on: 2026-01-02)
-STU00139 - Mason Garcia (Enrolled on: 2026-01-10)
-STU00140 - Liam Miller (Enrolled on: 2026-01-30)
-STU00141 - Mason Garcia (Enrolled on: 2026-01-04)
-STU00142 - Ava Hernandez (Enrolled on: 2026-01-01)
-STU00143 - Emma Garcia (Enrolled on: 2026-01-08)
-STU00144 - Isabella Hernandez (Enrolled on: 2026-01-07)
-STU00145 - Mason Martinez (Enrolled on: 2026-01-08)
-STU00146 - Mia Hernandez (Enrolled on: 2026-01-24)
-STU00147 - Emma Jones (Enrolled on: 2026-01-13)
-STU00148 - Emma Hernandez (Enrolled on: 2026-01-18)
-STU00149 - Lucas Garcia (Enrolled on: 2026-01-16)
-STU00150 - Liam Jones (Enrolled on: 2026-01-12)
-STU00151 - Mia Jones (Enrolled on: 2026-01-26)
-STU00152 - Emma Martinez (Enrolled on: 2026-01-11)
-
-CSE3666 Enrolled Students:
-STU00032 - Sophia Jones (Enrolled on: 2026-01-26)
-STU00033 - Ava Brown (Enrolled on: 2026-01-06)
-STU00034 - Mia Johnson (Enrolled on: 2026-01-14)
-STU00035 - Liam Jones (Enrolled on: 2026-01-24)
-STU00036 - Ava Smith (Enrolled on: 2026-01-06)
-STU00037 - Sophia Williams (Enrolled on: 2026-01-27)
-STU00038 - Emma Garcia (Enrolled on: 2026-01-03)
-STU00039 - Lucas Martinez (Enrolled on: 2026-01-03)
-STU00040 - Olivia Miller (Enrolled on: 2026-01-17)
-STU00041 - Olivia Brown (Enrolled on: 2026-01-06)
-STU00042 - Ava Jones (Enrolled on: 2026-01-05)
-STU00043 - Emma Martinez (Enrolled on: 2026-01-12)
-STU00044 - Emma Garcia (Enrolled on: 2026-01-12)
-STU00045 - Liam Williams (Enrolled on: 2026-01-13)
-STU00046 - Ava Hernandez (Enrolled on: 2026-01-13)
-STU00047 - Lucas Johnson (Enrolled on: 2026-01-30)
-STU00048 - Sophia Johnson (Enrolled on: 2026-01-07)
-STU00049 - Noah Brown (Enrolled on: 2026-01-30)
-STU00050 - Mia Smith (Enrolled on: 2026-01-17)
-STU00051 - Mia Williams (Enrolled on: 2026-01-02)
-STU00052 - Olivia Miller (Enrolled on: 2026-01-27)
-STU00053 - Noah Williams (Enrolled on: 2026-01-18)
-STU00054 - Mia Williams (Enrolled on: 2026-01-06)
-STU00055 - Noah Hernandez (Enrolled on: 2026-01-01)
-STU00056 - Olivia Johnson (Enrolled on: 2026-01-22)
-STU00057 - Isabella Williams (Enrolled on: 2026-01-08)
-STU00058 - Lucas Martinez (Enrolled on: 2026-01-28)
->>>>>>> 6f1922a (Added the necessary fixes to main file and test file so that it could work with the requirements of the milestone whilst ensuring a smooth running demo)
+STU00032 - Noah Miller (Enrolled on: 2026-01-18)
+STU00033 - Liam Williams (Enrolled on: 2026-01-12)
+STU00034 - Isabella Hernandez (Enrolled on: 2026-01-12)
+STU00035 - Noah Miller (Enrolled on: 2026-01-22)
+STU00036 - Sophia Miller (Enrolled on: 2026-01-19)
+STU00037 - Isabella Brown (Enrolled on: 2026-01-09)
+STU00038 - Mia Miller (Enrolled on: 2026-01-14)
+STU00039 - Ava Williams (Enrolled on: 2026-01-20)
+STU00040 - Liam Smith (Enrolled on: 2026-01-29)
+STU00041 - Sophia Miller (Enrolled on: 2026-01-12)
+STU00042 - Isabella Martinez (Enrolled on: 2026-01-08)
+STU00043 - Liam Hernandez (Enrolled on: 2026-01-10)
+STU00044 - Olivia Brown (Enrolled on: 2026-01-06)
+STU00045 - Mason Garcia (Enrolled on: 2026-01-25)
+STU00046 - Lucas Davis (Enrolled on: 2026-01-03)
+STU00047 - Emma Brown (Enrolled on: 2026-01-20)
+STU00048 - Sophia Miller (Enrolled on: 2026-01-29)
+STU00049 - Olivia Hernandez (Enrolled on: 2026-01-05)
+STU00050 - Mia Garcia (Enrolled on: 2026-01-01)
+STU00051 - Ava Smith (Enrolled on: 2026-01-16)
+STU00052 - Lucas Davis (Enrolled on: 2026-01-14)
+STU00053 - Liam Smith (Enrolled on: 2026-01-24)
+STU00054 - Mia Miller (Enrolled on: 2026-01-09)
+STU00055 - Mia Jones (Enrolled on: 2026-01-25)
+STU00056 - Sophia Jones (Enrolled on: 2026-01-12)
+STU00057 - Mia Hernandez (Enrolled on: 2026-01-19)
+STU00058 - Ava Smith (Enrolled on: 2026-01-19)
 
 Displaying waitlisted students for each course:
 
 CSE1010 Waitlisted Students:
 
+CSE2050 Waitlisted Students:
+
+CSE2102 Waitlisted Students:
+
+CSE2500 Waitlisted Students:
+
 CSE2600 Waitlisted Students:
 
+CSE3100 Waitlisted Students:
+
 CSE3140 Waitlisted Students:
+
+CSE3150 Waitlisted Students:
+
+CSE3500 Waitlisted Students:
 
 CSE3666 Waitlisted Students:
 
@@ -334,543 +402,305 @@ Demo 2.1: Sorting enrolled students by enrollment date for each course using dif
 Sorting complete. Displaying sorted enrolled students for each course:
 
 CSE1010 Enrolled Students based on date using (bubble sort):
-<<<<<<< HEAD
-STU00003 - Lucas Smith (Enrolled on: 2026-01-01)
-STU00016 - Ava Hernandez (Enrolled on: 2026-01-01)
-STU00022 - Isabella Johnson (Enrolled on: 2026-01-01)
-STU00017 - Noah Brown (Enrolled on: 2026-01-03)
-STU00019 - Sophia Martinez (Enrolled on: 2026-01-04)
-STU00023 - Mason Smith (Enrolled on: 2026-01-05)
-STU00028 - Isabella Jones (Enrolled on: 2026-01-07)
-STU00025 - Lucas Williams (Enrolled on: 2026-01-09)
-STU00024 - Sophia Garcia (Enrolled on: 2026-01-10)
-STU00013 - Olivia Brown (Enrolled on: 2026-01-12)
-STU00020 - Mia Hernandez (Enrolled on: 2026-01-12)
-STU00002 - Sophia Johnson (Enrolled on: 2026-01-13)
-STU00012 - Olivia Miller (Enrolled on: 2026-01-13)
-STU00001 - Mason Garcia (Enrolled on: 2026-01-15)
-STU00008 - Sophia Johnson (Enrolled on: 2026-01-15)
-STU00005 - Isabella Smith (Enrolled on: 2026-01-16)
-STU00011 - Isabella Williams (Enrolled on: 2026-01-16)
-STU00026 - Mia Hernandez (Enrolled on: 2026-01-16)
-STU00032 - Sophia Brown (Enrolled on: 2026-01-16)
-STU00010 - Olivia Smith (Enrolled on: 2026-01-17)
-STU00029 - Mia Miller (Enrolled on: 2026-01-19)
-STU00004 - Mia Smith (Enrolled on: 2026-01-21)
-STU00009 - Mia Martinez (Enrolled on: 2026-01-25)
-STU00018 - Olivia Smith (Enrolled on: 2026-01-25)
-STU00034 - Isabella Martinez (Enrolled on: 2026-01-25)
-STU00014 - Mason Brown (Enrolled on: 2026-01-26)
-STU00031 - Sophia Smith (Enrolled on: 2026-01-26)
-STU00007 - Emma Martinez (Enrolled on: 2026-01-27)
-STU00015 - Sophia Hernandez (Enrolled on: 2026-01-27)
-STU00027 - Lucas Jones (Enrolled on: 2026-01-27)
-STU00033 - Olivia Garcia (Enrolled on: 2026-01-28)
-STU00006 - Ava Johnson (Enrolled on: 2026-01-30)
-STU00030 - Liam Hernandez (Enrolled on: 2026-01-30)
-STU00021 - Lucas Davis (Enrolled on: 2026-01-31)
-=======
-STU00008 - Sophia Hernandez (Enrolled on: 2026-01-01)
-STU00007 - Ava Hernandez (Enrolled on: 2026-01-02)
-STU00022 - Sophia Smith (Enrolled on: 2026-01-04)
-STU00017 - Sophia Jones (Enrolled on: 2026-01-05)
-STU00003 - Mason Miller (Enrolled on: 2026-01-06)
-STU00009 - Olivia Jones (Enrolled on: 2026-01-06)
-STU00010 - Mason Brown (Enrolled on: 2026-01-07)
-STU00006 - Liam Jones (Enrolled on: 2026-01-08)
-STU00021 - Olivia Williams (Enrolled on: 2026-01-08)
-STU00014 - Mia Brown (Enrolled on: 2026-01-09)
-STU00031 - Mia Davis (Enrolled on: 2026-01-11)
-STU00013 - Isabella Miller (Enrolled on: 2026-01-12)
-STU00025 - Emma Martinez (Enrolled on: 2026-01-12)
-STU00030 - Isabella Martinez (Enrolled on: 2026-01-12)
-STU00029 - Liam Williams (Enrolled on: 2026-01-15)
-STU00001 - Lucas Williams (Enrolled on: 2026-01-16)
-STU00026 - Noah Davis (Enrolled on: 2026-01-16)
-STU00032 - Sophia Jones (Enrolled on: 2026-01-16)
-STU00034 - Mia Johnson (Enrolled on: 2026-01-16)
-STU00019 - Liam Williams (Enrolled on: 2026-01-17)
-STU00002 - Olivia Brown (Enrolled on: 2026-01-19)
-STU00011 - Sophia Martinez (Enrolled on: 2026-01-19)
-STU00033 - Ava Brown (Enrolled on: 2026-01-22)
-STU00004 - Isabella Davis (Enrolled on: 2026-01-23)
-STU00012 - Olivia Williams (Enrolled on: 2026-01-23)
-STU00020 - Ava Johnson (Enrolled on: 2026-01-24)
-STU00005 - Emma Garcia (Enrolled on: 2026-01-25)
-STU00015 - Isabella Smith (Enrolled on: 2026-01-25)
-STU00027 - Mason Williams (Enrolled on: 2026-01-25)
-STU00023 - Mia Hernandez (Enrolled on: 2026-01-26)
-STU00016 - Olivia Hernandez (Enrolled on: 2026-01-29)
-STU00028 - Emma Smith (Enrolled on: 2026-01-30)
-STU00018 - Emma Brown (Enrolled on: 2026-01-31)
-STU00024 - Isabella Garcia (Enrolled on: 2026-01-31)
->>>>>>> 6f1922a (Added the necessary fixes to main file and test file so that it could work with the requirements of the milestone whilst ensuring a smooth running demo)
+STU00010 - Olivia Davis (Enrolled on: 2026-01-01)
+STU00017 - Noah Williams (Enrolled on: 2026-01-01)
+STU00032 - Noah Miller (Enrolled on: 2026-01-02)
+STU00008 - Emma Williams (Enrolled on: 2026-01-03)
+STU00029 - Ava Miller (Enrolled on: 2026-01-03)
+STU00030 - Isabella Smith (Enrolled on: 2026-01-03)
+STU00009 - Mia Williams (Enrolled on: 2026-01-05)
+STU00024 - Noah Williams (Enrolled on: 2026-01-05)
+STU00003 - Emma Brown (Enrolled on: 2026-01-06)
+STU00022 - Sophia Smith (Enrolled on: 2026-01-07)
+STU00033 - Liam Williams (Enrolled on: 2026-01-08)
+STU00018 - Isabella Miller (Enrolled on: 2026-01-10)
+STU00031 - Noah Hernandez (Enrolled on: 2026-01-10)
+STU00005 - Mason Jones (Enrolled on: 2026-01-12)
+STU00012 - Mia Hernandez (Enrolled on: 2026-01-12)
+STU00019 - Liam Miller (Enrolled on: 2026-01-12)
+STU00015 - Mia Martinez (Enrolled on: 2026-01-13)
+STU00026 - Ava Johnson (Enrolled on: 2026-01-13)
+STU00001 - Isabella Hernandez (Enrolled on: 2026-01-14)
+STU00013 - Ava Davis (Enrolled on: 2026-01-16)
+STU00007 - Liam Johnson (Enrolled on: 2026-01-17)
+STU00027 - Emma Williams (Enrolled on: 2026-01-17)
+STU00002 - Olivia Garcia (Enrolled on: 2026-01-20)
+STU00021 - Emma Hernandez (Enrolled on: 2026-01-20)
+STU00023 - Noah Miller (Enrolled on: 2026-01-21)
+STU00025 - Mia Jones (Enrolled on: 2026-01-21)
+STU00004 - Mason Brown (Enrolled on: 2026-01-25)
+STU00016 - Liam Jones (Enrolled on: 2026-01-25)
+STU00020 - Ava Hernandez (Enrolled on: 2026-01-25)
+STU00011 - Mia Smith (Enrolled on: 2026-01-28)
+STU00034 - Isabella Hernandez (Enrolled on: 2026-01-28)
+STU00006 - Isabella Davis (Enrolled on: 2026-01-31)
+STU00014 - Mia Williams (Enrolled on: 2026-01-31)
+STU00028 - Mia Miller (Enrolled on: 2026-01-31)
+
+
+
+CSE2050 Enrolled Students based on name using (selection sort):
+
+
+
+CSE2102 Enrolled Students based on id using (insertion sort):
+
+
+
+CSE2500 Enrolled Students based on date using (bubble sort):
 
 
 
 CSE2600 Enrolled Students based on name using (selection sort):
-<<<<<<< HEAD
-STU00055 - Ava Johnson (Enrolled on: 2026-01-23)
-STU00080 - Ava Jones (Enrolled on: 2026-01-23)
-STU00058 - Ava Martinez (Enrolled on: 2026-01-17)
-STU00081 - Ava Miller (Enrolled on: 2026-01-21)
-STU00068 - Ava Smith (Enrolled on: 2026-01-06)
-STU00078 - Ava Smith (Enrolled on: 2026-01-10)
-STU00064 - Ava Williams (Enrolled on: 2026-01-01)
-STU00065 - Emma Jones (Enrolled on: 2026-01-24)
-STU00071 - Emma Miller (Enrolled on: 2026-01-28)
-STU00057 - Emma Miller (Enrolled on: 2026-01-30)
-STU00063 - Emma Smith (Enrolled on: 2026-01-19)
-STU00073 - Isabella Hernandez (Enrolled on: 2026-01-17)
-STU00074 - Isabella Hernandez (Enrolled on: 2026-01-14)
-STU00072 - Isabella Miller (Enrolled on: 2026-01-09)
-STU00069 - Liam Garcia (Enrolled on: 2026-01-30)
-STU00082 - Liam Hernandez (Enrolled on: 2026-01-24)
-STU00083 - Lucas Johnson (Enrolled on: 2026-01-08)
-STU00062 - Lucas Johnson (Enrolled on: 2026-01-27)
-STU00077 - Lucas Smith (Enrolled on: 2026-01-07)
-STU00059 - Mia Hernandez (Enrolled on: 2026-01-03)
-STU00070 - Noah Davis (Enrolled on: 2026-01-30)
-STU00056 - Noah Garcia (Enrolled on: 2026-01-04)
-STU00084 - Olivia Brown (Enrolled on: 2026-01-05)
-STU00076 - Olivia Garcia (Enrolled on: 2026-01-21)
-STU00060 - Olivia Hernandez (Enrolled on: 2026-01-14)
-STU00066 - Olivia Johnson (Enrolled on: 2026-01-15)
-STU00079 - Sophia Davis (Enrolled on: 2026-01-30)
-STU00061 - Sophia Jones (Enrolled on: 2026-01-19)
-STU00067 - Sophia Martinez (Enrolled on: 2026-01-09)
-STU00075 - Sophia Smith (Enrolled on: 2026-01-12)
-=======
-STU00082 - Ava Davis (Enrolled on: 2026-01-15)
-STU00071 - Ava Davis (Enrolled on: 2026-01-13)
-STU00065 - Ava Smith (Enrolled on: 2026-01-08)
-STU00066 - Emma Garcia (Enrolled on: 2026-01-10)
-STU00079 - Emma Hernandez (Enrolled on: 2026-01-18)
-STU00083 - Emma Jones (Enrolled on: 2026-01-12)
-STU00069 - Emma Martinez (Enrolled on: 2026-01-26)
-STU00080 - Isabella Davis (Enrolled on: 2026-01-13)
-STU00073 - Isabella Garcia (Enrolled on: 2026-01-09)
-STU00057 - Isabella Williams (Enrolled on: 2026-01-15)
-STU00060 - Liam Brown (Enrolled on: 2026-01-01)
-STU00081 - Liam Johnson (Enrolled on: 2026-01-16)
-STU00074 - Liam Miller (Enrolled on: 2026-01-21)
-STU00078 - Lucas Garcia (Enrolled on: 2026-01-01)
-STU00070 - Lucas Hernandez (Enrolled on: 2026-01-09)
-STU00058 - Lucas Martinez (Enrolled on: 2026-01-30)
-STU00077 - Lucas Smith (Enrolled on: 2026-01-17)
-STU00063 - Lucas Williams (Enrolled on: 2026-01-15)
-STU00064 - Mason Garcia (Enrolled on: 2026-01-11)
-STU00084 - Mason Jones (Enrolled on: 2026-01-06)
-STU00067 - Mason Miller (Enrolled on: 2026-01-23)
-STU00062 - Mia Davis (Enrolled on: 2026-01-24)
-STU00068 - Mia Miller (Enrolled on: 2026-01-21)
-STU00055 - Noah Hernandez (Enrolled on: 2026-01-13)
-STU00061 - Noah Smith (Enrolled on: 2026-01-06)
-STU00059 - Noah Williams (Enrolled on: 2026-01-07)
-STU00076 - Olivia Brown (Enrolled on: 2026-01-03)
-STU00072 - Olivia Johnson (Enrolled on: 2026-01-25)
-STU00056 - Olivia Johnson (Enrolled on: 2026-01-14)
-STU00075 - Olivia Smith (Enrolled on: 2026-01-07)
->>>>>>> 6f1922a (Added the necessary fixes to main file and test file so that it could work with the requirements of the milestone whilst ensuring a smooth running demo)
+STU00074 - Ava Garcia (Enrolled on: 2026-01-29)
+STU00066 - Ava Jones (Enrolled on: 2026-01-05)
+STU00061 - Ava Martinez (Enrolled on: 2026-01-21)
+STU00082 - Ava Miller (Enrolled on: 2026-01-04)
+STU00058 - Ava Smith (Enrolled on: 2026-01-17)
+STU00068 - Ava Smith (Enrolled on: 2026-01-30)
+STU00076 - Ava Smith (Enrolled on: 2026-01-30)
+STU00070 - Emma Brown (Enrolled on: 2026-01-10)
+STU00081 - Emma Davis (Enrolled on: 2026-01-26)
+STU00060 - Emma Martinez (Enrolled on: 2026-01-14)
+STU00075 - Isabella Miller (Enrolled on: 2026-01-28)
+STU00079 - Isabella Smith (Enrolled on: 2026-01-10)
+STU00062 - Liam Miller (Enrolled on: 2026-01-23)
+STU00073 - Mason Davis (Enrolled on: 2026-01-16)
+STU00067 - Mason Hernandez (Enrolled on: 2026-01-25)
+STU00072 - Mason Johnson (Enrolled on: 2026-01-04)
+STU00059 - Mason Miller (Enrolled on: 2026-01-25)
+STU00078 - Mia Davis (Enrolled on: 2026-01-06)
+STU00057 - Mia Hernandez (Enrolled on: 2026-01-31)
+STU00055 - Mia Jones (Enrolled on: 2026-01-27)
+STU00077 - Mia Smith (Enrolled on: 2026-01-17)
+STU00084 - Noah Brown (Enrolled on: 2026-01-28)
+STU00080 - Noah Hernandez (Enrolled on: 2026-01-12)
+STU00065 - Olivia Johnson (Enrolled on: 2026-01-29)
+STU00064 - Olivia Johnson (Enrolled on: 2026-01-17)
+STU00069 - Olivia Martinez (Enrolled on: 2026-01-27)
+STU00056 - Sophia Jones (Enrolled on: 2026-01-26)
+STU00071 - Sophia Martinez (Enrolled on: 2026-01-04)
+STU00063 - Sophia Miller (Enrolled on: 2026-01-15)
+STU00083 - Sophia Smith (Enrolled on: 2026-01-11)
 
 
 
-CSE3140 Enrolled Students based on id using (insertion sort):
-<<<<<<< HEAD
-STU00113 - Lucas Davis (Enrolled on: 2026-01-02)
-STU00114 - Lucas Smith (Enrolled on: 2026-01-30)
-STU00115 - Liam Martinez (Enrolled on: 2026-01-17)
-STU00116 - Emma Martinez (Enrolled on: 2026-01-06)
-STU00117 - Sophia Brown (Enrolled on: 2026-01-23)
-STU00118 - Olivia Hernandez (Enrolled on: 2026-01-25)
-STU00139 - Liam Davis (Enrolled on: 2026-01-24)
-STU00140 - Mia Johnson (Enrolled on: 2026-01-09)
-STU00141 - Liam Williams (Enrolled on: 2026-01-16)
-STU00142 - Liam Garcia (Enrolled on: 2026-01-27)
-STU00143 - Mason Garcia (Enrolled on: 2026-01-10)
-STU00144 - Mia Smith (Enrolled on: 2026-01-04)
-STU00145 - Emma Hernandez (Enrolled on: 2026-01-17)
-STU00146 - Mason Brown (Enrolled on: 2026-01-19)
-STU00147 - Olivia Garcia (Enrolled on: 2026-01-18)
-STU00148 - Liam Jones (Enrolled on: 2026-01-26)
-STU00149 - Olivia Miller (Enrolled on: 2026-01-24)
-STU00150 - Sophia Davis (Enrolled on: 2026-01-03)
-STU00151 - Sophia Garcia (Enrolled on: 2026-01-04)
-STU00152 - Olivia Jones (Enrolled on: 2026-01-23)
-=======
-STU00113 - Sophia Williams (Enrolled on: 2026-01-01)
-STU00114 - Noah Davis (Enrolled on: 2026-01-11)
-STU00115 - Mia Johnson (Enrolled on: 2026-01-11)
-STU00116 - Isabella Williams (Enrolled on: 2026-01-29)
-STU00117 - Mason Smith (Enrolled on: 2026-01-29)
-STU00118 - Ava Miller (Enrolled on: 2026-01-02)
-STU00139 - Mason Garcia (Enrolled on: 2026-01-10)
-STU00140 - Liam Miller (Enrolled on: 2026-01-30)
-STU00141 - Mason Garcia (Enrolled on: 2026-01-04)
-STU00142 - Ava Hernandez (Enrolled on: 2026-01-01)
-STU00143 - Emma Garcia (Enrolled on: 2026-01-08)
-STU00144 - Isabella Hernandez (Enrolled on: 2026-01-07)
-STU00145 - Mason Martinez (Enrolled on: 2026-01-08)
-STU00146 - Mia Hernandez (Enrolled on: 2026-01-24)
-STU00147 - Emma Jones (Enrolled on: 2026-01-13)
-STU00148 - Emma Hernandez (Enrolled on: 2026-01-18)
-STU00149 - Lucas Garcia (Enrolled on: 2026-01-16)
-STU00150 - Liam Jones (Enrolled on: 2026-01-12)
-STU00151 - Mia Jones (Enrolled on: 2026-01-26)
-STU00152 - Emma Martinez (Enrolled on: 2026-01-11)
->>>>>>> 6f1922a (Added the necessary fixes to main file and test file so that it could work with the requirements of the milestone whilst ensuring a smooth running demo)
+CSE3100 Enrolled Students based on id using (insertion sort):
+
+
+
+CSE3140 Enrolled Students based on date using (bubble sort):
+STU00145 - Lucas Martinez (Enrolled on: 2026-01-05)
+STU00146 - Isabella Johnson (Enrolled on: 2026-01-06)
+STU00143 - Ava Davis (Enrolled on: 2026-01-08)
+STU00115 - Lucas Martinez (Enrolled on: 2026-01-09)
+STU00150 - Lucas Jones (Enrolled on: 2026-01-09)
+STU00149 - Sophia Martinez (Enrolled on: 2026-01-11)
+STU00139 - Noah Johnson (Enrolled on: 2026-01-12)
+STU00142 - Ava Smith (Enrolled on: 2026-01-15)
+STU00147 - Liam Brown (Enrolled on: 2026-01-15)
+STU00144 - Liam Williams (Enrolled on: 2026-01-16)
+STU00148 - Emma Davis (Enrolled on: 2026-01-16)
+STU00113 - Ava Smith (Enrolled on: 2026-01-17)
+STU00152 - Olivia Garcia (Enrolled on: 2026-01-18)
+STU00141 - Mia Brown (Enrolled on: 2026-01-19)
+STU00114 - Sophia Hernandez (Enrolled on: 2026-01-21)
+STU00116 - Noah Garcia (Enrolled on: 2026-01-22)
+STU00151 - Sophia Johnson (Enrolled on: 2026-01-22)
+STU00140 - Lucas Williams (Enrolled on: 2026-01-25)
+STU00118 - Mason Smith (Enrolled on: 2026-01-30)
+STU00117 - Olivia Martinez (Enrolled on: 2026-01-31)
+
+
+
+CSE3150 Enrolled Students based on name using (selection sort):
+
+
+
+CSE3500 Enrolled Students based on id using (insertion sort):
 
 
 
 CSE3666 Enrolled Students based on date using (bubble sort):
-<<<<<<< HEAD
-STU00050 - Mason Hernandez (Enrolled on: 2026-01-02)
-STU00034 - Isabella Martinez (Enrolled on: 2026-01-03)
-STU00039 - Noah Jones (Enrolled on: 2026-01-03)
-STU00037 - Liam Davis (Enrolled on: 2026-01-04)
-STU00053 - Emma Miller (Enrolled on: 2026-01-04)
-STU00046 - Olivia Garcia (Enrolled on: 2026-01-06)
-STU00032 - Sophia Brown (Enrolled on: 2026-01-08)
-STU00036 - Sophia Williams (Enrolled on: 2026-01-08)
-STU00043 - Mason Hernandez (Enrolled on: 2026-01-08)
-STU00057 - Emma Miller (Enrolled on: 2026-01-08)
-STU00051 - Mason Hernandez (Enrolled on: 2026-01-10)
-STU00041 - Mia Johnson (Enrolled on: 2026-01-11)
-STU00052 - Ava Miller (Enrolled on: 2026-01-12)
-STU00033 - Olivia Garcia (Enrolled on: 2026-01-15)
-STU00035 - Noah Martinez (Enrolled on: 2026-01-16)
-STU00049 - Sophia Williams (Enrolled on: 2026-01-18)
-STU00042 - Sophia Miller (Enrolled on: 2026-01-19)
-STU00058 - Ava Martinez (Enrolled on: 2026-01-19)
-STU00040 - Emma Jones (Enrolled on: 2026-01-20)
-STU00038 - Lucas Martinez (Enrolled on: 2026-01-21)
-STU00045 - Emma Williams (Enrolled on: 2026-01-21)
-STU00056 - Noah Garcia (Enrolled on: 2026-01-21)
-STU00054 - Sophia Hernandez (Enrolled on: 2026-01-23)
-STU00044 - Sophia Smith (Enrolled on: 2026-01-25)
-STU00047 - Noah Davis (Enrolled on: 2026-01-25)
-STU00048 - Olivia Davis (Enrolled on: 2026-01-27)
-STU00055 - Ava Johnson (Enrolled on: 2026-01-28)
-=======
-STU00055 - Noah Hernandez (Enrolled on: 2026-01-01)
-STU00051 - Mia Williams (Enrolled on: 2026-01-02)
-STU00038 - Emma Garcia (Enrolled on: 2026-01-03)
-STU00039 - Lucas Martinez (Enrolled on: 2026-01-03)
-STU00042 - Ava Jones (Enrolled on: 2026-01-05)
-STU00033 - Ava Brown (Enrolled on: 2026-01-06)
-STU00036 - Ava Smith (Enrolled on: 2026-01-06)
-STU00041 - Olivia Brown (Enrolled on: 2026-01-06)
-STU00054 - Mia Williams (Enrolled on: 2026-01-06)
-STU00048 - Sophia Johnson (Enrolled on: 2026-01-07)
-STU00057 - Isabella Williams (Enrolled on: 2026-01-08)
-STU00043 - Emma Martinez (Enrolled on: 2026-01-12)
-STU00044 - Emma Garcia (Enrolled on: 2026-01-12)
-STU00045 - Liam Williams (Enrolled on: 2026-01-13)
-STU00046 - Ava Hernandez (Enrolled on: 2026-01-13)
-STU00034 - Mia Johnson (Enrolled on: 2026-01-14)
-STU00040 - Olivia Miller (Enrolled on: 2026-01-17)
-STU00050 - Mia Smith (Enrolled on: 2026-01-17)
-STU00053 - Noah Williams (Enrolled on: 2026-01-18)
-STU00056 - Olivia Johnson (Enrolled on: 2026-01-22)
-STU00035 - Liam Jones (Enrolled on: 2026-01-24)
-STU00032 - Sophia Jones (Enrolled on: 2026-01-26)
-STU00037 - Sophia Williams (Enrolled on: 2026-01-27)
-STU00052 - Olivia Miller (Enrolled on: 2026-01-27)
-STU00058 - Lucas Martinez (Enrolled on: 2026-01-28)
-STU00047 - Lucas Johnson (Enrolled on: 2026-01-30)
-STU00049 - Noah Brown (Enrolled on: 2026-01-30)
->>>>>>> 6f1922a (Added the necessary fixes to main file and test file so that it could work with the requirements of the milestone whilst ensuring a smooth running demo)
+STU00050 - Mia Garcia (Enrolled on: 2026-01-01)
+STU00046 - Lucas Davis (Enrolled on: 2026-01-03)
+STU00049 - Olivia Hernandez (Enrolled on: 2026-01-05)
+STU00044 - Olivia Brown (Enrolled on: 2026-01-06)
+STU00042 - Isabella Martinez (Enrolled on: 2026-01-08)
+STU00037 - Isabella Brown (Enrolled on: 2026-01-09)
+STU00054 - Mia Miller (Enrolled on: 2026-01-09)
+STU00043 - Liam Hernandez (Enrolled on: 2026-01-10)
+STU00033 - Liam Williams (Enrolled on: 2026-01-12)
+STU00034 - Isabella Hernandez (Enrolled on: 2026-01-12)
+STU00041 - Sophia Miller (Enrolled on: 2026-01-12)
+STU00056 - Sophia Jones (Enrolled on: 2026-01-12)
+STU00038 - Mia Miller (Enrolled on: 2026-01-14)
+STU00052 - Lucas Davis (Enrolled on: 2026-01-14)
+STU00051 - Ava Smith (Enrolled on: 2026-01-16)
+STU00032 - Noah Miller (Enrolled on: 2026-01-18)
+STU00036 - Sophia Miller (Enrolled on: 2026-01-19)
+STU00057 - Mia Hernandez (Enrolled on: 2026-01-19)
+STU00058 - Ava Smith (Enrolled on: 2026-01-19)
+STU00039 - Ava Williams (Enrolled on: 2026-01-20)
+STU00047 - Emma Brown (Enrolled on: 2026-01-20)
+STU00035 - Noah Miller (Enrolled on: 2026-01-22)
+STU00053 - Liam Smith (Enrolled on: 2026-01-24)
+STU00045 - Mason Garcia (Enrolled on: 2026-01-25)
+STU00055 - Mia Jones (Enrolled on: 2026-01-25)
+STU00040 - Liam Smith (Enrolled on: 2026-01-29)
+STU00048 - Sophia Miller (Enrolled on: 2026-01-29)
 
 
 
 Demo 2.2: Performing binary search for a student in each course...
-<<<<<<< HEAD
-Searching for STU00018 - Olivia Smith in CSE1010...
-Found: STU00018 - Olivia Smith (Enrolled on: 2026-01-25)
-Searching for STU00070 - Noah Davis in CSE2600...
-Found: STU00070 - Noah Davis (Enrolled on: 2026-01-30)
-Searching for STU00143 - Mason Garcia in CSE3140...
-Found: STU00143 - Mason Garcia (Enrolled on: 2026-01-10)
-Searching for STU00045 - Emma Williams in CSE3666...
-Found: STU00045 - Emma Williams (Enrolled on: 2026-01-21)
+Searching for STU00018 - Isabella Miller in CSE1010...
+Found: STU00018 - Isabella Miller (Enrolled on: 2026-01-10)
+No enrolled students in CSE2050 to search for.
+No enrolled students in CSE2102 to search for.
+No enrolled students in CSE2500 to search for.
+Searching for STU00070 - Emma Brown in CSE2600...
+Found: STU00070 - Emma Brown (Enrolled on: 2026-01-10)
+No enrolled students in CSE3100 to search for.
+Searching for STU00143 - Ava Davis in CSE3140...
+Found: STU00143 - Ava Davis (Enrolled on: 2026-01-08)
+No enrolled students in CSE3150 to search for.
+No enrolled students in CSE3500 to search for.
+Searching for STU00045 - Mason Garcia in CSE3666...
+Found: STU00045 - Mason Garcia (Enrolled on: 2026-01-25)
 
 Dropping a student from each course and checking waitlist replacement...
-Dropping STU00001 - Mason Garcia from CSE1010...
+Dropping STU00001 - Isabella Hernandez from CSE1010...
 
 No student was enrolled from the waitlist.
 After dropping, enrolled students in CSE1010:
-STU00002 - Sophia Johnson (Enrolled on: 2026-01-13)
-STU00003 - Lucas Smith (Enrolled on: 2026-01-01)
-STU00004 - Mia Smith (Enrolled on: 2026-01-21)
-STU00005 - Isabella Smith (Enrolled on: 2026-01-16)
-STU00006 - Ava Johnson (Enrolled on: 2026-01-30)
-STU00007 - Emma Martinez (Enrolled on: 2026-01-27)
-STU00008 - Sophia Johnson (Enrolled on: 2026-01-15)
-STU00009 - Mia Martinez (Enrolled on: 2026-01-25)
-STU00010 - Olivia Smith (Enrolled on: 2026-01-17)
-STU00011 - Isabella Williams (Enrolled on: 2026-01-16)
-STU00012 - Olivia Miller (Enrolled on: 2026-01-13)
-STU00013 - Olivia Brown (Enrolled on: 2026-01-12)
-STU00014 - Mason Brown (Enrolled on: 2026-01-26)
-STU00015 - Sophia Hernandez (Enrolled on: 2026-01-27)
-STU00016 - Ava Hernandez (Enrolled on: 2026-01-01)
-STU00017 - Noah Brown (Enrolled on: 2026-01-03)
-STU00018 - Olivia Smith (Enrolled on: 2026-01-25)
-STU00019 - Sophia Martinez (Enrolled on: 2026-01-04)
-STU00020 - Mia Hernandez (Enrolled on: 2026-01-12)
-STU00021 - Lucas Davis (Enrolled on: 2026-01-31)
-STU00022 - Isabella Johnson (Enrolled on: 2026-01-01)
-STU00023 - Mason Smith (Enrolled on: 2026-01-05)
-STU00024 - Sophia Garcia (Enrolled on: 2026-01-10)
-STU00025 - Lucas Williams (Enrolled on: 2026-01-09)
-STU00026 - Mia Hernandez (Enrolled on: 2026-01-16)
-STU00027 - Lucas Jones (Enrolled on: 2026-01-27)
-STU00028 - Isabella Jones (Enrolled on: 2026-01-07)
-STU00029 - Mia Miller (Enrolled on: 2026-01-19)
-STU00030 - Liam Hernandez (Enrolled on: 2026-01-30)
-STU00031 - Sophia Smith (Enrolled on: 2026-01-26)
-STU00032 - Sophia Brown (Enrolled on: 2026-01-16)
-STU00033 - Olivia Garcia (Enrolled on: 2026-01-28)
-STU00034 - Isabella Martinez (Enrolled on: 2026-01-25)
+STU00002 - Olivia Garcia (Enrolled on: 2026-01-20)
+STU00003 - Emma Brown (Enrolled on: 2026-01-06)
+STU00004 - Mason Brown (Enrolled on: 2026-01-25)
+STU00005 - Mason Jones (Enrolled on: 2026-01-12)
+STU00006 - Isabella Davis (Enrolled on: 2026-01-31)
+STU00007 - Liam Johnson (Enrolled on: 2026-01-17)
+STU00008 - Emma Williams (Enrolled on: 2026-01-03)
+STU00009 - Mia Williams (Enrolled on: 2026-01-05)
+STU00010 - Olivia Davis (Enrolled on: 2026-01-01)
+STU00011 - Mia Smith (Enrolled on: 2026-01-28)
+STU00012 - Mia Hernandez (Enrolled on: 2026-01-12)
+STU00013 - Ava Davis (Enrolled on: 2026-01-16)
+STU00014 - Mia Williams (Enrolled on: 2026-01-31)
+STU00015 - Mia Martinez (Enrolled on: 2026-01-13)
+STU00016 - Liam Jones (Enrolled on: 2026-01-25)
+STU00017 - Noah Williams (Enrolled on: 2026-01-01)
+STU00018 - Isabella Miller (Enrolled on: 2026-01-10)
+STU00019 - Liam Miller (Enrolled on: 2026-01-12)
+STU00020 - Ava Hernandez (Enrolled on: 2026-01-25)
+STU00021 - Emma Hernandez (Enrolled on: 2026-01-20)
+STU00022 - Sophia Smith (Enrolled on: 2026-01-07)
+STU00023 - Noah Miller (Enrolled on: 2026-01-21)
+STU00024 - Noah Williams (Enrolled on: 2026-01-05)
+STU00025 - Mia Jones (Enrolled on: 2026-01-21)
+STU00026 - Ava Johnson (Enrolled on: 2026-01-13)
+STU00027 - Emma Williams (Enrolled on: 2026-01-17)
+STU00028 - Mia Miller (Enrolled on: 2026-01-31)
+STU00029 - Ava Miller (Enrolled on: 2026-01-03)
+STU00030 - Isabella Smith (Enrolled on: 2026-01-03)
+STU00031 - Noah Hernandez (Enrolled on: 2026-01-10)
+STU00032 - Noah Miller (Enrolled on: 2026-01-02)
+STU00033 - Liam Williams (Enrolled on: 2026-01-08)
+STU00034 - Isabella Hernandez (Enrolled on: 2026-01-28)
 Waitlisted students in CSE1010:
 
 
-Dropping STU00055 - Ava Johnson from CSE2600...
+Dropping STU00055 - Mia Jones from CSE2600...
 
 No student was enrolled from the waitlist.
 After dropping, enrolled students in CSE2600:
-STU00056 - Noah Garcia (Enrolled on: 2026-01-04)
-STU00057 - Emma Miller (Enrolled on: 2026-01-30)
-STU00058 - Ava Martinez (Enrolled on: 2026-01-17)
-STU00059 - Mia Hernandez (Enrolled on: 2026-01-03)
-STU00060 - Olivia Hernandez (Enrolled on: 2026-01-14)
-STU00061 - Sophia Jones (Enrolled on: 2026-01-19)
-STU00062 - Lucas Johnson (Enrolled on: 2026-01-27)
-STU00063 - Emma Smith (Enrolled on: 2026-01-19)
-STU00064 - Ava Williams (Enrolled on: 2026-01-01)
-STU00065 - Emma Jones (Enrolled on: 2026-01-24)
-STU00066 - Olivia Johnson (Enrolled on: 2026-01-15)
-STU00067 - Sophia Martinez (Enrolled on: 2026-01-09)
-STU00068 - Ava Smith (Enrolled on: 2026-01-06)
-STU00069 - Liam Garcia (Enrolled on: 2026-01-30)
-STU00070 - Noah Davis (Enrolled on: 2026-01-30)
-STU00071 - Emma Miller (Enrolled on: 2026-01-28)
-STU00072 - Isabella Miller (Enrolled on: 2026-01-09)
-STU00073 - Isabella Hernandez (Enrolled on: 2026-01-17)
-STU00074 - Isabella Hernandez (Enrolled on: 2026-01-14)
-STU00075 - Sophia Smith (Enrolled on: 2026-01-12)
-STU00076 - Olivia Garcia (Enrolled on: 2026-01-21)
-STU00077 - Lucas Smith (Enrolled on: 2026-01-07)
-STU00078 - Ava Smith (Enrolled on: 2026-01-10)
-STU00079 - Sophia Davis (Enrolled on: 2026-01-30)
-STU00080 - Ava Jones (Enrolled on: 2026-01-23)
-STU00081 - Ava Miller (Enrolled on: 2026-01-21)
-STU00082 - Liam Hernandez (Enrolled on: 2026-01-24)
-STU00083 - Lucas Johnson (Enrolled on: 2026-01-08)
-STU00084 - Olivia Brown (Enrolled on: 2026-01-05)
+STU00056 - Sophia Jones (Enrolled on: 2026-01-26)
+STU00057 - Mia Hernandez (Enrolled on: 2026-01-31)
+STU00058 - Ava Smith (Enrolled on: 2026-01-17)
+STU00059 - Mason Miller (Enrolled on: 2026-01-25)
+STU00060 - Emma Martinez (Enrolled on: 2026-01-14)
+STU00061 - Ava Martinez (Enrolled on: 2026-01-21)
+STU00062 - Liam Miller (Enrolled on: 2026-01-23)
+STU00063 - Sophia Miller (Enrolled on: 2026-01-15)
+STU00064 - Olivia Johnson (Enrolled on: 2026-01-17)
+STU00065 - Olivia Johnson (Enrolled on: 2026-01-29)
+STU00066 - Ava Jones (Enrolled on: 2026-01-05)
+STU00067 - Mason Hernandez (Enrolled on: 2026-01-25)
+STU00068 - Ava Smith (Enrolled on: 2026-01-30)
+STU00069 - Olivia Martinez (Enrolled on: 2026-01-27)
+STU00070 - Emma Brown (Enrolled on: 2026-01-10)
+STU00071 - Sophia Martinez (Enrolled on: 2026-01-04)
+STU00072 - Mason Johnson (Enrolled on: 2026-01-04)
+STU00073 - Mason Davis (Enrolled on: 2026-01-16)
+STU00074 - Ava Garcia (Enrolled on: 2026-01-29)
+STU00075 - Isabella Miller (Enrolled on: 2026-01-28)
+STU00076 - Ava Smith (Enrolled on: 2026-01-30)
+STU00077 - Mia Smith (Enrolled on: 2026-01-17)
+STU00078 - Mia Davis (Enrolled on: 2026-01-06)
+STU00079 - Isabella Smith (Enrolled on: 2026-01-10)
+STU00080 - Noah Hernandez (Enrolled on: 2026-01-12)
+STU00081 - Emma Davis (Enrolled on: 2026-01-26)
+STU00082 - Ava Miller (Enrolled on: 2026-01-04)
+STU00083 - Sophia Smith (Enrolled on: 2026-01-11)
+STU00084 - Noah Brown (Enrolled on: 2026-01-28)
 Waitlisted students in CSE2600:
 
 
-Dropping STU00113 - Lucas Davis from CSE3140...
+Dropping STU00113 - Ava Smith from CSE3140...
 
 No student was enrolled from the waitlist.
 After dropping, enrolled students in CSE3140:
-STU00114 - Lucas Smith (Enrolled on: 2026-01-30)
-STU00115 - Liam Martinez (Enrolled on: 2026-01-17)
-STU00116 - Emma Martinez (Enrolled on: 2026-01-06)
-STU00117 - Sophia Brown (Enrolled on: 2026-01-23)
-STU00118 - Olivia Hernandez (Enrolled on: 2026-01-25)
-STU00139 - Liam Davis (Enrolled on: 2026-01-24)
-STU00140 - Mia Johnson (Enrolled on: 2026-01-09)
-STU00141 - Liam Williams (Enrolled on: 2026-01-16)
-STU00142 - Liam Garcia (Enrolled on: 2026-01-27)
-STU00143 - Mason Garcia (Enrolled on: 2026-01-10)
-STU00144 - Mia Smith (Enrolled on: 2026-01-04)
-STU00145 - Emma Hernandez (Enrolled on: 2026-01-17)
-STU00146 - Mason Brown (Enrolled on: 2026-01-19)
-STU00147 - Olivia Garcia (Enrolled on: 2026-01-18)
-STU00148 - Liam Jones (Enrolled on: 2026-01-26)
-STU00149 - Olivia Miller (Enrolled on: 2026-01-24)
-STU00150 - Sophia Davis (Enrolled on: 2026-01-03)
-STU00151 - Sophia Garcia (Enrolled on: 2026-01-04)
-STU00152 - Olivia Jones (Enrolled on: 2026-01-23)
+STU00114 - Sophia Hernandez (Enrolled on: 2026-01-21)
+STU00115 - Lucas Martinez (Enrolled on: 2026-01-09)
+STU00116 - Noah Garcia (Enrolled on: 2026-01-22)
+STU00117 - Olivia Martinez (Enrolled on: 2026-01-31)
+STU00118 - Mason Smith (Enrolled on: 2026-01-30)
+STU00139 - Noah Johnson (Enrolled on: 2026-01-12)
+STU00140 - Lucas Williams (Enrolled on: 2026-01-25)
+STU00141 - Mia Brown (Enrolled on: 2026-01-19)
+STU00142 - Ava Smith (Enrolled on: 2026-01-15)
+STU00143 - Ava Davis (Enrolled on: 2026-01-08)
+STU00144 - Liam Williams (Enrolled on: 2026-01-16)
+STU00145 - Lucas Martinez (Enrolled on: 2026-01-05)
+STU00146 - Isabella Johnson (Enrolled on: 2026-01-06)
+STU00147 - Liam Brown (Enrolled on: 2026-01-15)
+STU00148 - Emma Davis (Enrolled on: 2026-01-16)
+STU00149 - Sophia Martinez (Enrolled on: 2026-01-11)
+STU00150 - Lucas Jones (Enrolled on: 2026-01-09)
+STU00151 - Sophia Johnson (Enrolled on: 2026-01-22)
+STU00152 - Olivia Garcia (Enrolled on: 2026-01-18)
 Waitlisted students in CSE3140:
 
 
-Dropping STU00032 - Sophia Brown from CSE3666...
+Dropping STU00032 - Noah Miller from CSE3666...
 
 No student was enrolled from the waitlist.
 After dropping, enrolled students in CSE3666:
-STU00033 - Olivia Garcia (Enrolled on: 2026-01-15)
-STU00034 - Isabella Martinez (Enrolled on: 2026-01-03)
-STU00035 - Noah Martinez (Enrolled on: 2026-01-16)
-STU00036 - Sophia Williams (Enrolled on: 2026-01-08)
-STU00037 - Liam Davis (Enrolled on: 2026-01-04)
-STU00038 - Lucas Martinez (Enrolled on: 2026-01-21)
-STU00039 - Noah Jones (Enrolled on: 2026-01-03)
-STU00040 - Emma Jones (Enrolled on: 2026-01-20)
-STU00041 - Mia Johnson (Enrolled on: 2026-01-11)
-STU00042 - Sophia Miller (Enrolled on: 2026-01-19)
-STU00043 - Mason Hernandez (Enrolled on: 2026-01-08)
-STU00044 - Sophia Smith (Enrolled on: 2026-01-25)
-STU00045 - Emma Williams (Enrolled on: 2026-01-21)
-STU00046 - Olivia Garcia (Enrolled on: 2026-01-06)
-STU00047 - Noah Davis (Enrolled on: 2026-01-25)
-STU00048 - Olivia Davis (Enrolled on: 2026-01-27)
-STU00049 - Sophia Williams (Enrolled on: 2026-01-18)
-STU00050 - Mason Hernandez (Enrolled on: 2026-01-02)
-STU00051 - Mason Hernandez (Enrolled on: 2026-01-10)
-STU00052 - Ava Miller (Enrolled on: 2026-01-12)
-STU00053 - Emma Miller (Enrolled on: 2026-01-04)
-STU00054 - Sophia Hernandez (Enrolled on: 2026-01-23)
-STU00055 - Ava Johnson (Enrolled on: 2026-01-28)
-STU00056 - Noah Garcia (Enrolled on: 2026-01-21)
-STU00057 - Emma Miller (Enrolled on: 2026-01-08)
-STU00058 - Ava Martinez (Enrolled on: 2026-01-19)
-=======
-Searching for STU00018 - Emma Brown in CSE1010...
-Found: STU00018 - Emma Brown (Enrolled on: 2026-01-31)
-Searching for STU00070 - Lucas Hernandez in CSE2600...
-Found: STU00070 - Lucas Hernandez (Enrolled on: 2026-01-09)
-Searching for STU00143 - Emma Garcia in CSE3140...
-Found: STU00143 - Emma Garcia (Enrolled on: 2026-01-08)
-Searching for STU00045 - Liam Williams in CSE3666...
-Found: STU00045 - Liam Williams (Enrolled on: 2026-01-13)
-
-Dropping a student from each course and checking waitlist replacement...
-Dropping STU00001 - Lucas Williams from CSE1010...
-
-No student was enrolled from the waitlist.
-After dropping, enrolled students in CSE1010:
-STU00002 - Olivia Brown (Enrolled on: 2026-01-19)
-STU00003 - Mason Miller (Enrolled on: 2026-01-06)
-STU00004 - Isabella Davis (Enrolled on: 2026-01-23)
-STU00005 - Emma Garcia (Enrolled on: 2026-01-25)
-STU00006 - Liam Jones (Enrolled on: 2026-01-08)
-STU00007 - Ava Hernandez (Enrolled on: 2026-01-02)
-STU00008 - Sophia Hernandez (Enrolled on: 2026-01-01)
-STU00009 - Olivia Jones (Enrolled on: 2026-01-06)
-STU00010 - Mason Brown (Enrolled on: 2026-01-07)
-STU00011 - Sophia Martinez (Enrolled on: 2026-01-19)
-STU00012 - Olivia Williams (Enrolled on: 2026-01-23)
-STU00013 - Isabella Miller (Enrolled on: 2026-01-12)
-STU00014 - Mia Brown (Enrolled on: 2026-01-09)
-STU00015 - Isabella Smith (Enrolled on: 2026-01-25)
-STU00016 - Olivia Hernandez (Enrolled on: 2026-01-29)
-STU00017 - Sophia Jones (Enrolled on: 2026-01-05)
-STU00018 - Emma Brown (Enrolled on: 2026-01-31)
-STU00019 - Liam Williams (Enrolled on: 2026-01-17)
-STU00020 - Ava Johnson (Enrolled on: 2026-01-24)
-STU00021 - Olivia Williams (Enrolled on: 2026-01-08)
-STU00022 - Sophia Smith (Enrolled on: 2026-01-04)
-STU00023 - Mia Hernandez (Enrolled on: 2026-01-26)
-STU00024 - Isabella Garcia (Enrolled on: 2026-01-31)
-STU00025 - Emma Martinez (Enrolled on: 2026-01-12)
-STU00026 - Noah Davis (Enrolled on: 2026-01-16)
-STU00027 - Mason Williams (Enrolled on: 2026-01-25)
-STU00028 - Emma Smith (Enrolled on: 2026-01-30)
-STU00029 - Liam Williams (Enrolled on: 2026-01-15)
-STU00030 - Isabella Martinez (Enrolled on: 2026-01-12)
-STU00031 - Mia Davis (Enrolled on: 2026-01-11)
-STU00032 - Sophia Jones (Enrolled on: 2026-01-16)
-STU00033 - Ava Brown (Enrolled on: 2026-01-22)
-STU00034 - Mia Johnson (Enrolled on: 2026-01-16)
-Waitlisted students in CSE1010:
-
-
-Dropping STU00055 - Noah Hernandez from CSE2600...
-
-No student was enrolled from the waitlist.
-After dropping, enrolled students in CSE2600:
-STU00056 - Olivia Johnson (Enrolled on: 2026-01-14)
-STU00057 - Isabella Williams (Enrolled on: 2026-01-15)
-STU00058 - Lucas Martinez (Enrolled on: 2026-01-30)
-STU00059 - Noah Williams (Enrolled on: 2026-01-07)
-STU00060 - Liam Brown (Enrolled on: 2026-01-01)
-STU00061 - Noah Smith (Enrolled on: 2026-01-06)
-STU00062 - Mia Davis (Enrolled on: 2026-01-24)
-STU00063 - Lucas Williams (Enrolled on: 2026-01-15)
-STU00064 - Mason Garcia (Enrolled on: 2026-01-11)
-STU00065 - Ava Smith (Enrolled on: 2026-01-08)
-STU00066 - Emma Garcia (Enrolled on: 2026-01-10)
-STU00067 - Mason Miller (Enrolled on: 2026-01-23)
-STU00068 - Mia Miller (Enrolled on: 2026-01-21)
-STU00069 - Emma Martinez (Enrolled on: 2026-01-26)
-STU00070 - Lucas Hernandez (Enrolled on: 2026-01-09)
-STU00071 - Ava Davis (Enrolled on: 2026-01-13)
-STU00072 - Olivia Johnson (Enrolled on: 2026-01-25)
-STU00073 - Isabella Garcia (Enrolled on: 2026-01-09)
-STU00074 - Liam Miller (Enrolled on: 2026-01-21)
-STU00075 - Olivia Smith (Enrolled on: 2026-01-07)
-STU00076 - Olivia Brown (Enrolled on: 2026-01-03)
-STU00077 - Lucas Smith (Enrolled on: 2026-01-17)
-STU00078 - Lucas Garcia (Enrolled on: 2026-01-01)
-STU00079 - Emma Hernandez (Enrolled on: 2026-01-18)
-STU00080 - Isabella Davis (Enrolled on: 2026-01-13)
-STU00081 - Liam Johnson (Enrolled on: 2026-01-16)
-STU00082 - Ava Davis (Enrolled on: 2026-01-15)
-STU00083 - Emma Jones (Enrolled on: 2026-01-12)
-STU00084 - Mason Jones (Enrolled on: 2026-01-06)
-Waitlisted students in CSE2600:
-
-
-Dropping STU00113 - Sophia Williams from CSE3140...
-
-No student was enrolled from the waitlist.
-After dropping, enrolled students in CSE3140:
-STU00114 - Noah Davis (Enrolled on: 2026-01-11)
-STU00115 - Mia Johnson (Enrolled on: 2026-01-11)
-STU00116 - Isabella Williams (Enrolled on: 2026-01-29)
-STU00117 - Mason Smith (Enrolled on: 2026-01-29)
-STU00118 - Ava Miller (Enrolled on: 2026-01-02)
-STU00139 - Mason Garcia (Enrolled on: 2026-01-10)
-STU00140 - Liam Miller (Enrolled on: 2026-01-30)
-STU00141 - Mason Garcia (Enrolled on: 2026-01-04)
-STU00142 - Ava Hernandez (Enrolled on: 2026-01-01)
-STU00143 - Emma Garcia (Enrolled on: 2026-01-08)
-STU00144 - Isabella Hernandez (Enrolled on: 2026-01-07)
-STU00145 - Mason Martinez (Enrolled on: 2026-01-08)
-STU00146 - Mia Hernandez (Enrolled on: 2026-01-24)
-STU00147 - Emma Jones (Enrolled on: 2026-01-13)
-STU00148 - Emma Hernandez (Enrolled on: 2026-01-18)
-STU00149 - Lucas Garcia (Enrolled on: 2026-01-16)
-STU00150 - Liam Jones (Enrolled on: 2026-01-12)
-STU00151 - Mia Jones (Enrolled on: 2026-01-26)
-STU00152 - Emma Martinez (Enrolled on: 2026-01-11)
-Waitlisted students in CSE3140:
-
-
-Dropping STU00032 - Sophia Jones from CSE3666...
-
-No student was enrolled from the waitlist.
-After dropping, enrolled students in CSE3666:
-STU00033 - Ava Brown (Enrolled on: 2026-01-06)
-STU00034 - Mia Johnson (Enrolled on: 2026-01-14)
-STU00035 - Liam Jones (Enrolled on: 2026-01-24)
-STU00036 - Ava Smith (Enrolled on: 2026-01-06)
-STU00037 - Sophia Williams (Enrolled on: 2026-01-27)
-STU00038 - Emma Garcia (Enrolled on: 2026-01-03)
-STU00039 - Lucas Martinez (Enrolled on: 2026-01-03)
-STU00040 - Olivia Miller (Enrolled on: 2026-01-17)
-STU00041 - Olivia Brown (Enrolled on: 2026-01-06)
-STU00042 - Ava Jones (Enrolled on: 2026-01-05)
-STU00043 - Emma Martinez (Enrolled on: 2026-01-12)
-STU00044 - Emma Garcia (Enrolled on: 2026-01-12)
-STU00045 - Liam Williams (Enrolled on: 2026-01-13)
-STU00046 - Ava Hernandez (Enrolled on: 2026-01-13)
-STU00047 - Lucas Johnson (Enrolled on: 2026-01-30)
-STU00048 - Sophia Johnson (Enrolled on: 2026-01-07)
-STU00049 - Noah Brown (Enrolled on: 2026-01-30)
-STU00050 - Mia Smith (Enrolled on: 2026-01-17)
-STU00051 - Mia Williams (Enrolled on: 2026-01-02)
-STU00052 - Olivia Miller (Enrolled on: 2026-01-27)
-STU00053 - Noah Williams (Enrolled on: 2026-01-18)
-STU00054 - Mia Williams (Enrolled on: 2026-01-06)
-STU00055 - Noah Hernandez (Enrolled on: 2026-01-01)
-STU00056 - Olivia Johnson (Enrolled on: 2026-01-22)
-STU00057 - Isabella Williams (Enrolled on: 2026-01-08)
-STU00058 - Lucas Martinez (Enrolled on: 2026-01-28)
->>>>>>> 6f1922a (Added the necessary fixes to main file and test file so that it could work with the requirements of the milestone whilst ensuring a smooth running demo)
+STU00033 - Liam Williams (Enrolled on: 2026-01-12)
+STU00034 - Isabella Hernandez (Enrolled on: 2026-01-12)
+STU00035 - Noah Miller (Enrolled on: 2026-01-22)
+STU00036 - Sophia Miller (Enrolled on: 2026-01-19)
+STU00037 - Isabella Brown (Enrolled on: 2026-01-09)
+STU00038 - Mia Miller (Enrolled on: 2026-01-14)
+STU00039 - Ava Williams (Enrolled on: 2026-01-20)
+STU00040 - Liam Smith (Enrolled on: 2026-01-29)
+STU00041 - Sophia Miller (Enrolled on: 2026-01-12)
+STU00042 - Isabella Martinez (Enrolled on: 2026-01-08)
+STU00043 - Liam Hernandez (Enrolled on: 2026-01-10)
+STU00044 - Olivia Brown (Enrolled on: 2026-01-06)
+STU00045 - Mason Garcia (Enrolled on: 2026-01-25)
+STU00046 - Lucas Davis (Enrolled on: 2026-01-03)
+STU00047 - Emma Brown (Enrolled on: 2026-01-20)
+STU00048 - Sophia Miller (Enrolled on: 2026-01-29)
+STU00049 - Olivia Hernandez (Enrolled on: 2026-01-05)
+STU00050 - Mia Garcia (Enrolled on: 2026-01-01)
+STU00051 - Ava Smith (Enrolled on: 2026-01-16)
+STU00052 - Lucas Davis (Enrolled on: 2026-01-14)
+STU00053 - Liam Smith (Enrolled on: 2026-01-24)
+STU00054 - Mia Miller (Enrolled on: 2026-01-09)
+STU00055 - Mia Jones (Enrolled on: 2026-01-25)
+STU00056 - Sophia Jones (Enrolled on: 2026-01-12)
+STU00057 - Mia Hernandez (Enrolled on: 2026-01-19)
+STU00058 - Ava Smith (Enrolled on: 2026-01-19)
 Waitlisted students in CSE3666:
 
 
@@ -890,27 +720,19 @@ False
 'Course CSE9999 not found.'
 
 ---------------------------Pre-req. verification---------------------------
-<<<<<<< HEAD
-Advanced course: CSE3500
-Its prerequisites: ['CSE3100']
-Alice's completed courses: ['CSE3100']
-Bob's completed courses:   []
-Enrolled in CSE3500 : ['Alice']
-Bob, studentID STU00002 does not meet the prerequisites for this course. Cannot enroll in CSE3500.
-=======
 Advanced courses with prerequisites:
-CSE3500 with prerequisites ['CSE3100']
-CSE2500 with prerequisites ['CSE2050']
-CSE3100 with prerequisites ['CSE2050']
-CSE2050 with prerequisites ['CSE1010']
-CSE2102 with prerequisites ['CSE2050']
 CSE3150 with prerequisites ['CSE3100']
+CSE2102 with prerequisites ['CSE2050']
+CSE3100 with prerequisites ['CSE2050']
+CSE2500 with prerequisites ['CSE2050']
+CSE3500 with prerequisites ['CSE3100']
+CSE2050 with prerequisites ['CSE1010']
 
 Courses with no prerequisites:
+CSE1010
 CSE3140
 CSE2600
 CSE3666
-CSE1010
 University data loaded complete.
 Testing enrollment with prerequisites...
 Enrollment successful: STU00001 enrolled in CSE1010
@@ -1013,7 +835,6 @@ Enrollment successful: STU00112 enrolled in CSE3100
 Enrollment failed for STU00061 in CSE3100: Student_61, studentID STU00061 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
 Enrollment failed for STU00065 in CSE3100: Student_65, studentID STU00065 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
 Enrollment failed for STU00067 in CSE3100: Student_67, studentID STU00067 does not meet the prerequisites for this course. Cannot enroll in CSE3100.
->>>>>>> 6f1922a (Added the necessary fixes to main file and test file so that it could work with the requirements of the milestone whilst ensuring a smooth running demo)
 
 ---------------------------Sorting---------------------------
 Creating synthetic data as sorting data has been shown in Demo 2
